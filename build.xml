@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project basedir="." name="metalib2alma" default="metalib2marc">
-    <import file="language/build.xml"/>
+  <import file="language/build.xml"/>
     
-        
   <target name="analyzeMetalib" depends="loadConfig">      
       <xslt in="${metalib.xml}" style="analyzeMetalib.xsl" out="structure_${metalib_xml}">
           <classpath path="lib/saxon9he.jar"/>
