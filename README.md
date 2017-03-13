@@ -84,4 +84,5 @@ cd metalib2marc
 
 # Download html for all categories (see 2. Downloading category html)
 ant
+# The output file is found in `out/${metalib.xml}`
 ```
