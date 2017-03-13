@@ -1,0 +1,592 @@
+<!-- FILE NAME: /exlibris/metalib/m4_1/dat01/www_m_eng/category-4-right -->
+<!-- START_SECTION -->
+<!-- head -->
+<!-- Designed by UDI Ltd. http://www.design.co.il  -->
+<!-- Created at:25/04/2004 -->
+<html><head> 
+<title>MetaLib™ - Menage Categories</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<link rel="stylesheet" type="text/css" href="Filer_for_humanistiske_en/style.css"> 
+
+<!-- START INCLUDE FILE NAME:/exlibris/metalib/m4_1/dat01/www_m_eng/scripts-js -->
+ 
+<script language="JavaScript"> 
+<!-- 
+/*-------- Powered by UDI Ltd. http://www.design.co.il  -------*/ 
+/*-------------------- Created at:24/04/2004 -------------------*/ 
+ 
+ 
+ 
+/************* Highlight List Elements - Categories *****************/ 
+function getElement( nameStr ) { 
+ if ( document.getElementById ) return document.getElementById( nameStr ); // DOM 
+ if ( document.all ) return document.all[ nameStr ];  // IE4 
+ return null;  // sorry, no NS4. 
+}; //end getElement( string ) -> HTML element 
+ 
+function highlight (rowId) { 
+  var allRows = document.getElementsByTagName('a') 
+  for (var i = 0; i< allRows.length; i++) { 
+    row = allRows[i]; 
+    if (row.id == rowId) { 
+      row.className = "Highlight"; 
+    } else { 
+      row.className = "Normal"; 
+    } 
+  } 
+} 
+ 
+var PrevElem; 
+var PrevBGColor; 
+ 
+function setBGcolor(elem,dummy) 
+{ 
+ // first time we pressed on a link in the menu 
+ if (!PrevElem) { 
+   PrevElem=elem; 
+   PrevBGColor=elem.style.backgroundColor; 
+ } 
+ else { 
+   PrevElem.style.backgroundColor =PrevBGColor 
+   PrevElem=elem; 
+   PrevBGColor=elem.style.backgroundColor; 
+ } 
+ 
+ elem.style.backgroundColor = '#cfddeb' ; 
+} 
+/************* Highlight List Elements  - Categories *****************/ 
+ 
+ 
+/************* Tabs *****************/ 
+function setTab(mode) 
+{ 
+  if (mode == "Search") { 
+    SearchTab.style.display = ""; 
+    ResultsTab.style.display = "none"; 
+  } else { 
+    SearchTab.style.display = "none"; 
+    ResultsTab.style.display = ""; 
+  } 
+} 
+ 
+function Search_Results() 
+{ 
+  SearchTab.style.display = "none"; 
+  ResultsTab.style.display = ""; 
+/*  parent.SearchResults.location.href='http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11436/file/category-2-search-results'*/ 
+  parent.SearchResults.location.href='http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11437/category-2-results' 
+} 
+function Search() 
+{ 
+  SearchTab.style.display = ""; 
+  ResultsTab.style.display = "none"; 
+  parent.SearchResults.location.href='http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11438/file/category-2-search' 
+} 
+ 
+/************* Tabs *****************/ 
+function select_subcat(subcatVal) 
+{ 
+  var loc = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11439/category-1-select-s?sub_sequence=" + subcatVal; 
+  document.images["dummy_image"].src = loc; 
+} 
+ 
+function select_db(dbVal) 
+{ 
+  var loc = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11440/category-2-select-d?line_number=" + dbVal; 
+  document.images["dummy_image"].src = loc; 
+  highlight(dbVal); 
+//  setBGcolor(this,this,1); 
+} 
+ 
+function changeCat(catVal) 
+{ 
+  var loc = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11441/category-2-subcat?sequence=" + catVal; 
+  var loc1 = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11442/category-2-db-list?cat_sequence=" + catVal; 
+  window.sub_cat.location.href = loc; 
+  window.DataList.location.href = loc1; 
+} 
+ 
+/*************** Sort ***************/ 
+function MoveUp(combo) 
+{ 
+        i=combo.selectedIndex; 
+        if (i>0) 
+        { 
+                swap(combo,i,i-1); 
+                combo.options[i-1].selected=true; 
+                combo.options[i].selected=false; 
+        } 
+} 
+ 
+function MoveDown(combo) 
+{ 
+        i=combo.selectedIndex; 
+ 
+        if (i<combo.length-1 && i>-1) 
+        { 
+                swap(combo,i+1,i); 
+                combo.options[i+1].selected=true; 
+                combo.options[i].selected=false; 
+        } 
+} 
+ 
+//this function is used to swap between elements 
+function swap(combo,index1, index2) 
+{ 
+        var savedValue=combo.options[index1].value; 
+        var savedText=combo.options[index1].text; 
+ 
+        combo.options[index1].value=combo.options[index2].value; 
+        combo.options[index1].text=combo.options[index2].text; 
+ 
+        combo.options[index2].value=savedValue; 
+        combo.options[index2].text=savedText; 
+} 
+ 
+function MoveToTop(combo) 
+{ 
+        i=combo.selectedIndex; 
+ 
+        for (;i>0;i--) 
+        { 
+                swap(combo,i,i-1); 
+                combo.options[i-1].selected=true; 
+                combo.options[i].selected=false; 
+        } 
+} 
+ 
+function MoveToBottom(combo) 
+{ 
+        i=combo.selectedIndex; 
+ 
+        if (i>-1) 
+        { 
+                for (;i<combo.length-1;i++) 
+                { 
+                        swap(combo,i+1,i); 
+                        combo.options[i+1].selected=true; 
+                        combo.options[i].selected=false; 
+                } 
+        } 
+} 
+/*************** Sort ***************/ 
+ 
+function setList(theForm) 
+{ 
+    var listLength = theForm.right_select.length; 
+    for (var i=0; i< listLength; i++) { 
+      var newElem = theForm.right_select.options[i].value + ";"; 
+      theForm.order_list.value += newElem; 
+    } 
+/*    alert (theForm.order_list.value);  */ 
+    return true; 
+} 
+ 
+ 
+function setListLong(theForm) 
+{ 
+    var listLength = theForm.right_select.length; 
+    var loopLimit = -1; 
+    var f = document.forms[0]; 
+    var j = 0; 
+    var formField; 
+    for (var i=0; i< listLength; i++) { 
+      var newElem = theForm.right_select.options[i].value + ";"; 
+      if(i > loopLimit){ 
+        j++; 
+        loopLimit += 100; 
+        if(j > 1){ 
+          // Add the field to the form 
+          f.appendChild(formField); 
+        } 
+        formField = document.createElement("input"); 
+        formField.setAttribute("name", "ORDER_LIST" + j); 
+        formField.setAttribute("id", "ORDER_LIST" + j); 
+        formField.setAttribute("type", "hidden"); 
+        formField.setAttribute("value", ";"); 
+      } 
+      formField.setAttribute("value", formField.value + newElem); 
+    } 
+    if(loopLimit > listLength){ 
+        // Add the last field to the form 
+        f.appendChild(formField); 
+    } 
+    return true; 
+} 
+ 
+//moves options from one selection box (combo box) to another 
+//removes the all selected options from one combo box and adds them to the second combo box 
+function MoveElements(FromCombo,ToCombo) 
+{ 
+        var to_remove_counter=0; //number of options that were removed (num selected options) 
+ 
+        //move selected options to right select box (to) 
+        for (var i=0;i<FromCombo.options.length;i++) 
+        { 
+                if (FromCombo.options[i].selected==true) 
+                { 
+                        var addtext=FromCombo.options[i].text; 
+                        var addvalue=FromCombo.options[i].value; 
+                        ToCombo.options[ToCombo.options.length]=new Option(addtext,addvalue); 
+                        FromCombo.options[i].selected=false; 
+                        ++to_remove_counter; 
+                } 
+                else 
+                { 
+                        FromCombo.options[i-to_remove_counter].selected=false; 
+                        FromCombo.options[i-to_remove_counter].text=FromCombo.options[i].text; 
+                        FromCombo.options[i-to_remove_counter].value=FromCombo.options[i].value; 
+                } 
+        } 
+ 
+        //now cleanup the last remaining options 
+        var numToLeave=FromCombo.options.length-to_remove_counter; 
+        for (i=FromCombo.options.length-1;i>=numToLeave;i--) 
+        { 
+                FromCombo.options[i]=null; 
+        } 
+} 
+ 
+function SelectAll(combo) 
+{ 
+        for (var i=0;i<combo.options.length;i++) 
+        { 
+                combo.options[i].selected=true; 
+        } 
+} 
+/******** Select Groups ********/ 
+ 
+/* Sort list control */ 
+function compareText (option1, option2) { 
+  return option1.text < option2.text ? -1 : 
+    option1.text > option2.text ? 1 : 0; 
+} 
+function compareValue (option1, option2) { 
+  return option1.value < option2.value ? -1 : 
+    option1.value > option2.value ? 1 : 0; 
+} 
+function compareTextAsFloat (option1, option2) { 
+  var value1 = parseFloat(option1.text); 
+  var value2 = parseFloat(option2.text); 
+  return value1 < value2 ? -1 : 
+    value1 > value2 ? 1 : 0; 
+} 
+function compareValueAsFloat (option1, option2) { 
+  var value1 = parseFloat(option1.value); 
+  var value2 = parseFloat(option2.value); 
+  return value1 < value2 ? -1 : 
+    value1 > value2 ? 1 : 0; 
+} 
+function sortSelect (select, compareFunction) { 
+  if (!compareFunction) 
+    compareFunction = compareText; 
+  var options = new Array (select.options.length); 
+  for (var i = 0; i < options.length; i++) 
+    options[i] = 
+      new Option ( 
+        select.options[i].text, 
+        select.options[i].value, 
+        select.options[i].defaultSelected, 
+        select.options[i].selected 
+      ); 
+  options.sort(compareFunction); 
+  select.options.length = 0; 
+  for (var i = 0; i < options.length; i++) 
+    select.options[i] = options[i]; 
+} 
+/*  / Sort list control */ 
+ 
+// --> 
+</script> 
+
+<!-- END OF INCLUDE FILE:/exlibris/metalib/m4_1/dat01/www_m_eng/scripts-js -->
+ 
+<script language="JavaScript"> 
+<!-- 
+ 
+function selectAll() 
+{ 
+  if (document.form2.ckbox.checked) { 
+     SetAllCheckBoxes("form2", "sub_check", true); 
+  } else { 
+     SetAllCheckBoxes("form2", "sub_check", false); 
+  } 
+} 
+ 
+function SetAllCheckBoxes(FormName, FieldName, CheckValue) 
+{ 
+    if(!document.forms[FormName]) { 
+        return; 
+    } 
+    var objCheckBoxes = document.forms[FormName].elements[FieldName]; 
+    if(!objCheckBoxes) { 
+        return; 
+    } 
+    var countCheckBoxes = objCheckBoxes.length; 
+    if(!countCheckBoxes) { 
+        objCheckBoxes.checked = CheckValue; 
+    } else { 
+        // set the check value for all check boxes 
+        for(var i = 0; i < countCheckBoxes; i++) 
+            objCheckBoxes[i].checked = CheckValue; 
+    } 
+} 
+ 
+ 
+function SetMainCheckBox() 
+{ 
+    if(!document.forms["form2"]) { 
+        return; 
+    } 
+    var objCheckBoxes = document.form2.elements["sub_check"]; 
+    if(!objCheckBoxes) { 
+        return; 
+    } 
+    var countCheckBoxes = objCheckBoxes.length; 
+    var counter=0; 
+    if  (!countCheckBoxes) { 
+        form2.ckbox.checked = objCheckBoxes.checked; 
+        return; 
+    } 
+    for (i=0;i < countCheckBoxes && objCheckBoxes[i].checked; i++); 
+    if  (i == countCheckBoxes){ 
+        form2.ckbox.checked = true; 
+    } 
+    else { 
+        form2.ckbox.checked = false; 
+    } 
+} 
+ 
+// --> 
+</script> 
+</head> 
+<body leftmargin="0" topmargin="0" onload="SetMainCheckBox();" marginwidth="0" marginheight="0"> 
+ <form method="POST" name="form2" action="http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11443/category-4-load" target="_parent"> 
+<input name="sequence" value="" type="hidden"> 
+<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"> 
+        <tbody><tr> 
+        <td colspan="2"> 
+    <table cellspacing="0" cellpadding="0" border="0" width="100%"> 
+        <tbody><tr class="block" height="25"> 
+        <td class="TableHeader">&nbsp;&nbsp;&nbsp;&nbsp;</td> 
+        <td class="TableHeader" width="50%">Category</td> 
+        <td class="TableHeader" width="50%">Display Name</td> 
+      </tr> 
+  <tr> 
+     <td width="1"><img src="Filer_for_humanistiske_en/m-pixel.gif" alt="" border="0" width="1" height="1"></td> 
+     <td class="TableRow"><name=sub_cat>Humanistiske fag</name=sub_cat></td> 
+<!--     <TD><A HREF="http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11444/category-4-right?sequence=" target=sub_cat>Humanistiske fag</A></TD>--> 
+     <td><input name="subcategory_display" class="Form" style="width:100%" value="Arts and humanities" type="text"></td> 
+    </tr></tbody></table> 
+    </td> 
+        </tr> 
+  <tr> 
+        <td valign="TOP" height="100%"> 
+    <div style="overflow:auto; width:100%;height:100%;padding-top:1px"> 
+    <table cellspacing="0" cellpadding="0" border="0" width="100%"> 
+      <tbody><tr class="block" height="22"> 
+        <td class="TableHeader"><input name="ckbox" onclick="javascript:selectAll(); " checked="checked" type="checkbox"></td> 
+        <td class="TableHeader" width="50%">Subcategory</td> 
+        <td class="TableHeader" width="50%">Display Name</td> 
+      </tr> 
+<!-- END_SECTION --><!-- head --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001797" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001797" type="hidden"> 
+        <td class="TableRow">ALL</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="ALL" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000146" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000146" type="hidden"> 
+        <td class="TableRow">Arkeologi</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Archaeology" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000164" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000164" type="hidden"> 
+        <td class="TableRow">Klassisk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Classics" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000152" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000152" type="hidden"> 
+        <td class="TableRow">Kulturvitskap</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Cultural studies" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000002195" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000002195" type="hidden"> 
+        <td class="TableRow">Digital kultur</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Digital culture" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001845" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001845" type="hidden"> 
+        <td class="TableRow">Teatervitskap</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Drama studies" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000149" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000149" type="hidden"> 
+        <td class="TableRow">Engelsk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="English" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000161" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000161" type="hidden"> 
+        <td class="TableRow">Kunst</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Fine arts" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001495" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001495" type="hidden"> 
+        <td class="TableRow">Fransk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="French" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001134" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001134" type="hidden"> 
+        <td class="TableRow">Felles ressurser</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="General" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001848" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001848" type="hidden"> 
+        <td class="TableRow">Tysk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Germanic languages and literature" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000158" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000158" type="hidden"> 
+        <td class="TableRow">Historie</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="History" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001498" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001498" type="hidden"> 
+        <td class="TableRow">Italiensk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Italian" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000167" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000167" type="hidden"> 
+        <td class="TableRow">Lingvistikk, språk generelt</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Linguistics" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000143" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000143" type="hidden"> 
+        <td class="TableRow">Allmenn litteraturvitskap</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Literature" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000170" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000170" type="hidden"> 
+        <td class="TableRow">Musikk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Music" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000002247" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000002247" type="hidden"> 
+        <td class="TableRow">Musikkterapi</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Music therapy" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000173" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000173" type="hidden"> 
+        <td class="TableRow">Nordisk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Nordic languages and literature" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000155" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000155" type="hidden"> 
+        <td class="TableRow">Filosofi</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Philosophy" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000000176" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000000176" type="hidden"> 
+        <td class="TableRow">Religionsvitskap</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Science of religion" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001839" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001839" type="hidden"> 
+        <td class="TableRow">Slavisk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Slavonic languages and literature" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <tr onclick="highlight(this.id);" id="000001842" class=""> 
+        <td class="TableRow"><input name="sub_check" onclick="SetMainCheckBox();" checked="checked" type="checkbox"></td> 
+        <input name="sub_seq" value="000001842" type="hidden"> 
+        <td class="TableRow">Spansk</td> 
+        <td class="TableRow"><input name="sub_display" class="Form" style="width:100%" value="Spanish" type="text"></td> 
+      </tr> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- tail --> 
+    </tbody></table> 
+    </div> 
+    </td> 
+        </tr> 
+    <tr> 
+      <td colspan="2" style="PADDING-TOP:10PX;PADDING-BOTTOM:10PX;PADDING-RIGHT:16PX;" width="100%" align="RIGHT"> 
+      <table cellspacing="0" cellpadding="0" border="0"> 
+          <tbody><tr> 
+            <td><input class="ButLogin" value="Submit" style="width:60px" type="Submit"></td> 
+            <td width="2"><img src="Filer_for_humanistiske_en/m-pixel.gif" <="" td="" border="0" width="2" height="1"> 
+            </td><td><input class="ButLogin" value="Clear" onclick='window.location.href="http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-11445/category-4-right"' type="button"></td> 
+          </tr> 
+      </tbody></table> 
+      </td> 
+    </tr> 
+</tbody></table> 
+ </form> 
+ 
+ 
+ 
+ </body></html>
+<!-- END_SECTION -->
+<!-- tail -->

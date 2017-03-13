@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <cat1 id="Bibliotekinternt"
+         en="For UB library staff"
+         nb="Bibliotekinternt"
+         nn="Bibliotekinternt">
+      <cat2 id="Katalogisering"
+            en="Cataloguing"
+            nb="Katalogisering"
+            nn="Katalogisering"/>
+      <cat2 id="Klassifikasjon"
+            en="Classification"
+            nb="Klassifikasjon"
+            nn="Klassifikasjon"/>
+      <cat2 id="Fjernlån - Norden"
+            en="Interlibrary loan - Nordic countries"
+            nb="Fjernlån - Norden"
+            nn="Fjernlån - Norden"/>
+      <cat2 id="Fjernlån - internasj."
+            en="Interlibrary loan - internat."
+            nb="Fjernlån - Internasj."
+            nn="Fjernlån - Internasj."/>
+      <cat2 id="Tidsskrifter"
+            en="Journals"
+            nb="Tidsskrifter"
+            nn="Tidsskrifter"/>
+      <cat2 id="Bibliotekkataloger"
+            en="Library catalogs"
+            nb="Bibliotekkataloger"
+            nn="Bibliotekkataloger"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Helsefag" en="Health sciences" nb="Helsefag" nn="Helsefag">
+      <cat2 id="Helsefremmande arbeid / Health Promotion"
+            en="Health promotion"
+            nb="Helsefremmende arbeid"
+            nn="Helsefremmande arbeid"/>
+      <cat2 id="Sjukepleievitskap"
+            en="Nursing sciences"
+            nb="Sykepleievitenskap"
+            nn="Sjukepleievitskap"/>
+      <cat2 id="Helseledelse, helseøkonomi"
+            en="Health management, health economics"
+            nb="Helseledelse, helseøkonomi"
+            nn="Helseleiing, helseøkonomi"/>
+      <cat2 id="Fysioterapivitskap"
+            en="Physiotherapy science"
+            nb="Fysioterapivitenskap"
+            nn="Fysioterapivitskap"/>
+      <cat2 id="RAB - Radiografi, audiologi, bioingeniør"
+            en="RAB - Radiography, audiology, bioengineering"
+            nb="RAB - Radiografi, audiologi, bioingeniør"
+            nn="RAB - Radiografi, audiologi, bioingeniør"/>
+      <cat2 id="Logopedi" en="Speech therapy" nb="Logopedi" nn="Logopedi"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Humanistiske fag"
+         en="Arts and humanities"
+         nb="Humanistiske fag"
+         nn="Humanistiske fag">
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+      <cat2 id="Arkeologi" en="Archaeology" nb="Arkeologi" nn="Arkeologi"/>
+      <cat2 id="Klassisk" en="Classics" nb="Klassisk" nn="Klassisk"/>
+      <cat2 id="Kulturvitskap"
+            en="Cultural studies"
+            nb="Kulturvitenskap"
+            nn="Kulturvitskap"/>
+      <cat2 id="Digital kultur"
+            en="Digital culture"
+            nb="Digital kultur"
+            nn="Digital kultur"/>
+      <cat2 id="Teatervitskap"
+            en="Drama studies"
+            nb="Teatervitenskap"
+            nn="Teatervitskap"/>
+      <cat2 id="Engelsk" en="English" nb="Engelsk" nn="Engelsk"/>
+      <cat2 id="Kunst" en="Fine arts" nb="Kunst" nn="Kunst"/>
+      <cat2 id="Fransk" en="French" nb="Fransk" nn="Fransk"/>
+      <cat2 id="Felles ressurser"
+            en="General"
+            nb="Felles ressurser"
+            nn="Felles ressursar"/>
+      <cat2 id="Tysk"
+            en="Germanic languages and literature"
+            nb="Tysk"
+            nn="Tysk"/>
+      <cat2 id="Historie" en="History" nb="Historie" nn="Historie"/>
+      <cat2 id="Italiensk" en="Italian" nb="Italiensk" nn="Italiensk"/>
+      <cat2 id="Lingvistikk, språk generelt"
+            en="Linguistics"
+            nb="Lingvistikk, språk generelt"
+            nn="Lingvistikk, språk generelt"/>
+      <cat2 id="Allmenn litteraturvitskap"
+            en="Literature"
+            nb="Allmenn litteraturvitenskap"
+            nn="Allmenn litteraturvitskap"/>
+      <cat2 id="Musikk" en="Music" nb="Musikk" nn="Musikk"/>
+      <cat2 id="Musikkterapi"
+            en="Music therapy"
+            nb="Musikkterapi"
+            nn="Musikkterapi"/>
+      <cat2 id="Nordisk"
+            en="Nordic languages and literature"
+            nb="Nordisk"
+            nn="Nordisk"/>
+      <cat2 id="Filosofi" en="Philosophy" nb="Filosofi" nn="Filosofi"/>
+      <cat2 id="Religionsvitskap"
+            en="Science of religion"
+            nb="Religionsvitenskap"
+            nn="Religionsvitskap"/>
+      <cat2 id="Slavisk"
+            en="Slavonic languages and literature"
+            nb="Slavisk"
+            nn="Slavisk"/>
+      <cat2 id="Spansk" en="Spanish" nb="Spansk" nn="Spansk"/>
+   </cat1>
+   <cat1 id="Juss" en="Law" nb="Juss" nn="Juss">
+      <cat2 id="Generelt" en="General" nb="Generelt" nn="Generelt"/>
+      <cat2 id="Artiklar" en="Articles" nb="Artikler" nn="Artiklar"/>
+      <cat2 id="Norske rettskjelder"
+            en="Norwegian sources of law"
+            nb="Norske rettskilder"
+            nn="Norske rettskjelder"/>
+      <cat2 id="Utanlandske rettskjelder"
+            en="Foreign sources of law"
+            nb="Utenlandske rettskilder"
+            nn="Utanlandske rettskjelder"/>
+      <cat2 id="EU/EØS" en="EU/EEA" nb="EU/EØS" nn="EU/EØS"/>
+      <cat2 id="Folkerett"
+            en="Public international law"
+            nb="Folkerett"
+            nn="Folkerett"/>
+      <cat2 id="Menneskerettar"
+            en="Human rights"
+            nb="Menneskerettigheter"
+            nn="Menneskerettar"/>
+      <cat2 id="Rettshistorie"
+            en="History of law"
+            nb="Rettshistorie"
+            nn="Rettshistorie"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Kunst og design"
+         en="Art and design"
+         nb="Kunst og design"
+         nn="Kunst og design">
+      <cat2 id="Materialer" en="Materials" nb="Materialer" nn="Materialer"/>
+      <cat2 id="Arkiv og museer"
+            en="Archives and museums"
+            nb="Arkiv og museer"
+            nn="Arkiv og museer"/>
+      <cat2 id="Artikler, bibliografier"
+            en="Articles, biografies"
+            nb="Artikler, bibliografier"
+            nn="Artikler, bibliografier"/>
+      <cat2 id="Aviser" en="Newspapers" nb="Aviser" nn="Aviser"/>
+      <cat2 id="Bilder" en="Pictures" nb="Bilder" nn="Bilder"/>
+      <cat2 id="Bibliotekkataloger"
+            en="Library catalogs"
+            nb="Bibliotekkataloger"
+            nn="Bibliotekkataloger"/>
+      <cat2 id="Bøker på nett"
+            en="Books online"
+            nb="Bøker på nett"
+            nn="Bøker på nett"/>
+      <cat2 id="Oppslagsverk og leksika"
+            en="Referenceworks and encyclopedia"
+            nb="Oppslagsverk og leksika"
+            nn="Oppslagsverk og leksika"/>
+      <cat2 id="Kildekritikk og opphavsrett"
+            en="Source criticism and copyright"
+            nb="Kildekritikk og opphavsrett"
+            nn="Kildekritikk og opphavsrett"/>
+      <cat2 id="Ordbøker" en="Dictionaries" nb="Ordbøker" nn="Ordbøker"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Medisin, odontologi"
+         en="Medicine, dentistry"
+         nb="Medisin, odontologi"
+         nn="Medisin, odontologi">
+      <cat2 id="Elektroniske medisinske bøker"
+            en="Electronic medical books"
+            nb="Elektroniske medisinske bøker"
+            nn="Elektroniske medisinske bøker"/>
+      <cat2 id="Medisin og odontologi"
+            en="Medicine and dentistry"
+            nb="Medisin og odontologi"
+            nn="Medisin og odontologi"/>
+      <cat2 id="Molekylærbiologi"
+            en="Molecular biology"
+            nb="Molekylærbiologi"
+            nn="Molekylærbiologi"/>
+      <cat2 id="Farmakologi"
+            en="Pharmacology"
+            nb="Farmakologi"
+            nn="Farmakologi"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Naturvitskap"
+         en="Natural sciences"
+         nb="Naturvitenskap"
+         nn="Naturvitskap">
+      <cat2 id="Generelt" en="General" nb="Generelt" nn="Generelt"/>
+      <cat2 id="Biologi" en="Biology" nb="Biologi" nn="Biologi"/>
+      <cat2 id="Kjemi" en="Chemistry" nb="Kjemi" nn="Kjemi"/>
+      <cat2 id="Geofag" en="Earth sciences" nb="Geofag" nn="Geofag"/>
+      <cat2 id="Informatikk"
+            en="Informatics"
+            nb="Informatikk"
+            nn="Informatikk"/>
+      <cat2 id="Matematikk"
+            en="Mathematics"
+            nb="Matematikk"
+            nn="Matematikk"/>
+      <cat2 id="Molekylærbiologi"
+            en="Molecular biology"
+            nb="Molekylærbiologi"
+            nn="Molekylærbiologi"/>
+      <cat2 id="Fysikk" en="Physics" nb="Fysikk" nn="Fysikk"/>
+      <cat2 id="Teknologi" en="Technology" nb="Teknologi" nn="Teknologi"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Psykologi, pedagogikk"
+         en="Psychology, pedagogy"
+         nb="Psykologi, pedagogikk"
+         nn="Psykologi, pedagogikk">
+      <cat2 id="Barnevern" en="Child welfare" nb="Barnevern" nn="Barnevern"/>
+      <cat2 id="Gender and development"
+            en="Gender and development"
+            nb="Gender and development"
+            nn="Gender and development"/>
+      <cat2 id="Pedagogikk" en="Pedagogy" nb="Pedagogikk" nn="Pedagogikk"/>
+      <cat2 id="Psykologi" en="Psychology" nb="Psykologi" nn="Psykologi"/>
+      <cat2 id="Referansesamling"
+            en="Reference collection"
+            nb="Referansesamling"
+            nn="Referansesamling"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Samfunnsvitskap"
+         en="Social sciences"
+         nb="Samfunnsvitenskap"
+         nn="Samfunnsvitskap">
+      <cat2 id="Administrasjons- og organisasjonsvitskap"
+            en="Administration and organization theory"
+            nb="Administrasjons- og organisasjonsvitenskap"
+            nn="Administrasjons- og organisasjonsvitskap"/>
+      <cat2 id="Samanliknande politikk"
+            en="Comparative politics"
+            nb="Sammenliknende politikk"
+            nn="Samanliknande politikk"/>
+      <cat2 id="Utviklingsstudier"
+            en="Development studies"
+            nb="Utviklingsstudier"
+            nn="Utviklingsstudier"/>
+      <cat2 id="Økonomi" en="Economics" nb="Økonomi" nn="Økonomi"/>
+      <cat2 id="Geografi" en="Geography" nb="Geografi" nn="Geografi"/>
+      <cat2 id="Informasjonsvitskap"
+            en="Information science"
+            nb="Informasjonsvitenskap"
+            nn="Informasjonsvitskap"/>
+      <cat2 id="Medievitskap"
+            en="Media studies"
+            nb="Medievitenskap"
+            nn="Medievitskap"/>
+      <cat2 id="Sosialantropologi"
+            en="Social anthropology"
+            nb="Sosialantropologi"
+            nn="Sosialantropologi"/>
+      <cat2 id="Sosiologi" en="Sociology" nb="Sosiologi" nn="Sosiologi"/>
+      <cat2 id="Kvinne- og kjønnsforsking"
+            en="Women's and gender research"
+            nb="Kvinne- og kjønnsforskning"
+            nn="Kvinne- og kjønnsforsking"/>
+      <cat2 id="Dataarkiv" en="Data archives" nb="Dataarkiv" nn="Dataarkiv"/>
+      <cat2 id="Uavhengige forskingsinstitutt"
+            en="Undependent research institutes"
+            nb="Uavhengige forskingsinstitutt"
+            nn="Uavhengige forskingsinstitutt"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Tverrfagleg"
+         en="Interdisciplinary resources"
+         nb="Tverrfaglig"
+         nn="Tverrfagleg">
+      <cat2 id="Artikkelsøk"
+            en="Article search"
+            nb="Artikkelsøk"
+            nn="Artikkelsøk"/>
+      <cat2 id="Konferanser"
+            en="Conferences"
+            nb="Konferanser"
+            nn="Konferanser"/>
+      <cat2 id="Avhandlingar, publikasjonsarkiv"
+            en="Dissertations, publication archives"
+            nb="Avhandlinger, publikasjonsarkiv"
+            nn="Avhandlingar, publikasjonsarkiv"/>
+      <cat2 id="E-bokpakkar"
+            en="E-book collections"
+            nb="E-bokpakker"
+            nn="E-bokpakkar"/>
+      <cat2 id="E-tidsskriftpakkar"
+            en="E-journal collections"
+            nb="E-tidsskriftpakker"
+            nn="E-tidsskriftpakkar"/>
+      <cat2 id="Oppslagsverk"
+            en="Encyclopedias"
+            nb="Oppslagsverk"
+            nn="Oppslagsverk"/>
+      <cat2 id="Bibliotekkatalogar"
+            en="Library catalogues"
+            nb="Bibliotekkataloger"
+            nn="Bibliotekkatalogar"/>
+      <cat2 id="Aviser, nyhendemedier"
+            en="Newpapers, news media"
+            nb="Aviser, nyhetsmedier"
+            nn="Aviser, nyhendemedier"/>
+      <cat2 id="Offentleg informasjon"
+            en="Public information"
+            nb="Offentleg informasjon"
+            nn="Offentleg informasjon"/>
+      <cat2 id="Bibliotekfag"
+            en="Library science"
+            nb="Bibliotekfag"
+            nn="Bibliotekfag"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+   <cat1 id="Verdsdelar" nb="Verdensdeler" nn="Verdsdelar">
+      <cat2 id="Skandinavia" nb="Skandinavia" nn="Skandinavia"/>
+      <cat2 id="Europa" nb="Europa" nn="Europa"/>
+      <cat2 id="Aust-Europa" nb="Øst-Europa" nn="Aust-Europa"/>
+      <cat2 id="Afrika" nb="Afrika" nn="Afrika"/>
+      <cat2 id="Midt-Austen og Nord-Afrika"
+            nb="Midtøsten og Nord-Afrika"
+            nn="Midt-Austen og Nord-Afrika"/>
+      <cat2 id="Asia" nb="Asia" nn="Asia"/>
+      <cat2 id="Nord-Amerika og Karibia"
+            nb="Nord-Amerika og Karibia"
+            nn="Nord-Amerika og Karibia"/>
+      <cat2 id="Latin-Amerika" nb="Latin-Amerika" nn="Latin-Amerika"/>
+      <cat2 id="Australia og Oseania"
+            nb="Australia og Oseania"
+            nn="Australia og Oseania"/>
+      <cat2 id="ALL" en="ALL" nb="ALLE" nn="ALLE"/>
+   </cat1>
+</root>

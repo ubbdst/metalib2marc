@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project  xmlns:if="ant:if"
+    xmlns:unless="ant:unless"
+     basedir="." name="category" default="getLanguageHtmlFilesToXml">   
+    <dirname property="category.basedir" file="${ant.file.category}"/>
+    <echo message="${category.basedir}"></echo>
+    <condition property="local.properties.unless" value="true">
+        <not><available file="${category.basedir}/../local.properties"/></not>
+    </condition>  
+    
+ <!-- targets for creating a category file based on html downloads of
+     metalib data, to lookup result when converting metalib to marc. -->   
+    <target name="createLocalConfig" if="${local.properties.unless}">
+        <copy file="${category.basedir}/../local.properties.template" tofile="${category.basedir}/../local.properties"/>
+    </target>
+    
+    <target name="loadConfig">
+        <property file="${category.basedir}/../local.properties"/>
+    </target>
+    
+    <target name="getLanguageHtmlFilesToXml" depends="createLocalConfig,loadConfig">
+      <!-- Added transformation in forked java task to to explicitly set file.encoding for tagsoup fn:collection() input-->
+      <java fork="true" classname="net.sf.saxon.Transform" failonerror="true">
+          <classpath>
+              <pathelement location="${category.basedir}/../lib/saxon9he.jar"/>
+              <pathelement location="${category.basedir}/../lib/tagsoup-1.2.1.jar"/>
+          </classpath>          
+          <jvmarg value="-Dfile.encoding=UTF-8"/>          
+          <arg value="-s:${category.basedir}/dummy.xml"/>
+          <arg value="-o:${category.basedir}/../categories.xml"/>
+          <arg value="-xsl:${category.basedir}/../getCategoriesFromHtml.xsl"/>
+          <arg value="path=${xsl.getCategoriesFromHtml.path}" />
+      </java>    
+  </target>
+    
+</project>

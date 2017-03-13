@@ -1,0 +1,494 @@
+<!-- FILE NAME: /exlibris/metalib/m4_1/dat01/www_m_eng/category-4-right -->
+<!-- START_SECTION --><!-- head --> 
+<!-- Designed by UDI Ltd. http://www.design.co.il  --> 
+<!-- Created at:25/04/2004 --> 
+<HTML> 
+<HEAD> 
+<TITLE>MetaLib&#8482; - Menage Categories</TITLE> 
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"> 
+<LINK REL="stylesheet" TYPE="text/css" href="http://uniport.hosted.exlibrisgroup.com:80/DAT01/www_m_eng/style.css"> 
+
+<!-- START INCLUDE FILE NAME:/exlibris/metalib/m4_1/dat01/www_m_eng/scripts-js -->
+ 
+<script language="JavaScript"> 
+<!-- 
+/*-------- Powered by UDI Ltd. http://www.design.co.il  -------*/ 
+/*-------------------- Created at:24/04/2004 -------------------*/ 
+ 
+ 
+ 
+/************* Highlight List Elements - Categories *****************/ 
+function getElement( nameStr ) { 
+ if ( document.getElementById ) return document.getElementById( nameStr ); // DOM 
+ if ( document.all ) return document.all[ nameStr ];  // IE4 
+ return null;  // sorry, no NS4. 
+}; //end getElement( string ) -> HTML element 
+ 
+function highlight (rowId) { 
+  var allRows = document.getElementsByTagName('a') 
+  for (var i = 0; i< allRows.length; i++) { 
+    row = allRows[i]; 
+    if (row.id == rowId) { 
+      row.className = "Highlight"; 
+    } else { 
+      row.className = "Normal"; 
+    } 
+  } 
+} 
+ 
+var PrevElem; 
+var PrevBGColor; 
+ 
+function setBGcolor(elem,dummy) 
+{ 
+ // first time we pressed on a link in the menu 
+ if (!PrevElem) { 
+   PrevElem=elem; 
+   PrevBGColor=elem.style.backgroundColor; 
+ } 
+ else { 
+   PrevElem.style.backgroundColor =PrevBGColor 
+   PrevElem=elem; 
+   PrevBGColor=elem.style.backgroundColor; 
+ } 
+ 
+ elem.style.backgroundColor = '#cfddeb' ; 
+} 
+/************* Highlight List Elements  - Categories *****************/ 
+ 
+ 
+/************* Tabs *****************/ 
+function setTab(mode) 
+{ 
+  if (mode == "Search") { 
+    SearchTab.style.display = ""; 
+    ResultsTab.style.display = "none"; 
+  } else { 
+    SearchTab.style.display = "none"; 
+    ResultsTab.style.display = ""; 
+  } 
+} 
+ 
+function Search_Results() 
+{ 
+  SearchTab.style.display = "none"; 
+  ResultsTab.style.display = ""; 
+/*  parent.SearchResults.location.href='http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12454/file/category-2-search-results'*/ 
+  parent.SearchResults.location.href='http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12455/category-2-results' 
+} 
+function Search() 
+{ 
+  SearchTab.style.display = ""; 
+  ResultsTab.style.display = "none"; 
+  parent.SearchResults.location.href='http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12456/file/category-2-search' 
+} 
+ 
+/************* Tabs *****************/ 
+function select_subcat(subcatVal) 
+{ 
+  var loc = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12457/category-1-select-s?sub_sequence=" + subcatVal; 
+  document.images["dummy_image"].src = loc; 
+} 
+ 
+function select_db(dbVal) 
+{ 
+  var loc = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12458/category-2-select-d?line_number=" + dbVal; 
+  document.images["dummy_image"].src = loc; 
+  highlight(dbVal); 
+//  setBGcolor(this,this,1); 
+} 
+ 
+function changeCat(catVal) 
+{ 
+  var loc = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12459/category-2-subcat?sequence=" + catVal; 
+  var loc1 = "http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12460/category-2-db-list?cat_sequence=" + catVal; 
+  window.sub_cat.location.href = loc; 
+  window.DataList.location.href = loc1; 
+} 
+ 
+/*************** Sort ***************/ 
+function MoveUp(combo) 
+{ 
+        i=combo.selectedIndex; 
+        if (i>0) 
+        { 
+                swap(combo,i,i-1); 
+                combo.options[i-1].selected=true; 
+                combo.options[i].selected=false; 
+        } 
+} 
+ 
+function MoveDown(combo) 
+{ 
+        i=combo.selectedIndex; 
+ 
+        if (i<combo.length-1 && i>-1) 
+        { 
+                swap(combo,i+1,i); 
+                combo.options[i+1].selected=true; 
+                combo.options[i].selected=false; 
+        } 
+} 
+ 
+//this function is used to swap between elements 
+function swap(combo,index1, index2) 
+{ 
+        var savedValue=combo.options[index1].value; 
+        var savedText=combo.options[index1].text; 
+ 
+        combo.options[index1].value=combo.options[index2].value; 
+        combo.options[index1].text=combo.options[index2].text; 
+ 
+        combo.options[index2].value=savedValue; 
+        combo.options[index2].text=savedText; 
+} 
+ 
+function MoveToTop(combo) 
+{ 
+        i=combo.selectedIndex; 
+ 
+        for (;i>0;i--) 
+        { 
+                swap(combo,i,i-1); 
+                combo.options[i-1].selected=true; 
+                combo.options[i].selected=false; 
+        } 
+} 
+ 
+function MoveToBottom(combo) 
+{ 
+        i=combo.selectedIndex; 
+ 
+        if (i>-1) 
+        { 
+                for (;i<combo.length-1;i++) 
+                { 
+                        swap(combo,i+1,i); 
+                        combo.options[i+1].selected=true; 
+                        combo.options[i].selected=false; 
+                } 
+        } 
+} 
+/*************** Sort ***************/ 
+ 
+function setList(theForm) 
+{ 
+    var listLength = theForm.right_select.length; 
+    for (var i=0; i< listLength; i++) { 
+      var newElem = theForm.right_select.options[i].value + ";"; 
+      theForm.order_list.value += newElem; 
+    } 
+/*    alert (theForm.order_list.value);  */ 
+    return true; 
+} 
+ 
+ 
+function setListLong(theForm) 
+{ 
+    var listLength = theForm.right_select.length; 
+    var loopLimit = -1; 
+    var f = document.forms[0]; 
+    var j = 0; 
+    var formField; 
+    for (var i=0; i< listLength; i++) { 
+      var newElem = theForm.right_select.options[i].value + ";"; 
+      if(i > loopLimit){ 
+        j++; 
+        loopLimit += 100; 
+        if(j > 1){ 
+          // Add the field to the form 
+          f.appendChild(formField); 
+        } 
+        formField = document.createElement("input"); 
+        formField.setAttribute("name", "ORDER_LIST" + j); 
+        formField.setAttribute("id", "ORDER_LIST" + j); 
+        formField.setAttribute("type", "hidden"); 
+        formField.setAttribute("value", ";"); 
+      } 
+      formField.setAttribute("value", formField.value + newElem); 
+    } 
+    if(loopLimit > listLength){ 
+        // Add the last field to the form 
+        f.appendChild(formField); 
+    } 
+    return true; 
+} 
+ 
+//moves options from one selection box (combo box) to another 
+//removes the all selected options from one combo box and adds them to the second combo box 
+function MoveElements(FromCombo,ToCombo) 
+{ 
+        var to_remove_counter=0; //number of options that were removed (num selected options) 
+ 
+        //move selected options to right select box (to) 
+        for (var i=0;i<FromCombo.options.length;i++) 
+        { 
+                if (FromCombo.options[i].selected==true) 
+                { 
+                        var addtext=FromCombo.options[i].text; 
+                        var addvalue=FromCombo.options[i].value; 
+                        ToCombo.options[ToCombo.options.length]=new Option(addtext,addvalue); 
+                        FromCombo.options[i].selected=false; 
+                        ++to_remove_counter; 
+                } 
+                else 
+                { 
+                        FromCombo.options[i-to_remove_counter].selected=false; 
+                        FromCombo.options[i-to_remove_counter].text=FromCombo.options[i].text; 
+                        FromCombo.options[i-to_remove_counter].value=FromCombo.options[i].value; 
+                } 
+        } 
+ 
+        //now cleanup the last remaining options 
+        var numToLeave=FromCombo.options.length-to_remove_counter; 
+        for (i=FromCombo.options.length-1;i>=numToLeave;i--) 
+        { 
+                FromCombo.options[i]=null; 
+        } 
+} 
+ 
+function SelectAll(combo) 
+{ 
+        for (var i=0;i<combo.options.length;i++) 
+        { 
+                combo.options[i].selected=true; 
+        } 
+} 
+/******** Select Groups ********/ 
+ 
+/* Sort list control */ 
+function compareText (option1, option2) { 
+  return option1.text < option2.text ? -1 : 
+    option1.text > option2.text ? 1 : 0; 
+} 
+function compareValue (option1, option2) { 
+  return option1.value < option2.value ? -1 : 
+    option1.value > option2.value ? 1 : 0; 
+} 
+function compareTextAsFloat (option1, option2) { 
+  var value1 = parseFloat(option1.text); 
+  var value2 = parseFloat(option2.text); 
+  return value1 < value2 ? -1 : 
+    value1 > value2 ? 1 : 0; 
+} 
+function compareValueAsFloat (option1, option2) { 
+  var value1 = parseFloat(option1.value); 
+  var value2 = parseFloat(option2.value); 
+  return value1 < value2 ? -1 : 
+    value1 > value2 ? 1 : 0; 
+} 
+function sortSelect (select, compareFunction) { 
+  if (!compareFunction) 
+    compareFunction = compareText; 
+  var options = new Array (select.options.length); 
+  for (var i = 0; i < options.length; i++) 
+    options[i] = 
+      new Option ( 
+        select.options[i].text, 
+        select.options[i].value, 
+        select.options[i].defaultSelected, 
+        select.options[i].selected 
+      ); 
+  options.sort(compareFunction); 
+  select.options.length = 0; 
+  for (var i = 0; i < options.length; i++) 
+    select.options[i] = options[i]; 
+} 
+/*  / Sort list control */ 
+ 
+// --> 
+</script> 
+
+<!-- END OF INCLUDE FILE:/exlibris/metalib/m4_1/dat01/www_m_eng/scripts-js -->
+ 
+<script language="JavaScript"> 
+<!-- 
+ 
+function selectAll() 
+{ 
+  if (document.form2.ckbox.checked) { 
+     SetAllCheckBoxes("form2", "sub_check", true); 
+  } else { 
+     SetAllCheckBoxes("form2", "sub_check", false); 
+  } 
+} 
+ 
+function SetAllCheckBoxes(FormName, FieldName, CheckValue) 
+{ 
+    if(!document.forms[FormName]) { 
+        return; 
+    } 
+    var objCheckBoxes = document.forms[FormName].elements[FieldName]; 
+    if(!objCheckBoxes) { 
+        return; 
+    } 
+    var countCheckBoxes = objCheckBoxes.length; 
+    if(!countCheckBoxes) { 
+        objCheckBoxes.checked = CheckValue; 
+    } else { 
+        // set the check value for all check boxes 
+        for(var i = 0; i < countCheckBoxes; i++) 
+            objCheckBoxes[i].checked = CheckValue; 
+    } 
+} 
+ 
+ 
+function SetMainCheckBox() 
+{ 
+    if(!document.forms["form2"]) { 
+        return; 
+    } 
+    var objCheckBoxes = document.form2.elements["sub_check"]; 
+    if(!objCheckBoxes) { 
+        return; 
+    } 
+    var countCheckBoxes = objCheckBoxes.length; 
+    var counter=0; 
+    if  (!countCheckBoxes) { 
+        form2.ckbox.checked = objCheckBoxes.checked; 
+        return; 
+    } 
+    for (i=0;i < countCheckBoxes && objCheckBoxes[i].checked; i++); 
+    if  (i == countCheckBoxes){ 
+        form2.ckbox.checked = true; 
+    } 
+    else { 
+        form2.ckbox.checked = false; 
+    } 
+} 
+ 
+// --> 
+</script> 
+</HEAD> 
+<BODY LEFTMARGIN="0" TOPMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" onload="SetMainCheckBox();"> 
+ <FORM METHOD=POST  NAME=form2 action="http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12461/category-4-load" target="_parent"> 
+<input type="hidden" name="sequence" value=""> 
+<TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="100%" HEIGHT="100%"> 
+        <TR> 
+        <TD COLSPAN="2"> 
+    <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="100%"> 
+        <TR CLASS="block" HEIGHT="25"> 
+        <TD class="TableHeader">&nbsp;&nbsp;&nbsp;&nbsp;</TD> 
+        <TD class="TableHeader" width="50%">Category</TD> 
+        <TD class="TableHeader" width="50%">Display Name</TD> 
+      </TR> 
+  <TR> 
+     <TD WIDTH="1"><IMG SRC="http://uniport.hosted.exlibrisgroup.com:80/DAT01/icon_eng/m-pixel.gif" WIDTH="1" HEIGHT="1" BORDER="0" alt=""></TD> 
+     <TD class="TableRow"><name=sub_cat>Naturvitskap</TD> 
+<!--     <TD><A HREF="http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12462/category-4-right?sequence=" target=sub_cat>Naturvitskap</A></TD>--> 
+     <TD><INPUT TYPE="text" NAME="subcategory_display" CLASS="Form" style="width:100%" value="Naturvitskap"></TD> 
+    </TABLE> 
+    </TD> 
+        </TR> 
+  <TR> 
+        <TD HEIGHT="100%" VALIGN="TOP"> 
+    <DIV style="overflow:auto; width:100%;height:100%;padding-top:1px"> 
+    <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0" WIDTH="100%"> 
+      <TR CLASS="block" HEIGHT="22"> 
+        <TD class="TableHeader"><INPUT TYPE="checkbox" NAME="ckbox" onClick="javascript:selectAll(); " ></TD> 
+        <TD class="TableHeader" width="50%">Subcategory</TD> 
+        <TD class="TableHeader" width="50%">Display Name</TD> 
+      </TR> 
+<!-- END_SECTION --><!-- head --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000001823" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000001823"> 
+        <TD class="TableRow">Generelt</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Generelt"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000001826" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000001826"> 
+        <TD class="TableRow">Biologi</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Biologi"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000001829" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000001829"> 
+        <TD class="TableRow">Fysikk</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Fysikk"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000001832" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000001832"> 
+        <TD class="TableRow">Geofag</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Geofag"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000000250" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000000250"> 
+        <TD class="TableRow">Informatikk</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Informatikk"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000000253" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000000253"> 
+        <TD class="TableRow">Kjemi</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Kjemi"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000000259" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000000259"> 
+        <TD class="TableRow">Matematikk</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Matematikk"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000000265" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000000265"> 
+        <TD class="TableRow">Molekylærbiologi</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Molekylærbiologi"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000000268" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000000268"> 
+        <TD class="TableRow">Teknologi</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="Teknologi"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- body --> 
+      <TR onclick="highlight(this.id);" id="000000271" class=""> 
+        <TD class="TableRow"><INPUT TYPE="checkbox" NAME="sub_check" onclick="SetMainCheckBox();" checked></TD> 
+        <input type="hidden" name=sub_seq value="000000271"> 
+        <TD class="TableRow">ALL</TD> 
+        <TD class="TableRow"><INPUT TYPE="text" NAME="sub_display" CLASS="Form" style="width:100%" value="ALLE"></TD> 
+      </TR> 
+<!-- END_SECTION --><!-- body --> 
+<!-- START_SECTION --><!-- tail --> 
+    </TABLE> 
+    </DIV> 
+    </TD> 
+        </TR> 
+    <TR> 
+      <TD COLSPAN="2" STYLE="PADDING-TOP:10PX;PADDING-BOTTOM:10PX;PADDING-RIGHT:16PX;" width="100%" ALIGN="RIGHT"> 
+      <TABLE CELLPADDING="0" CELLSPACING="0" BORDER="0"> 
+          <TR> 
+            <TD><INPUT TYPE="Submit" class="ButLogin" value="Submit" style="width:60px"></TD> 
+            <TD WIDTH="2"><IMG SRC="http://uniport.hosted.exlibrisgroup.com:80/DAT01/icon_eng/m-pixel.gif" WIDTH="2" HEIGHT="1" BORDER="0"</TD> 
+            <TD><INPUT TYPE="button" class="ButLogin" value="Clear" onClick='window.location.href="http://uniport.hosted.exlibrisgroup.com:80/M/J8L61T2RLNLXKT16BPASQJM3PC5XD5QRUIPMRM6X5THCB7M7D5-12463/category-4-right"'></TD> 
+          </TR> 
+      </TABLE> 
+      </TD> 
+    </TR> 
+</TABLE> 
+ </FORM> 
+</BODY> 
+</HTML> 
+<!-- END_SECTION --><!-- tail --> 
+ 

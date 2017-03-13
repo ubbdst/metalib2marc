@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<examples xmlns="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd http://uniport.hosted.exlibrisgroup.com:80/aleph-cgi/load_schema.pl">
+   <analyze-wrapper xpath="/file/knowledge_unit/category/main">
+      <main>Samfunnsvitskap</main>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/category/sub">
+      <sub>Dataarkiv</sub>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/external_conf/line">
+      <line>&lt;externalConf&gt;</line>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/find_module/line">
+      <line>#!/exlibris/metalib/m4_1/product/bin/perl</line>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/present_module/line">
+      <line>#!/exlibris/metalib/m4_1/product/bin/perl</line>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/present_single/line">
+      <line>#!/exlibris/metalib/m4_1/product/bin/perl</line>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/program_name/line">
+      <line>use strict;</line>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag: is]">
+      <controlfield tag=" is">of nearly 13,000 journals.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag: ye]">
+      <controlfield tag=" ye">rom 1993 to date and is updated daily.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:001]">
+      <controlfield tag="001">UNI07783</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:200]">
+      <controlfield tag="200">l-text databas</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:CKB]">
+      <controlfield tag="CKB">CKB02871</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:FMT]">
+      <controlfield tag="FMT">DD</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:Gro]">
+      <controlfield tag="Gro">eopolitical Location,</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:LDR]">
+      <controlfield tag="LDR">^^^^^nam^^22^^^^^^a^4500</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:ds ]">
+      <controlfield tag="ds ">de a list of libraries that hold the journal title.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:ech]">
+      <controlfield tag="ech">l, civil, environmental, electrical, structural, process engineering and materials science.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:exi]">
+      <controlfield tag="exi">esents key terms in the same context used by the original author.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:f t]">
+      <controlfield tag="f t">anch library collections</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:hic]">
+      <controlfield tag="hic">citation databases</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:ien]">
+      <controlfield tag="ien">dertakes research and training in biological pest management, biodiversity, biosystemat</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:iti]">
+      <controlfield tag="iti">rom 1975 - 1991 almost completely</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:ive]">
+      <controlfield tag="ive">instant access to one of the most</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:lso]">
+      <controlfield tag="lso">lable to the U</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:of ]">
+      <controlfield tag="of ">extbook collection completely</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:rts]">
+      <controlfield tag="rts">ducation, includes citation and abstract information from over</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:s a]">
+      <controlfield tag="s a">terial published in Israel.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:shi]">
+      <controlfield tag="shi">an applied life science publisher of books, journals and electronic products.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:sit]">
+      <controlfield tag="sit">rary's online catalogue</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:sse]">
+      <controlfield tag="sse">aspects of agriculture and allied disciplines.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:tat]">
+      <controlfield tag="tat">from 1975 onwards completely</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:tio]">
+      <controlfield tag="tio">ournals and related documents. ^M</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:uct]">
+      <controlfield tag="uct">and Systems, Molecular Sequence,MeSH disease terminology, and CAS Registry Numbers.</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/controlfield[@tag:urr]">
+      <controlfield tag="urr">ndex to Journals in Education (CIJE). ^M</controlfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:024]/subfield[@code:a]">
+      <subfield code="a">TUB01</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:073]/subfield[@code:a]">
+      <subfield code="a">EBSCO</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:110 @ind1:2]/subfield[@code:a]">
+      <subfield code="a">SilverPlatter</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:210]/subfield[@code:a]">
+      <subfield code="a">Intute Astronomy</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:245 @ind1:1]/subfield[@code:9]">
+      <subfield code="9">eng</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:245 @ind1:1]/subfield[@code:a]">
+      <subfield code="a">Intute Astronomy</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:246 @ind1:1]/subfield[@code:a]">
+      <subfield code="a">IPSA</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:260]/subfield[@code:a]">
+      <subfield code="a">US Department of Education</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:260]/subfield[@code:b]">
+      <subfield code="b">International Political Science Association</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:a]">
+      <subfield code="a">National Assembly Library, Yeouido-dong ,Yeongdeungpo-gu, Seoul, Korea</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:b]">
+      <subfield code="b">Seoul</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:c]">
+      <subfield code="c">California</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:d]">
+      <subfield code="d">Israel</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:e]">
+      <subfield code="e">150 - 703</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:f]">
+      <subfield code="f">NY</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:k]">
+      <subfield code="k">82-02-788-4143</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:l]">
+      <subfield code="l">83-02-788-4291</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:m]">
+      <subfield code="m">webw3@nanet.go.kr</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:p]">
+      <subfield code="p">Hélène Chaudoreille</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:270]/subfield[@code:z]">
+      <subfield code="z">**IP管控，不必用ID/Password</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:307]/subfield[@code:8]">
+      <subfield code="8">http://www.nanet.go.kr/english/visitorinfo/cody/e04_libtime_cody.html</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:500]/subfield[@code:a]">
+      <subfield code="a">With the Full Text edition of ABI/INFORM Global, researchers get immediate access to full text articles from the most frequently requested publications. ABI/INFORM Global Full Text contains ASCII full text articles from more than 500 of the indexed publications. Full text coverage begins with 1991 for many publications. Abstract and index coverage begins with 1971 material. ABI/INFORM is a valuable source of business conditions, trends, corporate strategies and tactics, management techniques competitive and product information and much more.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:505]/subfield[@code:a]">
+      <subfield code="a">This database provides bibliographic citations and abstracts from journal articles, monographs, technical reports, theses, letters, meeting abstracts, papers and reports.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:506]/subfield[@code:a]">
+      <subfield code="a">Authentication needed</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:513]/subfield[@code:a]">
+      <subfield code="a">Frå 1933</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:520]/subfield[@code:a]">
+      <subfield code="a">Intute is a free online service providing you with access to the very best web resources for education and research, evaluated and selected by a network of subject specialists.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:531]/subfield[@code:a]">
+      <subfield code="a">SciFinder tilgang er kun for UiB studenter og ansatte</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:532]/subfield[@code:b]">
+      <subfield code="b">testing</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:540]/subfield[@code:a]">
+      <subfield code="a">Keesing's Worldwide, LLC</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:545]/subfield[@code:a]">
+      <subfield code="a">BIOME is a hub within the Resource Discovery Network (RDN) (http://www.rdn.ac.uk), and is funded by the Joint Information Systems Committee (JISC) http://www.jisc.ac.uk/</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:546]/subfield[@code:a]">
+      <subfield code="a">ENGLISH</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:561]/subfield[@code:a]">
+      <subfield code="a">This database provides fast access to the environmental information necessary to resolve day-to-day problems, ensure ongoing compliance, and handle emergency situations more effectively.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:574]/subfield[@code:a]">
+      <subfield code="a">Via Subway : ## ##The closest subway station to the library is the Yeouido Station on subway line #5 exit 3. From the station visitors may use the National Assembly Shuttle Bus services to and from the library. ## ##☞ Yeouido Station (Line#5) ## - Shuttle Bus : exit 3, the shuttle bus stop is 100m ahead at HP building ## - Other Buses : exit 5, take 162, 261, 262, 461, 7007-1, 9409 ##☞ Yeouinaru Station (Line#5) exit 2 : 5615, 5618, 6633, 7007-1, 61 ##[Shuttle Bus Services] ## ##→ Service Hours : 09:00 - 16:00 (Mon-Fri) ##→ Interval : 20 minutes ## ##※ There is no service at 12:20, 12:40, and on Saturdays, Sundays, national holidays. ## ##Other Bus Line ## ##- National Assembly Library : 5615, 5618, 5711, 6633, 1002, 1008 ##- Hyundai Capital Services, Inc. : 263, 362, 461, 5711, 6623, 1002 ##- Kookmin Bank : 162, 262, 263, 461, 5711, 7007-1, 9409 ##- Ministry of Patriots and Veterans Affairs : 162, 261, 362, 363, 5711, 7613, 1008, 61 ## ##[Yeouido Transportation Center] ##※ 10 minutes walk from the Transportation Center to the Library ## ##- #1 : 11-1, 11-2, 301, 320, 5601 ##- #2 : 160, 162, 260, 261, 262, 360, 461, 5012, 5615, 5618, 5623, 6630, 6633 ##- #3 : 160, 260, 360, 362, 363, 461, 600, 661,, 5012, 6623, 6628 ##- #4: 88, 905</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:575]/subfield[@code:a]">
+      <subfield code="a">The National Assembly Library of Korea is equipped with facilities to assist individuals' visit more convenient. ## ## Wheelchairs ##Wheelchairs are available at the circulation desk. Please inquire at the information desk at the visitor entrance for any assistance. ## ## Print Magnifying Equipment and Vocalizer ##This equipment is available in the Main Research Hall on the first floor for individuals with sight disabilities. For any assistance, please contact the circulations desk.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:590]/subfield[@code:a]">
+      <subfield code="a">Subject headings MeSH: Ubs brosjyre om MeSH</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:591]/subfield[@code:a]">
+      <subfield code="a">Hostname:port, DB-kode og Link to rek in native interf. lagt inn. HF 30.10.07</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:592]/subfield[@code:a]">
+      <subfield code="a">ISSN, ISBN, and Year searches are not supported. ## ##Truncation is not supported in multi-word searches. ## ##Author searches are done on the last name only.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:593]/subfield[@code:a]">
+      <subfield code="a">The Link to Records in Native Interface is $856_u ## ##Author names are entered in different formats, so the Lateral Term Transformation does not attempt to send just the last name to the search box and the OpenURL may not pick up the correct data.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:594]/subfield[@code:a]">
+      <subfield code="a">FREE</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:595]/subfield[@code:a]">
+      <subfield code="a">ISSN, ISBN, and Year searches are not supported. ## ##Truncation is not supported in multi-word searches. ## ##Author searches are done on the last name only.</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:650]/subfield[@code:a]">
+      <subfield code="a">engineering</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:653]/subfield[@code:a]">
+      <subfield code="a">Astronomy</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:655]/subfield[@code:a]">
+      <subfield code="a">Subject Gateway</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:710 @ind1:2]/subfield[@code:a]">
+      <subfield code="a">MCB University Press Ltd</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:720]/subfield[@code:a]">
+      <subfield code="a">ALEPH (Ex Libris)</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 1]/subfield[@code:7]">
+      <subfield code="7">3FAKzKlP6HTAUHrJ;XJo0Lg9=S1WUHR1.Xtk</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 1]/subfield[@code:D]">
+      <subfield code="D">CA1yLIp9cVBQqFRx;FLYqh0d=8f4819Z.VnE</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 1]/subfield[@code:u]">
+      <subfield code="u">http://www.intute.ac.uk/sciences/astronomy/</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 2]/subfield[@code:a]">
+      <subfield code="a">http://www.ei.org/eicorp/</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 2]/subfield[@code:u]">
+      <subfield code="u">http://www.ovid.com/</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 3]/subfield[@code:u]">
+      <subfield code="u">$856_u</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 4]/subfield[@code:u]">
+      <subfield code="u">http://oswlib.library.oswego.edu:4690/F?func=item-global&amp;doc_library=FIT01&amp;doc_number=$0100</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 5]/subfield[@code:u]">
+      <subfield code="u">http://websok.libris.kb.se/websearch/form?type=simple</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 6]/subfield[@code:u]">
+      <subfield code="u">http://rebiun.crue.org/</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:856 @ind1:4 @ind2: 9]/subfield[@code:u]">
+      <subfield code="u">http://www.ub.uib.no/felles/brosjyrer/pubmed-eng.pdf</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:901]/subfield[@code:a]">
+      <subfield code="a">Nicholas Lewis</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:902]/subfield[@code:a]">
+      <subfield code="a">Tilbyr artiklar i fulltekst</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:956]/subfield[@code:a]">
+      <subfield code="a">http://www.ovid.com/</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:AF1]/subfield[@code:a]">
+      <subfield code="a">BERGEN</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:AF3]/subfield[@code:a]">
+      <subfield code="a">GUEST</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:ATG]/subfield[@code:a]">
+      <subfield code="a">RESTRICT</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:CAT]/subfield[@code:a]">
+      <subfield code="a">bergen</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:CAT]/subfield[@code:b]">
+      <subfield code="b">00</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:CAT]/subfield[@code:c]">
+      <subfield code="c">20061127</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:CAT]/subfield[@code:h]">
+      <subfield code="h">0842</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:CAT]/subfield[@code:l]">
+      <subfield code="l">DAT01</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:CJK]/subfield[@code:a]">
+      <subfield code="a">lat</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:FIL]/subfield[@code:a]">
+      <subfield code="a">News</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:FTL]/subfield[@code:a]">
+      <subfield code="a">ISSN=0199-6649</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:ICN]/subfield[@code:a]">
+      <subfield code="a">fulltext</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:LCL @ind1:1]/subfield[@code:a]">
+      <subfield code="a">medisin odontologi tannmedisin helsefag molekylærbiologi biologi sykepleie fysioterapi</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:LCL @ind1:2]/subfield[@code:a]">
+      <subfield code="a">medicine dentistry health sciences molecular biology##nursing physiotherapy physical therapy</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:LUP]/subfield[@code:a]">
+      <subfield code="a">20040709</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:MTD]/subfield[@code:a]">
+      <subfield code="a">-</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:NEW]/subfield[@code:a]">
+      <subfield code="a">Y</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:NWD]/subfield[@code:a]">
+      <subfield code="a">20060630</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:NWP]/subfield[@code:b]">
+      <subfield code="b">GUEST</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:PXY]/subfield[@code:a]">
+      <subfield code="a">Y</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:REG]/subfield[@code:a]">
+      <subfield code="a">001</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:RNK]/subfield[@code:a]">
+      <subfield code="a">3</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:SES]/subfield[@code:a]">
+      <subfield code="a">10</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:SFX]/subfield[@code:a]">
+      <subfield code="a">N</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:SPX @ind1:Y]/subfield[@code:a]">
+      <subfield code="a">N</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:STA]/subfield[@code:a]">
+      <subfield code="a">INACTIVE</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:TAR]/subfield[@code:a]">
+      <subfield code="a">INTUTE</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:TAR]/subfield[@code:b]">
+      <subfield code="b">Y</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:TAR]/subfield[@code:f]">
+      <subfield code="f">Y</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:TRN]/subfield[@code:a]">
+      <subfield code="a">*** Missing transliteration</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:UPD]/subfield[@code:a]">
+      <subfield code="a">Yes</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:VER]/subfield[@code:a]">
+      <subfield code="a">03.12.0000</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:ZDC]/subfield[@code:a]">
+      <subfield code="a">astronomy</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/datafield[@tag:ZHS]/subfield[@code:a]">
+      <subfield code="a">z3950.intute.ac.uk:210</subfield>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/record/leader">
+      <leader>^^^^^nam^^22^^^^^^a^4500</leader>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/tab_conv/line">
+      <line>!=================================================================</line>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/tab_sutrs/line">
+      <line>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-!!!!!-!!!!!-!!!!</line>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/z39/confline">
+      <confline>target INTUTE</confline>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/z58/field">
+      <field name="z58_base">INTUTE</field>
+   </analyze-wrapper>
+   <analyze-wrapper xpath="/file/knowledge_unit/z58/field/field">
+      <field name="z58_tab01_code">WTI</field>
+   </analyze-wrapper>
+</examples>

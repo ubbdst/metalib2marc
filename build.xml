@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." name="metalib2alma" default="metalib2marc">
+    <import file="language/build.xml"/>
+    
+        
+  <target name="analyzeMetalib" depends="loadConfig">      
+      <xslt in="${metalib.xml}" style="analyzeMetalib.xsl" out="structure_${metalib_xml}">
+          <classpath path="lib/saxon9he.jar"/>
+      </xslt>
+  </target>
+  
+  <target name="metalib2marc" depends="getLanguageHtmlFilesToXml">
+      <mkdir dir="out/"/>
+      <xslt in="${metalib.xml}" style="metalib2marc.xsl" out="out/${metalib.xml}">
+          <param name="institution" expression="${xsl.metalib2marc.institution}"/>
+          <param name="language" expression="${xsl.metalib2marc.language}"/>
+          <param name="path" expression="${xsl.metalib2marc.path}"/>
+          <classpath path="lib/saxon9he.jar"/>  
+      </xslt>
+  </target>
+</project>

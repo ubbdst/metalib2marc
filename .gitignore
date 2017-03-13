@@ -1,0 +1,6 @@
+out/
+examples.xml
+*.xpr
+categories.xml
+local.properties
+UBB_Metalib.xml

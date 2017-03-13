@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description xmlns:x="http://www.jenitennison.com/xslt/xspec"
+    xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+    stylesheet="../metalib2marc.xsl">
+    <x:param name="institution" select="'UBB'"/>    
+    
+    <x:scenario label="Scenario for testing template with match '*:file">
+        <x:context><file xmlns="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
+            
+           >        
+        </file></x:context>
+        <x:expect label="Expecting file element to be stripped and replaced with a root element &lt;records&gt; in xmlns='http://www.loc.gov/MARC21/slim'">
+            <records xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>  
+        </x:expect>
+    </x:scenario>
+    
+    <x:scenario label="Scenario for testing multiple of same main category, and different sub categories">
+        <x:context>
+            <file>        
+                <knowledge_unit>
+                    <record  xmlns="http://www.loc.gov/MARC21/slim">
+                        <controlfield tag="001">UNI01262</controlfield>
+                        <datafield tag="245" ind1="1" ind2=" ">
+                            <subfield code="a">Library of Congress</subfield>
+                        </datafield>
+                        <datafield tag='STA'><subfield code="a">ACTIVE</subfield></datafield>
+                    </record>          
+                <category>
+                    <main>Tverrfagleg</main>
+                    <sub>Bibliotekkatalogar</sub>
+                    <main>Bibliotekinternt</main>
+                    <sub>Bibliotekkataloger</sub>
+                    <main>Bibliotekinternt</main>
+                    <sub>Fjernlån - internasj.</sub>
+                </category>
+                </knowledge_unit>
+            </file>
+        </x:context>
+        <x:expect label="expecting nested bibliotekkataloger" >
+            <records xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library">
+                <record>
+                    <leader>00000nai</leader>
+                    <controlfield tag="008">##################k##d#o##########2######</controlfield>
+                    <datafield tag="245" ind1="1" ind2=" ">
+                        <subfield code="a">Library of Congress</subfield>
+                    </datafield>
+                    <datafield tag="920" ind1=" " ind2=" ">
+                        <subfield code="a">Interdisciplinary resources</subfield>
+                        <subfield code="b">Library catalogues</subfield>
+                        <subfield code="5">UBB</subfield>
+                        <subfield code="9">eng</subfield>
+                    </datafield>
+                    <datafield tag="920" ind1=" " ind2=" ">
+                        <subfield code="a">Tverrfaglig</subfield>
+                        <subfield code="b">Bibliotekkataloger</subfield>
+                        <subfield code="5">UBB</subfield>
+                        <subfield code="9">nor</subfield>
+                    </datafield>
+                    <datafield tag="920" ind1=" " ind2=" ">
+                        <subfield code="a">For UB library staff</subfield>
+                        <subfield code="b">Library catalogs</subfield>
+                        <subfield code="b">Interlibrary loan - internat.</subfield>
+                        <subfield code="5">UBB</subfield>
+                        <subfield code="9">eng</subfield>
+                    </datafield>
+                    <datafield tag="920" ind1=" " ind2=" ">
+                        <subfield code="a">Bibliotekinternt</subfield>
+                        <subfield code="b">Bibliotekkataloger</subfield>
+                        <subfield code="b">Fjernlån - Internasj.</subfield>
+                        <subfield code="5">UBB</subfield>
+                        <subfield code="9">nor</subfield>
+                    </datafield>
+                </record>
+            </records>
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing template with match '*">
+        <x:context>
+            <file xmlns="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd
+                http://uniport.hosted.exlibrisgroup.com:80/aleph-cgi/load_schema.pl">   
+            <knowledge_unit>
+            </knowledge_unit>
+            </file>
+        </x:context>
+        <x:expect label="Expecting &lt;knowledge_unit&gt; stripped and root element records">
+            <records xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing template with match 'text()' and mode 'copy'">
+        <x:context mode="copy">                        
+            <subfield xmlns="http://www.loc.gov/MARC21/slim" code="a">Eurobarometer</subfield>       
+</x:context>
+        <x:expect  label="Expecting subfield element copied with attribute and string copied">
+            <subfield xmlns="http://www.loc.gov/MARC21/slim"                 
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+                code="a">Eurobarometer</subfield>
+            
+                        
+</x:expect>
+</x:scenario>
+
+    <x:scenario
+        label="Scenario for testing template with match '*' and mode 'copy'">
+        <x:context mode="copy">                        
+            <subfield code="a">Eurobarometer</subfield>       
+        </x:context>
+        <x:expect  label="Expecting subfield element copied with attribute and string copied">
+            <subfield xmlns="http://www.loc.gov/MARC21/slim"                
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+                code="a">Eurobarometer</subfield>
+            
+            
+        </x:expect></x:scenario>
+
+    <x:scenario 
+        label="Scenario for testing template with match '*:datafield[@tag=('531','532','574',         '575','591','592','593','594','595','901','902','956') and *:subfield/@code='a']   |         *:datafield[@tag='856']/*:subfield[@code=('$7','$D')]|         *:datafield[@tag='245']/*:subfield[@code='$9']' and mode 'copy #default'">
+        <x:context mode="copy">
+            <datafield tag="531"><subfield code="a">value</subfield></datafield>
+        </x:context>
+        <x:expect label="Expecting element datafield with @tag 531  and children removed (an empty sequence)" select="()"/>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing template with match '*:datafield[matches(@tag,'^[0-9]+')]">
+        <x:context href="../examples.xml" select="//*:knowledge_unit[1]/*:record[1]/*:datafield[@tag='210']"/>
+        <x:expect label="datafield 210 copied as is">
+            <datafield xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:pkg="http://expath.org/ns/pkg"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+                tag="210" ind1=" " ind2=" ">
+                <subfield code="a">Eurobarometer</subfield>
+            </datafield>
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing template with match '*:datafield[@tag='520']|         *:datafield[@tag='245' and *:subfield/@code='a']|         *:datafield[@tag='246' and *:subfield/@code='a']|           *:datafield[@tag='260' and (*:subfield/@code='a' or *:subfield/@code='b')]">
+        <x:context href="../examples.xml" select="//*:knowledge_unit[1]/*:record[1]/*:datafield[@tag='210']"/>
+        <x:expect label="datafield 210 copied as is">
+            <datafield xmlns="http://www.loc.gov/MARC21/slim" tag="210" ind1=" " ind2=" ">
+                <subfield code="a">Eurobarometer</subfield>
+            </datafield>
+            
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing function controlfield_008">
+        <x:call template="controlfield_008"/>
+        <x:expect label="controlfield added with k in position 18 (from 0)"><controlfield xmlns="http://www.loc.gov/MARC21/slim"
+            xmlns:pkg="http://expath.org/ns/pkg"
+            xmlns:impl="urn:x-xspec:compile:xslt:impl"
+            xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+            tag="008">##################k##d#o##########2######</controlfield>
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing template with match '*:record[*:datafield[@tag='STA']/*:subfield[@code='a']='ACTIVE']">
+        <x:scenario label="with INACTIVE status">
+            <x:context>
+                <file>        
+                    <knowledge_unit>
+                        <record  xmlns="http://www.loc.gov/MARC21/slim">                           
+                            <datafield tag='STA'><subfield code="a">INACTIVE</subfield></datafield>
+                        </record>
+                               </knowledge_unit>
+                </file>
+            </x:context>
+            <x:expect label="no record copied. Empty records element.">
+                <records xmlns="http://www.loc.gov/MARC21/slim"
+                    xmlns:pkg="http://expath.org/ns/pkg"
+                    xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                    xmlns:flub="http://data.ub.uib.no/xsl/function-library" />
+                
+            </x:expect>
+        </x:scenario>
+        <x:scenario label="with ACTIVE status">
+          
+            <x:context><file>        
+                <knowledge_unit>
+                    <record  xmlns="http://www.loc.gov/MARC21/slim">                           
+                        <datafield tag='STA'><subfield code="a">ACTIVE</subfield></datafield>
+                    </record>
+                </knowledge_unit>
+            </file>
+            </x:context>
+            <x:expect label="record added with leader and controlfield">
+                <records xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:pkg="http://expath.org/ns/pkg"
+                xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library" > <record>
+                    <leader>00000nai</leader>
+                    <controlfield tag="008">##################k##d#o##########2######</controlfield>
+                </record></records></x:expect>
+        </x:scenario>    
+    </x:scenario>
+ 
+    <x:scenario
+        label="Scenario for testing template with match '*:datafield[@tag='856' and @ind1='4' and (@ind2='1' or @ind2='9') and subfield/@code='u']">
+        <x:scenario label="ind2 is 1">
+            <x:context href="../examples.xml" select="//*:knowledge_unit[4]/*:record/*:datafield[@tag='856' and @ind1='4' and @ind2='1']"/>
+            <x:expect label="expecting field copied to controlfield 956"><datafield xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:pkg="http://expath.org/ns/pkg"
+                xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+                tag="921"
+                ind1=" "
+                ind2=" ">
+                <subfield code="u">http://www.ncbi.nlm.nih.gov/pubmed?otool=inoublib</subfield>
+                <subfield code="5">UBB</subfield>
+            </datafield></x:expect>
+        </x:scenario>
+       <x:scenario label="ind2 is 9">
+           <x:context  href="../examples.xml" select="//*:knowledge_unit[4]/*:record/*:datafield[@tag='856' and @ind1='4' and @ind2='9']"/>
+           <x:expect label="expecting field copied to 921"><datafield xmlns="http://www.loc.gov/MARC21/slim"
+               xmlns:pkg="http://expath.org/ns/pkg"
+               xmlns:impl="urn:x-xspec:compile:xslt:impl"
+               xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+               tag="956"
+               ind1=" "
+               ind2=" ">
+               <subfield code="u">http://www.ub.uib.no/felles/brosjyrer/pubmed-eng.pdf</subfield>
+               <subfield code="5">UBB</subfield>
+           </datafield></x:expect>
+       </x:scenario>
+       
+
+        
+        <!--<x:expect label="Not yet implemented" select="'Not yet implemented'"/>-->
+    </x:scenario>
+
+        <x:scenario 
+        label="Scenario for testing template with match 'text()">
+        <x:context>
+            <record  xmlns="http://www.loc.gov/MARC21/slim">  
+                TEST
+                <datafield tag='STA'><subfield code="a">ACTIVE</subfield></datafield>
+            </record>
+        </x:context>
+        <x:expect label="Expecting text node stripped" >
+            <record xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:pkg="http://expath.org/ns/pkg"
+                xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library">
+                <leader>00000nai</leader>
+                <controlfield tag="008">##################k##d#o##########2######</controlfield>
+            </record>
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario  label="Scenario for testing template with match '*:record">
+        <x:context>
+            <file>        
+                <knowledge_unit>
+                    <record  xmlns="http://www.loc.gov/MARC21/slim">
+                        <controlfield tag="001">UNI01262</controlfield>
+                        <datafield tag="245" ind1="1" ind2=" ">
+                            <subfield code="a">Library of Congress</subfield>
+                        </datafield>
+                        <datafield tag='STA'><subfield code="a">INACTIVE</subfield></datafield>
+                    </record>          
+                    <category>
+                        <main>Tverrfagleg</main>
+                        <sub>Bibliotekkatalogar</sub>
+                        <main>Bibliotekinternt</main>
+                        <sub>Bibliotekkataloger</sub>
+                        <main>Bibliotekinternt</main>
+                        <sub>Fjernlån - internasj.</sub>
+                    </category>
+                </knowledge_unit>
+            </file>
+        </x:context>
+        <x:expect label="Expecting empty records element">
+            <records xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:pkg="http://expath.org/ns/pkg"
+                xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library" />
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario  label="Scenario for testing function replaceFieldInPosition">
+        <x:scenario label="$position=0">
+        <x:call function="flub:replaceFieldInPosition">
+            <x:param name="controlfield">
+                <controlfield tag="008">#########################################</controlfield>
+            </x:param>
+            <x:param name="position" select="0"/>
+            <x:param name="insert_value" select="'a'"/>
+        </x:call>
+        <x:expect label="expecting a inserted on first #">
+            <controlfield xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:pkg="http://expath.org/ns/pkg"
+                xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+                tag="008">a########################################</controlfield>        </x:expect>
+    </x:scenario>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing function subfield_code_5">
+        
+        <x:call template="subfield_code_5"/>
+        <x:expect label="subfield with code 5 attribute, and global param institution (UBB) as text node" >
+            <subfield  xmlns="http://www.loc.gov/MARC21/slim"
+                xmlns:pkg="http://expath.org/ns/pkg"
+                xmlns:impl="urn:x-xspec:compile:xslt:impl"
+                xmlns:flub="http://data.ub.uib.no/xsl/function-library" code="5">UBB</subfield>
+        </x:expect>
+    </x:scenario>
+
+    <x:scenario label="Scenario for testing function leader">
+        <x:call template="leader"/>
+        <x:expect label="Expecting &lt;leader>00000nai&lt;/leader"><leader xmlns="http://www.loc.gov/MARC21/slim"
+            xmlns:pkg="http://expath.org/ns/pkg"
+            xmlns:impl="urn:x-xspec:compile:xslt:impl"
+            xmlns:flub="http://data.ub.uib.no/xsl/function-library">00000nai</leader></x:expect>
+    </x:scenario>
+</x:description>
