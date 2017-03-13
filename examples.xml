@@ -1,0 +1,1385 @@
+<file xmlns="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation=" 
+    http://uniport.hosted.exlibrisgroup.com:80/aleph-cgi/load_schema.pl">
+    
+<knowledge_unit>
+    <record>
+        <controlfield tag="001">UNI04918</controlfield>
+        <datafield tag="245" ind1="1" ind2=" ">
+            <subfield code="a">Eurobarometer</subfield>
+        </datafield>
+        <datafield tag="210" ind1=" " ind2=" ">
+            <subfield code="a">Eurobarometer</subfield>
+        </datafield>
+        <datafield tag="594" ind1=" " ind2=" ">
+            <subfield code="a">FREE</subfield>
+        </datafield>
+        <datafield tag="591" ind1=" " ind2=" ">
+            <subfield code="a">260106/PHB</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">Du kjem inn på heimesida til European Commission Public Opinion. Eurobaromter i venstre sidefelt.######This is the website for the Public Opinion Analysis sector of the European Commission.</subfield>
+        </datafield>
+        <datafield tag="TAR" ind1=" " ind2=" ">
+            <subfield code="f">Y</subfield>
+        </datafield>
+        <datafield tag="AF1" ind1=" " ind2=" ">
+            <subfield code="a">BERGEN</subfield>
+        </datafield>
+        <datafield tag="STA" ind1=" " ind2=" ">
+            <subfield code="a">ACTIVE</subfield>
+        </datafield>
+        <datafield tag="NWD" ind1=" " ind2=" ">
+            <subfield code="a">20060630</subfield>
+        </datafield>
+        <datafield tag="RNK" ind1=" " ind2=" ">
+            <subfield code="a">3</subfield>
+        </datafield>
+        <datafield tag="CJK" ind1=" " ind2=" ">
+            <subfield code="a">lat</subfield>
+        </datafield>
+        <controlfield tag="FMT">DD</controlfield>
+        <datafield tag="CAT" ind1=" " ind2=" ">
+            <subfield code="a">bergen</subfield>
+            <subfield code="b">00</subfield>
+            <subfield code="c">20060130</subfield>
+            <subfield code="l">DAT01</subfield>
+            <subfield code="h">0907</subfield>
+        </datafield>
+        <datafield tag="856" ind1="4" ind2="1">
+            <subfield code="u">http://ec.europa.eu/public_opinion/index_en.htm</subfield>
+        </datafield>
+        <datafield tag="655" ind1=" " ind2=" ">
+            <subfield code="a">Subject Gateway</subfield>
+        </datafield>
+        <datafield tag="653" ind1=" " ind2=" ">
+            <subfield code="a">EU</subfield>
+        </datafield>
+        <datafield tag="653" ind1=" " ind2=" ">
+            <subfield code="a">Meiningsmålingar</subfield>
+        </datafield>
+        <datafield tag="CAT" ind1=" " ind2=" ">
+            <subfield code="a">bergen</subfield>
+            <subfield code="b">00</subfield>
+            <subfield code="c">20100924</subfield>
+            <subfield code="l">DAT01</subfield>
+            <subfield code="h">1325</subfield>
+        </datafield>
+        <datafield tag="CAT" ind1=" " ind2=" ">
+            <subfield code="a">bergen</subfield>
+            <subfield code="b">00</subfield>
+            <subfield code="c">20100924</subfield>
+            <subfield code="l">DAT01</subfield>
+            <subfield code="h">1326</subfield>
+        </datafield>
+    </record>    
+    <category>
+        <main>Samfunnsvitskap</main>
+        <sub>Dataarkiv</sub>
+    </category>
+</knowledge_unit>
+    <knowledge_unit>
+        <record>
+            <controlfield tag="001">UNI20748</controlfield>
+            <datafield tag="245" ind1="1" ind2=" ">
+                <subfield code="a">The Cambridge Companions to Literature and Classics</subfield>
+            </datafield>
+            <datafield tag="246" ind1="1" ind2=" ">
+                <subfield code="a">Cambridge Companions to Literature and Classics</subfield>
+            </datafield>
+            <datafield tag="210" ind1=" " ind2=" ">
+                <subfield code="a">The Cambridge Companions to Literature and Classics</subfield>
+            </datafield>
+            <datafield tag="594" ind1=" " ind2=" ">
+                <subfield code="a">SUBSCRIPTION</subfield>
+            </datafield>
+            <datafield tag="591" ind1=" " ind2=" ">
+                <subfield code="a">es 2015-01-16</subfield>
+            </datafield>
+            <datafield tag="520" ind1=" " ind2=" ">
+                <subfield code="a">The Cambridge Companions to Literature and Classics collection offers over 1400 comprehensive and accessible essays on major authors, periods and genres, written by experts and designed for student readers.</subfield>
+            </datafield>
+            <datafield tag="595" ind1=" " ind2=" ">
+                <subfield code="a">Klikk på &quot;log in&quot; for å få tilgang.</subfield>
+            </datafield>
+            <datafield tag="546" ind1=" " ind2=" ">
+                <subfield code="a">ENGLISH</subfield>
+            </datafield>
+            <datafield tag="TAR" ind1=" " ind2=" ">
+                <subfield code="f">Y</subfield>
+            </datafield>
+            <datafield tag="PXY" ind1=" " ind2=" ">
+                <subfield code="a">Y</subfield>
+            </datafield>
+            <datafield tag="AF1" ind1=" " ind2=" ">
+                <subfield code="a">BERGEN</subfield>
+            </datafield>
+            <datafield tag="ICN" ind1=" " ind2=" ">
+                <subfield code="a">NEW</subfield>
+            </datafield>
+            <datafield tag="STA" ind1=" " ind2=" ">
+                <subfield code="a">ACTIVE</subfield>
+            </datafield>
+            <controlfield tag="CKB">UNI08984</controlfield>
+            <datafield tag="NWD" ind1=" " ind2=" ">
+                <subfield code="a">20150701</subfield>
+            </datafield>
+            <datafield tag="RNK" ind1=" " ind2=" ">
+                <subfield code="a">3</subfield>
+            </datafield>
+            <datafield tag="LCL" ind1="1" ind2=" ">
+                <subfield code="a">Antikken, klassisk, litteraturvitenskap</subfield>
+            </datafield>
+            <datafield tag="SFX" ind1=" " ind2=" ">
+                <subfield code="a">N</subfield>
+            </datafield>
+            <datafield tag="CJK" ind1=" " ind2=" ">
+                <subfield code="a">lat</subfield>
+            </datafield>
+            <controlfield tag="FMT">DD</controlfield>
+            <datafield tag="856" ind1="4" ind2="1">
+                <subfield code="u">http://cco.cambridge.org/collection?id=literature</subfield>
+            </datafield>
+            <datafield tag="655" ind1=" " ind2=" ">
+                <subfield code="a">Electronic Book</subfield>
+            </datafield>
+            <datafield tag="CAT" ind1=" " ind2=" ">
+                <subfield code="c">20150116</subfield>
+                <subfield code="l">DAT01</subfield>
+                <subfield code="h">1103</subfield>
+            </datafield>
+            <datafield tag="653" ind1=" " ind2=" ">
+                <subfield code="a">Litteratur, Klassisk filologi</subfield>
+            </datafield>
+            <datafield tag="CAT" ind1=" " ind2=" ">
+                <subfield code="a">bergen</subfield>
+                <subfield code="b">00</subfield>
+                <subfield code="c">20150116</subfield>
+                <subfield code="l">DAT01</subfield>
+                <subfield code="h">1236</subfield>
+            </datafield>
+            <datafield tag="CAT" ind1=" " ind2=" ">
+                <subfield code="a">bergen</subfield>
+                <subfield code="b">00</subfield>
+                <subfield code="c">20150116</subfield>
+                <subfield code="l">DAT01</subfield>
+                <subfield code="h">1312</subfield>
+            </datafield>
+        </record>
+        
+        <category>
+            <main>Humanistiske fag</main>
+            <sub>Engelsk</sub>
+            <main>Humanistiske fag</main>
+            <sub>Klassisk</sub>
+            <main>Humanistiske fag</main>
+            <sub>Nordisk</sub>
+            <main>Humanistiske fag</main>
+            <sub>Allmenn litteraturvitskap</sub>
+            <main>Humanistiske fag</main>
+            <sub>Fransk</sub>
+            <main>Humanistiske fag</main>
+            <sub>Italiensk</sub>
+            <main>Humanistiske fag</main>
+            <sub>Slavisk</sub>
+            <main>Humanistiske fag</main>
+            <sub>Spansk</sub>
+            <main>Humanistiske fag</main>
+            <sub>Tysk</sub>
+        </category>
+    </knowledge_unit>
+    <knowledge_unit>
+<record>
+  <controlfield tag="001">UNI01262</controlfield>
+  <datafield tag="245" ind1="1" ind2=" ">
+    <subfield code="a">Library of Congress</subfield>
+  </datafield>
+  <datafield tag="210" ind1=" " ind2=" ">
+    <subfield code="a">Library of Congress</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Library of Congress Online Catalog gir oversikt over bøker, serier, datafiler, manuscript, kart, musikk og lydopptak og visuelt materiale i biblioteket. ## ##The Library of Congress Online Catalog is a database of books, serials, computer files, manuscripts, cartographic materials, music, sound recordings, and visual materials at the library.</subfield>
+  </datafield>
+  <datafield tag="594" ind1=" " ind2=" ">
+    <subfield code="a">FREE</subfield>
+  </datafield>
+  <datafield tag="270" ind1=" " ind2=" ">
+    <subfield code="d">United States</subfield>
+  </datafield>
+  <datafield tag="TAR" ind1=" " ind2=" ">
+    <subfield code="a">LOC</subfield>
+    <subfield code="f">N</subfield>
+  </datafield>
+  <datafield tag="ZHS" ind1=" " ind2=" ">
+    <subfield code="a">z3950.loc.gov:7090</subfield>
+  </datafield>
+  <datafield tag="ZDC" ind1=" " ind2=" ">
+    <subfield code="a">Voyager</subfield>
+  </datafield>
+  <datafield tag="AF1" ind1=" " ind2=" ">
+    <subfield code="a">BERGEN</subfield>
+  </datafield>
+  <datafield tag="AF3" ind1=" " ind2=" ">
+    <subfield code="a">GUEST</subfield>
+  </datafield>
+  <datafield tag="STA" ind1=" " ind2=" ">
+    <subfield code="a">ACTIVE</subfield>
+  </datafield>
+  <controlfield tag="CKB">CKB00073</controlfield>
+  <datafield tag="RNK" ind1=" " ind2=" ">
+    <subfield code="a">3</subfield>
+  </datafield>
+  <datafield tag="CJK" ind1=" " ind2=" ">
+    <subfield code="a">lat</subfield>
+  </datafield>
+  <controlfield tag="FMT">DD</controlfield>
+  <datafield tag="ATG" ind1=" " ind2=" ">
+    <subfield code="a">FREE</subfield>
+  </datafield>
+  <datafield tag="720" ind1=" " ind2=" ">
+    <subfield code="a">Voyager (Endeavor)</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2=" ">
+    <subfield code="a">Library</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="u">http://catalog.loc.gov/</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="c">20041017</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1521</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="a">bergen</subfield>
+    <subfield code="b">00</subfield>
+    <subfield code="c">20080422</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">0839</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="a">bergen</subfield>
+    <subfield code="b">00</subfield>
+    <subfield code="c">20130130</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1004</subfield>
+  </datafield>
+</record>
+
+<z58 base='LOC'>
+  <field name='z58_base'>LOC</field>
+  <field name='z58_access_method'>Z39</field>
+  <field name='z58_in_record_type'>USMARC</field>
+  <field name='z58_in_record_create'>vir_z00_z39_usmarc</field>
+  <field name='z58_in_record_create_param'></field>
+  <field name='z58_in_record_char_conv'>MARC8_TO_UTF</field>
+  <field name='z58_in_direct_key'></field>
+  <field name='z58_in_direct_key_param'></field>
+  <field name='z58_in_scan_fix'></field>
+  <field name='z58_configuration_type'>Full Record</field>
+  <field name='z58_in_scan_char_conv'></field>
+  <field name='z58_out_find_char_conv'>UTF_TO_MARC8</field>
+  <field name='z58_out_scan_char_conv'></field>
+  <field name='z58_sort'></field>
+  <field name='z58_scan'>N</field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WTI</field>
+    <field name='z58_tab01_code_target'>WTI</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WAU</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WSU</field>
+    <field name='z58_tab01_code_target'>WSU</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WYR</field>
+    <field name='z58_tab01_code_target'>WYR</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WRD</field>
+    <field name='z58_tab01_code_target'>WRD</field>
+    <field name='z58_tab01_filing'>20P1P</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>ISSN</field>
+    <field name='z58_tab01_code_target'>ISSN</field>
+    <field name='z58_tab01_filing'>29Ps/(\d{4})(\d{4})/$1-$2/P</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>ISBN</field>
+    <field name='z58_tab01_code_target'>ISBN</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>24###</field>
+    <field name='z58_tab01_code_target'>WTI</field>
+    <field name='z58_tab01_filing'>1_2P.,:;!&quot;-P_7P([/&lt;P</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>1####</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'>1_7P([/&lt;P_2P.P</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>6####</field>
+    <field name='z58_tab01_code_target'>WSU</field>
+    <field name='z58_tab01_filing'>1_2P.,:;!&quot;-P_7P([/&lt;P</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>7####</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'>1_7P([/&lt;P_2P.P</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_record_conv_name'>vir_fix_doc_standard</field>
+  <field name='z58_record_conv_param'></field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>008##</field>
+    <field name='z58_tab_conv_in_sub_field'></field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_first</field>
+    <field name='z58_tab_conv_param'>YR,a,8,4</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>010##</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_reg_exp</field>
+    <field name='z58_tab_conv_param'>LCCN,a,P/a\^?(\w*\d+)/</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>010##</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_reg_exp</field>
+    <field name='z58_tab_conv_param'>LCCN,a,P/\^?(\d+)/</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'>NOTEXIST LCCN</field>
+  </field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>245##</field>
+    <field name='z58_tab_conv_in_sub_field'>a,b</field>
+    <field name='z58_tab_conv_program'></field>
+    <field name='z58_tab_conv_param'>TTL,a</field>
+    <field name='z58_tab_conv_action'>MERGE_SUB</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_metalib_info'></field>
+  <field name='z58_metalib_select'></field>
+  <field name='z58_metalib_connect'></field>
+  <field name='z58_metalib_note'></field>
+  <field name='z58_locate'>245&lt;br&gt; b wti= locate_str_1</field>
+  <field name='z58_holding_method'>OPAC</field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_sfx_name'></field>
+  <field name='z58_sfx_param'></field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>year</field>
+    <field name='z58_sfx_950_tag'>YR</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a,b</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>issn</field>
+    <field name='z58_sfx_950_tag'>022##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>title</field>
+    <field name='z58_sfx_950_tag'>TTL</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>authorf</field>
+    <field name='z58_sfx_950_tag'>100##</field>
+    <field name='z58_sfx_950_program'>vir_950_au_lstfir</field>
+    <field name='z58_sfx_950_param'>Pa</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>authorl</field>
+    <field name='z58_sfx_950_tag'>100##</field>
+    <field name='z58_sfx_950_program'>vir_950_au_lstfir</field>
+    <field name='z58_sfx_950_param'>Pa</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>authorf</field>
+    <field name='z58_sfx_950_tag'>700##</field>
+    <field name='z58_sfx_950_program'>vir_950_au_lstfir</field>
+    <field name='z58_sfx_950_param'>Pa</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>authorl</field>
+    <field name='z58_sfx_950_tag'>700##</field>
+    <field name='z58_sfx_950_program'>vir_950_au_lstfir</field>
+    <field name='z58_sfx_950_param'>Pa</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>subject</field>
+    <field name='z58_sfx_950_tag'>65###</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>isbn</field>
+    <field name='z58_sfx_950_tag'>020##</field>
+    <field name='z58_sfx_950_program'>vir_950_parser</field>
+    <field name='z58_sfx_950_param'>Pa\S\G(</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>isbn</field>
+    <field name='z58_sfx_950_tag'>020##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_open_date'>20010101</field>
+  <field name='z58_update_date'>20130102</field>
+  <field name='z58_cataloger'>CKB</field>
+  <field name='z58_source'>CKB</field>
+  <field name='z58_status'></field>
+  <field name='z58_sdi_flag'></field>
+  <field name='z58_sdi_326_key'></field>
+  <field name='z58_merge_type'></field>
+  <field name='z58_up_cataloger'>exlibris</field>
+  <field name='z58_update_time'>0000000000</field>
+  <field name='z58_active'></field>
+  <field name='z58_institute'>METALIB</field>
+  <field name='z58_html_hit_pattern'></field>
+  <field name='z58_zero_hit_pattern'></field>
+  <field name='z58_program_name'></field>
+  <field name='z58_authen_module'></field>
+  <field name='z58_find_module'></field>
+  <field name='z58_present_module'></field>
+  <field name='z58_external_format'></field>
+  <field name='z58_version'></field>
+  <field name='z58_buf_url'>
+  </field>
+</z58>
+
+<z39 filename='/exlibris/metalib/m4_1/dat01/z39_gate/z39_gate_LOC.conf'>
+  <confline>target LOC</confline>
+  <confline>recordtype USMARC</confline>
+  <confline>find WTI u=4 t=l,r,b s=pw c=1</confline>
+  <confline>find WAU u=1 t=l,r,b s=pw c=1</confline>
+  <confline>find WSU u=21 t=l,r,b s=pw c=1</confline>
+  <confline>find WYR u=31 r=o</confline>
+  <confline>find WRD u=1016 t=l,r,b s=pw c=1</confline>
+  <confline>find ISSN u=8</confline>
+  <confline>find ISBN u=7</confline>
+</z39>
+
+<category>
+<main>Tverrfagleg</main>
+<sub>Bibliotekkatalogar</sub>
+<main>Bibliotekinternt</main>
+<sub>Bibliotekkataloger</sub>
+<main>Bibliotekinternt</main>
+<sub>Fjernlån - internasj.</sub>
+</category>
+</knowledge_unit>
+    
+    <knowledge_unit>
+<record>
+  <controlfield tag="001">UNI01300</controlfield>
+  <datafield tag="245" ind1="1" ind2=" ">
+    <subfield code="a">PubMed (Medline)</subfield>
+  </datafield>
+  <datafield tag="246" ind1="1" ind2=" ">
+    <subfield code="a">Medline</subfield>
+  </datafield>
+  <datafield tag="210" ind1=" " ind2=" ">
+    <subfield code="a">PubMed (Medline)</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Referansar til forskningsartiklar innan medisin, tannmedisin og helsefag. Lenker til fulltekst, kan krevje abonnement. @@U http://www.ub.uib.no/felles/Brosjyrer/Pubmed.pdf@@DUBs brosjyre@@E## ##PubMed is a bibliographic database covering medicine, dentistry, and health sciences. Links to fulltext, may require a subscription. More info, see &quot;Lenke til hjelpeside&quot;</subfield>
+  </datafield>
+  <datafield tag="594" ind1=" " ind2=" ">
+    <subfield code="a">FREE</subfield>
+  </datafield>
+  <datafield tag="595" ind1=" " ind2=" ">
+    <subfield code="a">Author names are entered in the database in different formats. Therefore, searches on authors are done on the Last name and First initial only: Last, F?</subfield>
+  </datafield>
+  <datafield tag="591" ind1=" " ind2=" ">
+    <subfield code="a">rkl, 18.1.2005; 29.3.2006 lagt tilbake:http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?otool=inoublib##rkl 26.6.2014 endret til ##http://www.ncbi.nlm.nih.gov/pubmed?otool=inoublib</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Subject headings MeSH: Ubs brosjyre om MeSH</subfield>
+  </datafield>
+  <datafield tag="590" ind1=" " ind2=" ">
+    <subfield code="a">Subject headings MeSH: NLMs user guide</subfield>
+  </datafield>
+  <datafield tag="110" ind1="2" ind2=" ">
+    <subfield code="a">United States National Library of Medicine (NLM)</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="b">United States National Library of Medicine (NLM)</subfield>
+  </datafield>
+  <datafield tag="TAR" ind1=" " ind2=" ">
+    <subfield code="a">PUBMED</subfield>
+    <subfield code="f">N</subfield>
+  </datafield>
+  <datafield tag="ZHS" ind1=" " ind2=" ">
+    <subfield code="a">http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?</subfield>
+  </datafield>
+  <datafield tag="ZDC" ind1=" " ind2=" ">
+    <subfield code="a">pubmed</subfield>
+  </datafield>
+  <datafield tag="PXY" ind1=" " ind2=" ">
+    <subfield code="a">N</subfield>
+  </datafield>
+  <datafield tag="AF1" ind1=" " ind2=" ">
+    <subfield code="a">BERGEN</subfield>
+  </datafield>
+  <datafield tag="AF3" ind1=" " ind2=" ">
+    <subfield code="a">GUEST</subfield>
+  </datafield>
+  <datafield tag="STA" ind1=" " ind2=" ">
+    <subfield code="a">ACTIVE</subfield>
+  </datafield>
+  <controlfield tag="CKB">CKB00158</controlfield>
+  <datafield tag="RNK" ind1=" " ind2=" ">
+    <subfield code="a">3</subfield>
+  </datafield>
+  <datafield tag="LCL" ind1="1" ind2=" ">
+    <subfield code="a">medisin odontologi tannmedisin helsefag molekylærbiologi biologi sykepleie fysioterapi</subfield>
+  </datafield>
+  <datafield tag="LCL" ind1="2" ind2=" ">
+    <subfield code="a">medicine dentistry health sciences molecular biology##nursing physiotherapy physical therapy</subfield>
+  </datafield>
+  <datafield tag="CJK" ind1=" " ind2=" ">
+    <subfield code="a">lat</subfield>
+  </datafield>
+  <controlfield tag="FMT">DD</controlfield>
+  <datafield tag="ATG" ind1=" " ind2=" ">
+    <subfield code="a">FREE</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.nlm.nih.gov/</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2=" ">
+    <subfield code="a">Index</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="u">http://www.ncbi.nlm.nih.gov/pubmed?otool=inoublib</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="3">
+    <subfield code="u">http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;list_uids=$035_a&amp;dopt=Abstract</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="c">20041017</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1522</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="9">
+    <subfield code="u">http://www.ub.uib.no/felles/brosjyrer/pubmed-eng.pdf</subfield>
+  </datafield>
+  <datafield tag="653" ind1=" " ind2=" ">
+    <subfield code="a">sjukepleie sykepleie nursing</subfield>
+  </datafield>
+  <datafield tag="653" ind1=" " ind2=" ">
+    <subfield code="a">tannmedisin odontologi odontology</subfield>
+  </datafield>
+  <datafield tag="653" ind1=" " ind2=" ">
+    <subfield code="a">veterinærmedisin vetrinary medicine</subfield>
+  </datafield>
+  <datafield tag="653" ind1=" " ind2=" ">
+    <subfield code="a">cellebiologi cell biology</subfield>
+  </datafield>
+  <datafield tag="653" ind1=" " ind2=" ">
+    <subfield code="a">molekylærbiologi molecular biology</subfield>
+  </datafield>
+  <datafield tag="653" ind1=" " ind2=" ">
+    <subfield code="a">fysiologi physiology</subfield>
+  </datafield>
+  <datafield tag="653" ind1=" " ind2=" ">
+    <subfield code="a">biokjemi biochemistry</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="a">bergen</subfield>
+    <subfield code="b">00</subfield>
+    <subfield code="c">20160902</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1618</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="a">bergen</subfield>
+    <subfield code="b">00</subfield>
+    <subfield code="c">20160902</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1618</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="a">bergen</subfield>
+    <subfield code="b">00</subfield>
+    <subfield code="c">20160902</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1618</subfield>
+  </datafield>
+</record>
+
+<z58 base='PUBMED'>
+  <field name='z58_base'>PUBMED</field>
+  <field name='z58_access_method'>EXTERNAL</field>
+  <field name='z58_in_record_type'>USMARC</field>
+  <field name='z58_in_record_create'>vir_z00_z39_usmarc</field>
+  <field name='z58_in_record_create_param'></field>
+  <field name='z58_in_record_char_conv'></field>
+  <field name='z58_in_direct_key'></field>
+  <field name='z58_in_direct_key_param'></field>
+  <field name='z58_in_scan_fix'></field>
+  <field name='z58_configuration_type'>Full Record</field>
+  <field name='z58_in_scan_char_conv'></field>
+  <field name='z58_out_find_char_conv'></field>
+  <field name='z58_out_scan_char_conv'></field>
+  <field name='z58_sort'></field>
+  <field name='z58_scan'>N</field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WTI</field>
+    <field name='z58_tab01_code_target'>WTI</field>
+    <field name='z58_tab01_filing'>8P10P_29Ps/\?/*/gP</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WAU</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WSU</field>
+    <field name='z58_tab01_code_target'>WSU</field>
+    <field name='z58_tab01_filing'>29Ps/\?/*/gP</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WYR</field>
+    <field name='z58_tab01_code_target'>WYR</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WRD</field>
+    <field name='z58_tab01_code_target'>WRD</field>
+    <field name='z58_tab01_filing'>29Ps/\?/*/gP</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>ISSN</field>
+    <field name='z58_tab01_code_target'>ISSN</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>ISBN</field>
+    <field name='z58_tab01_code_target'>WRD</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>24###</field>
+    <field name='z58_tab01_code_target'></field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>1####</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'>1</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>6####</field>
+    <field name='z58_tab01_code_target'>WSU</field>
+    <field name='z58_tab01_filing'>1</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>7####</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'>1</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_record_conv_name'>vir_fix_doc_entrez</field>
+  <field name='z58_record_conv_param'></field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>DOI</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_reg_exp</field>
+    <field name='z58_tab_conv_param'>024,a,Pas/(.*)/DOI:$1/</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>035##</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_reg_exp</field>
+    <field name='z58_tab_conv_param'>024,a,Pas/(.*)/PMID:$1/</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>773##</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_reg_exp</field>
+    <field name='z58_tab_conv_param'>YR,a,P/Date:\s(\d{4})/</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'>NOTEXIST YR</field>
+  </field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>733##</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_parser</field>
+    <field name='z58_tab_conv_param'>773,t,Pa\S\G.</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>733##</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_reg_exp</field>
+    <field name='z58_tab_conv_param'>773,g,Pa/\.(.*)/</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_metalib_info'></field>
+  <field name='z58_metalib_select'></field>
+  <field name='z58_metalib_connect'></field>
+  <field name='z58_metalib_note'></field>
+  <field name='z58_locate'></field>
+  <field name='z58_holding_method'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_sfx_name'></field>
+  <field name='z58_sfx_param'></field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>year</field>
+    <field name='z58_sfx_950_tag'>YR</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>issn</field>
+    <field name='z58_sfx_950_tag'>022##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>authorf</field>
+    <field name='z58_sfx_950_tag'>100##</field>
+    <field name='z58_sfx_950_program'>vir_950_au_lstfir</field>
+    <field name='z58_sfx_950_param'>Pa</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>authorl</field>
+    <field name='z58_sfx_950_tag'>100##</field>
+    <field name='z58_sfx_950_program'>vir_950_au_lstfir</field>
+    <field name='z58_sfx_950_param'>Pa</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>title</field>
+    <field name='z58_sfx_950_tag'>773##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>t</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>atitle</field>
+    <field name='z58_sfx_950_tag'>245##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>volume</field>
+    <field name='z58_sfx_950_tag'>773##</field>
+    <field name='z58_sfx_950_program'>vir_950_parser</field>
+    <field name='z58_sfx_950_param'>Pg\SVolume:\G,</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>issue</field>
+    <field name='z58_sfx_950_tag'>773##</field>
+    <field name='z58_sfx_950_program'>vir_950_parser</field>
+    <field name='z58_sfx_950_param'>Pg\SIssue:\G,</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>spage</field>
+    <field name='z58_sfx_950_tag'>773##</field>
+    <field name='z58_sfx_950_program'>vir_950_parser</field>
+    <field name='z58_sfx_950_param'>Pg\SPages:\G</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>doi</field>
+    <field name='z58_sfx_950_tag'>DOI</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>subject</field>
+    <field name='z58_sfx_950_tag'>65###</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>epage</field>
+    <field name='z58_sfx_950_tag'>773##</field>
+    <field name='z58_sfx_950_program'>vir_950_reg_exp</field>
+    <field name='z58_sfx_950_param'>Pg/Pages.+\d+-(\d+)/</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>sici</field>
+    <field name='z58_sfx_950_tag'>035##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_open_date'>20031202</field>
+  <field name='z58_update_date'>20140528</field>
+  <field name='z58_cataloger'>chrisr</field>
+  <field name='z58_source'>CKB</field>
+  <field name='z58_status'></field>
+  <field name='z58_sdi_flag'></field>
+  <field name='z58_sdi_326_key'>        00</field>
+  <field name='z58_merge_type'></field>
+  <field name='z58_up_cataloger'>exlibris</field>
+  <field name='z58_update_time'>0000000000</field>
+  <field name='z58_active'></field>
+  <field name='z58_institute'>METALIB</field>
+  <field name='z58_html_hit_pattern'></field>
+  <field name='z58_zero_hit_pattern'></field>
+  <field name='z58_program_name'>hc_u_pubmed.pm</field>
+  <field name='z58_authen_module'></field>
+  <field name='z58_find_module'>ext_pubmed_find</field>
+  <field name='z58_present_module'>ext_pubmed_present</field>
+  <field name='z58_external_format'>URL</field>
+  <field name='z58_version'></field>
+  <field name='z58_buf_url'>
+  </field>
+</z58>
+
+<program_name>
+<line>use strict;</line>
+<line>package hc_u_pubmed;</line>
+<line>use base (&quot;hc_url&quot;);</line>
+<line>use URI::Escape;</line>
+<line></line>
+<line>require &quot;call_httpd_LWP.ML&quot;;</line>
+<line>require &quot;call_httpd_timeout_new&quot;;</line>
+<line></line>
+<line>my $port       = 80;</line>
+<line>my $protocol   = &quot; HTTP/1.0\n\n&quot;;</line>
+<line>my $go_on = 1;</line>
+<line>my $out_command='',</line>
+<line>my $db='';</line>
+<line>my $find_request_fix='';</line>
+<line>my ($set_number, $set_entry,$find_request);</line>
+<line>my $no_records = 0;</line>
+<line>my $go_on = 1;</line>
+<line>my $max_record = 10;</line>
+<line>my $set_entry=1;</line>
+<line></line>
+<line>sub createFindRequest {</line>
+<line>    my $self = shift;</line>
+<line>    $self-&gt;{Find}-&gt;{hitPattern} =  '&lt;Count&gt;(\d+)&lt;/Count&gt;';</line>
+<line>    my ($errorcode, $command) = $self-&gt;constructQuery();</line>
+<line>    my $requestParams = $self-&gt;{RequestParams};</line>
+<line>    my $host = $self-&gt;{Find}-&gt;{hostName};</line>
+<line>    my $cgi = $self-&gt;{Find}-&gt;{cgiName};</line>
+<line>    my $db = $self-&gt;{db};</line>
+<line>    $requestParams-&gt;{url} = $host.$cgi.'db='.$db.'&amp;usehistory=y&amp;term='.$command; #ncbi_term'.$command;</line>
+<line>    $requestParams-&gt;{cgiMethod} = 'GET';</line>
+<line>    $self-&gt;{RequestParams} = $requestParams;</line>
+<line>    $self-&gt;{MLQuery} = $host.$cgi.'db='.$db.'&amp;term='.$command; #&amp;ncbi_term='.$command;</line>
+<line>    ;</line>
+<line>    return (0,&quot;&quot;);</line>
+<line>}</line>
+<line></line>
+<line>sub parseFindResults {</line>
+<line>    my $self = shift;</line>
+<line>    my $response = $self-&gt;{response};</line>
+<line>    my ($key, $env);</line>
+<line>    if ($response =~ /&lt;WebEnv&gt;(.*?)&lt;\/WebEnv&gt;/){</line>
+<line>        $self-&gt;{CookieJar}-&gt;{webEnv} = $1;</line>
+<line>        $env = $1;</line>
+<line>    }</line>
+<line>    if ($response =~ /&lt;QueryKey&gt;(.*?)&lt;\/QueryKey&gt;/){</line>
+<line>        $self-&gt;{CookieJar}-&gt;{queryKey} = $1;</line>
+<line>        $key = $1;</line>
+<line>    }</line>
+<line>    $self-&gt;{MLQuery} .= &quot;&amp;query_key=$key&amp;WebEnv=$env&amp;&quot;;</line>
+<line>    return $self-&gt;SUPER::parseFindResults;</line>
+<line>}</line>
+<line></line>
+<line></line>
+<line>sub createPresentRequest {</line>
+<line>    my $self = shift;</line>
+<line>    my $requestParams = $self-&gt;{RequestParams};</line>
+<line>    my $set_entry = $self-&gt;{setEntry}-1;</line>
+<line>    my $max_record = $self-&gt;{maxRecord};</line>
+<line>    #$requestParams-&gt;{url} = $self-&gt;{MLQuery}.'dispstart='.$set_entry.'&amp;dispmax='.$max_record.'&amp;mode=xml&amp;rettype=full';</line>
+<line>    $requestParams-&gt;{url} = $self-&gt;{MLQuery}.'retstart='.$set_entry.'&amp;retmax='.$max_record.'&amp;mode=xml&amp;rettype=full';</line>
+<line>    $requestParams-&gt;{url} =~ s/esearch/efetch/;</line>
+<line>    $requestParams-&gt;{cgiMethod} = 'GET';</line>
+<line>    $self-&gt;{RequestParams} = $requestParams;</line>
+<line>    return (0,&quot;&quot;);</line>
+<line>}</line>
+<line></line>
+<line></line>
+<line>#################################################################</line>
+<line>sub parsePresentResults {</line>
+<line>    my ($self) = shift;</line>
+<line>    my $response = $self-&gt;{response};</line>
+<line>    $response =~ s/\n//g;</line>
+<line>    $response =~ s/\r//g;</line>
+<line>    $response =~ s/\t//g;</line>
+<line>    my (@present);</line>
+<line></line>
+<line>    while ($response =~ /&lt;PubmedArticle.*?&gt;(.*?)&lt;\/PubmedArticle&gt;/){</line>
+<line>        $response = $';</line>
+<line>        my $result_line = $1;</line>
+<line>        my $docx=[];</line>
+<line></line>
+<line>        if ($result_line =~ /&lt;PMID.*?&gt;(.*?)&lt;\/PMID&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            push (@$docx, &quot;035 \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        my($year,$month,$day,$vol,$issue,$pages,$ta);</line>
+<line>        if ($result_line =~ /&lt;PubDate.*?&gt;(.*?)&lt;\/PubDate&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            my $date = $1;</line>
+<line>            ($year)  = $date =~ /&lt;Year.*?&gt;(.*?)&lt;\/Year&gt;/;</line>
+<line>            ($year) = $date =~ /&lt;MedlineDate&gt;(\d{4}).*?&lt;\/MedlineDate&gt;/ if !$year;</line>
+<line>            ($month) = $date =~ /&lt;Month.*?&gt;(.*?)&lt;\/Month&gt;/;</line>
+<line>            ($day)   = $date =~ /&lt;Day.*?&gt;(.*?)&lt;\/Day&gt;/;</line>
+<line>            push (@$docx, &quot;YR \$\$a$year&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;ArticleTitle.*?&gt;(.*?)&lt;\/ArticleTitle&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            push (@$docx, &quot;245 \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;Volume.*?&gt;(.*?)&lt;\/Volume&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            $vol = $1;</line>
+<line>            push (@$docx, &quot;VOL \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;Issue.*?&gt;(.*?)&lt;\/Issue&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            $issue = $1;</line>
+<line>            push (@$docx, &quot;ISSU \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;MedlinePgn.*?&gt;(.*?)&lt;\/MedlinePgn&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            $pages = $1;</line>
+<line>            push (@$docx, &quot;PAGES \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;ISSN.*?&gt;(.*?)&lt;\/ISSN&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            push (@$docx, &quot;022 \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;ArticleIdList.*?&gt;(.*?)&lt;\/ArticleIdList&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            my $list = $1;</line>
+<line>            while($list =~ /&lt;ArticleId(.*?)&gt;(.*?)&lt;\/ArticleId&gt;/){</line>
+<line>                $list = $';</line>
+<line>                my $num = $2;</line>
+<line>                push (@$docx, &quot;024 \$\$a$2&quot;);</line>
+<line>                my $temp = $1;</line>
+<line>                my ($type) = $temp =~ /IdType=&quot;(.*?)&quot;/;</line>
+<line>                push (@$docx, &quot;DOI \$\$a$num&quot;) if $type eq 'doi';</line>
+<line>                push (@$docx, &quot;PII \$\$a$num&quot;) if $type eq 'pii';</line>
+<line>            }</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;PublicationStatus.*?&gt;(.*?)&lt;\/PublicationStatus/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            push (@$docx, &quot;500 \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;Affiliation.*?&gt;(.*?)&lt;\/Affiliation&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            push (@$docx, &quot;270 \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;Language.*?&gt;(.*?)&lt;\/Language&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            push (@$docx, &quot;546 \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;PublicationTypeList.*?&gt;(.*?)&lt;\/PublicationTypeList&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            my $list = $1;</line>
+<line>            while($list =~ /&lt;PublicationType.*?&gt;(.*)&lt;\/PublicationType&gt;/){</line>
+<line>                $list = $';</line>
+<line>                push (@$docx, &quot;513 \$\$a$1&quot;);</line>
+<line>            }</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;MedlineTA.*?&gt;(.*?)&lt;\/MedlineTA&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            $ta = $1;</line>
+<line>            push (@$docx, &quot;JT \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;AbstractText.*?&gt;(.*?)&lt;\/AbstractText&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            push (@$docx, &quot;520 \$\$a$1&quot;);</line>
+<line>        }</line>
+<line>        if ($result_line =~ /&lt;MeshHeadingList.*?&gt;(.*?)&lt;\/MeshHeadingList&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            my $list = $1;</line>
+<line>            while($list =~ /&lt;MeshHeading.*?&gt;(.*?)&lt;\/MeshHeading&gt;/){</line>
+<line>                $list = $';</line>
+<line>                push (@$docx, &quot;650 \$\$a$1&quot;);</line>
+<line>            }</line>
+<line>        }</line>
+<line>        my($author,$first,$middle,$last);</line>
+<line>        if ($result_line =~ /&lt;AuthorList.*?&gt;(.*?)&lt;\/AuthorList&gt;/){</line>
+<line>            $result_line = $`.$';</line>
+<line>            my $list = $1;</line>
+<line>            my $prime = 1;</line>
+<line>            while($list =~ /&lt;Author.*?&gt;(.*?)&lt;\/Author&gt;/){</line>
+<line>                $list = $';</line>
+<line>                $author = $1;</line>
+<line>                ($last)  = $author =~ /&lt;LastName.*?&gt;(.*?)&lt;\/LastName&gt;/ ;</line>
+<line>                ($middle)= $author =~ /&lt;MiddleName&gt;(.*?)&lt;\/MiddleName&gt;/ ;</line>
+<line>                ($first) = $author =~ /&lt;ForeName.*?&gt;(.*?)&lt;\/ForeName&gt;/ ;</line>
+<line>                ($first) = $author =~ /&lt;FirstName.*?&gt;(.*?)&lt;\/FirstName&gt;/ if not $first ;</line>
+<line>                my $full_name = $last;</line>
+<line>                $full_name .= ', ' if $first;</line>
+<line>                $full_name .= $first if $first;</line>
+<line>                $full_name .= ' ' if $middle;</line>
+<line>                $full_name .= $middle if $middle;</line>
+<line></line>
+<line>                if($prime){</line>
+<line>                    push (@$docx, &quot;100 \$\$a$full_name&quot;);</line>
+<line>                    $prime--;</line>
+<line>                }</line>
+<line>                else{</line>
+<line>                    push (@$docx, &quot;700 \$\$a$full_name&quot;);</line>
+<line>                }</line>
+<line>            }</line>
+<line>        }</line>
+<line></line>
+<line>        my $version = &quot;$ta . &quot;;</line>
+<line>        $version .= &quot;Volume: $vol, &quot; if $vol;</line>
+<line>        $version .= &quot;Issue: $issue, &quot; if $issue;</line>
+<line>        $version .= &quot;Date: $year $month $day, &quot; if ($year || $month || $day);</line>
+<line>        $version .= &quot;Pages: $pages&quot; if $pages;</line>
+<line>        push (@$docx, &quot;733 \$\$a$version&quot;);</line>
+<line></line>
+<line>        push(@present,$docx) if (scalar @$docx);</line>
+<line>    }</line>
+<line>    $self-&gt;{PresentArray} = \@present;</line>
+<line>    return (0,&quot;&quot;);</line>
+<line>}</line>
+<line></line>
+<line>#########################################################################################</line>
+<line>sub dis_docx</line>
+<line>{</line>
+<line>    my ($docx) = @_;</line>
+<line>    my ($docx_line);</line>
+<line></line>
+<line>    foreach $docx_line (@$docx) {</line>
+<line>        use bytes;</line>
+<line>        print STDOUT &quot;$docx_line\n&quot;;</line>
+<line>        no bytes;</line>
+<line>    }</line>
+<line>}</line>
+<line></line>
+<line>sub trim {</line>
+<line>   my($string)=@_;</line>
+<line>   $string =~ s/\s*//g;</line>
+<line>   return $string;</line>
+<line>}</line>
+<line></line>
+<line></line>
+<line>sub constructQuery {</line>
+<line>    my $self = shift;</line>
+<line>    my %stopw=qw(a 1 about 1  again 1  all 1  almost 1  also 1  although 1  always 1  among 1  an 1  and 1  another 1  any 1  are 1  as 1  at 1 be 1  because 1  been 1  before 1  being 1  between 1  both 1  but 1  by 1 can 1  could 1 did 1  do 1  does 1  done 1  due 1  during 1 each 1  either 1  enough 1  especially 1  etc 1 for 1  found 1  from 1  further 1 had 1  has 1  have 1  having 1  here 1  how 1  however 1 i 1  if 1  in 1  into 1  is 1  it 1  its 1  itself 1 just 1 kg 1  km 1 made 1  mainly 1  make 1  may 1  mg 1  might 1  ml 1  mm 1  most 1  mostly 1  must 1 nearly 1  neither 1  no 1  nor 1 obtained 1  of 1  often 1  on 1  our 1  overall 1 perhaps 1  pmid 1 quite 1 rather 1  really 1  regarding 1 seem 1  seen 1  several 1  should 1  show 1  showed 1  shown 1  shows 1  significantly 1  since 1  so 1  some 1  such 1 than 1  that 1  the 1  their 1  theirs 1  them 1  then 1  there 1  therefore 1  these 1  they 1  this 1  those 1  through 1  thus 1  to 1 upon 1  use 1  used 1  using 1 various 1  very 1 was 1  we 1  were 1  what 1  when 1  which 1  while 1  with 1  within 1  without 1  would 1 );</line>
+<line>    my $find_request = $self-&gt;{MLQuery};</line>
+<line>    my ($fix_find_request) = &quot;&quot;;</line>
+<line>    my ($code,$value,$code2,$value2,$op2,$code3,$value3,$op3);</line>
+<line></line>
+<line>    my $h = {   'WTI' =&gt;  '[title]',</line>
+<line>                'WAU' =&gt;  '[auth]',</line>
+<line>                'WSU' =&gt;  '[mh]',</line>
+<line>                'ISSN' =&gt; '[jour]',</line>
+<line>                'WYR' =&gt;  '[pdat]',</line>
+<line>    };</line>
+<line></line>
+<line>    if ($find_request =~ /\s*(.*?)\s*=\s*\(\s*(.*?)\s*\)\s*(AND|OR|NOT)\s*(.*?)\s*=\s*\(\s*(.*?)\s*\)\s*(AND|OR|NOT)\s*(.*?)\s*=\s*\(\s*(.*?)\s*\)/) {</line>
+<line>        if ($1 eq 'WRD') {</line>
+<line>            $code = &quot;&quot;;</line>
+<line>        } else {</line>
+<line>            $code = $1;</line>
+<line>        }</line>
+<line>        $value  = normalize_term($code,$2);</line>
+<line>        $op2   = $3;</line>
+<line>        if ($4 eq 'WRD') {</line>
+<line>            $code2 = &quot;&quot;;</line>
+<line>        } else {</line>
+<line>            $code2 = $h-&gt;{$4};</line>
+<line>        }</line>
+<line>        $value2  = normalize_term($code2,$5);</line>
+<line></line>
+<line>        $op3   = $6;</line>
+<line>        if ($7 eq 'WRD') {</line>
+<line>            $code3 = &quot;&quot;;</line>
+<line>        } else {</line>
+<line>            $code3 = $h-&gt;{$7};</line>
+<line>        }</line>
+<line>        $value3  = normalize_term($code3,$8);</line>
+<line></line>
+<line>        $fix_find_request .= $value.$code.'+'.$op2.'+'.$value2.$code2.'+'.$op3.'+'.$value3.$code3;</line>
+<line>     }</line>
+<line>        elsif ($find_request =~ /\s*(.*?)\s*=\s*\(\s*(.*?)\s*\)\s*(AND|OR|NOT)\s*(.*?)\s*=\s*\(\s*(.*?)\s*\)/) {</line>
+<line>        if ($1 eq 'WRD') {</line>
+<line>            $code = &quot;&quot;;</line>
+<line>        } else {</line>
+<line>            $code = $h-&gt;{$1};</line>
+<line>        }</line>
+<line>        $value  = normalize_term($code,$2);</line>
+<line>        $op2   = $3;</line>
+<line>        if ($4 eq 'WRD') {</line>
+<line>            $code2 = &quot;&quot;;</line>
+<line>        } else {</line>
+<line>            $code2 = $h-&gt;{$4};</line>
+<line>        }</line>
+<line>        $value2  = normalize_term($code2,$5);</line>
+<line></line>
+<line>        $fix_find_request .= $value.$code.'+'.$op2.'+'.$value2.$code2;</line>
+<line>     }</line>
+<line>        elsif ($find_request =~ /\s*(.*?)\s*=\s*\(\s*(.*?)\s*\)/) {</line>
+<line>        if ($1 eq 'WRD') {</line>
+<line>            $code = &quot;&quot;;</line>
+<line>        } else {</line>
+<line>            $code = $h-&gt;{$1};</line>
+<line>        }</line>
+<line>        $value  = normalize_term($code,$2);</line>
+<line></line>
+<line>        $fix_find_request .= $value.$code;</line>
+<line>         my ($t,$w);</line>
+<line>         while ($fix_find_request =~ /((.*?)\[(?:title|mh)\])/g){</line>
+<line>                 $t=$1;</line>
+<line>                 $w=lc($2);</line>
+<line>                $fix_find_request =~s/\Q$t// if $stopw{$w};</line>
+<line>        }</line>
+<line>     }</line>
+<line>     $fix_find_request =~ s/://g;</line>
+<line>    return (&quot;&quot;, $fix_find_request);</line>
+<line>}</line>
+<line></line>
+<line>sub normalize_term</line>
+<line>{</line>
+<line></line>
+<line>    my ($code,$term) = @_;</line>
+<line>    my @value;</line>
+<line>   if ($code eq '[auth]') {</line>
+<line>        if ($term=~ /&quot;(.*?)&quot;/){</line>
+<line>            $term = $1;</line>
+<line>        }</line>
+<line>        if ($term =~ /(.+), (.+) ./) {</line>
+<line>            $term = $1.&quot; &quot;.substr($2,0,1).&quot;*&quot; ;</line>
+<line>        } elsif ($term =~ /(.+), (.+)/) {</line>
+<line>            $term = $1.&quot; &quot;.substr($2,0,1) .&quot;*&quot;;</line>
+<line>        } elsif ($term =~ /(.+), (.+) ?/) {</line>
+<line>            $term = $1.&quot; &quot;.substr($2,0,1). &quot;*&quot;;</line>
+<line>        }</line>
+<line>        $term = '&quot;'.$term.'&quot;';</line>
+<line>    }</line>
+<line>    elsif (!($term =~ /&quot;.*?&quot;/)){</line>
+<line>         if($code ne ''){</line>
+<line>        $term =~ s/ /$code/g;}</line>
+<line>    }</line>
+<line></line>
+<line>    return $term;</line>
+<line>}</line>
+<line></line>
+<line>sub findPresent(){</line>
+<line>    my $self = shift;</line>
+<line>    return;</line>
+<line>}</line>
+<line></line>
+<line></line>
+<line>1;</line>
+
+</program_name>
+<find_module>
+<line>#!/exlibris/metalib/m4_1/product/bin/perl</line>
+<line></line>
+<line></line>
+<line>sub BEGIN {</line>
+<line>    unshift (@INC, $ENV{'aleph_ext'});</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005&quot;);</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005/i686-linux&quot;);</line>
+<line>}</line>
+<line></line>
+<line>use hc_u_pubmed;</line>
+<line>use strict;</line>
+<line></line>
+<line>{</line>
+<line>    my $externalObject = new hc_u_pubmed;</line>
+<line>    $externalObject-&gt;find;</line>
+<line>}</line>
+<line></line>
+
+</find_module>
+<present_module>
+<line>#!/exlibris/metalib/m4_1/product/bin/perl</line>
+<line></line>
+<line></line>
+<line>sub BEGIN {</line>
+<line>    unshift (@INC, $ENV{'aleph_ext'});</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005&quot;);</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005/i686-linux&quot;);</line>
+<line>}</line>
+<line></line>
+<line>use hc_u_pubmed;</line>
+<line>use strict;</line>
+<line></line>
+<line>{</line>
+<line>    my $externalObject = new hc_u_pubmed;</line>
+<line>    $externalObject-&gt;present;</line>
+<line>}</line>
+<line></line>
+
+</present_module>
+<category>
+<main>Medisin, odontologi</main>
+<sub>Medisin og odontologi</sub>
+<main>Helsefag</main>
+<sub>Helsefremmande arbeid / Health Promotion</sub>
+<main>Medisin, odontologi</main>
+<sub>Molekylærbiologi</sub>
+<main>Helsefag</main>
+<sub>Logopedi</sub>
+<main>Psykologi, pedagogikk</main>
+<sub>Psykologi</sub>
+<main>Helsefag</main>
+<sub>Sjukepleievitskap</sub>
+<main>Helsefag</main>
+<sub>Fysioterapivitskap</sub>
+<main>Helsefag</main>
+<sub>RAB - Radiografi, audiologi, bioingeniør</sub>
+<main>Naturvitskap</main>
+<sub>Molekylærbiologi</sub>
+<main>Naturvitskap</main>
+<sub>Kjemi</sub>
+<main>Helsefag</main>
+<sub>Helseledelse, helseøkonomi</sub>
+<main>Medisin, odontologi</main>
+<sub>Farmakologi</sub>
+<main>Naturvitskap</main>
+<sub>Biologi</sub>
+</category>
+</knowledge_unit>
+
+    
+    
+
+</file>
