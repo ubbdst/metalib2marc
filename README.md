@@ -72,7 +72,7 @@ The mapping is a work in progress.
 - Almost all metalib only fields are stripped.
     - This includes all siblings of record elements, which are not categories, and all control fields which are non numerical (except `STA`, which is used for selecting only `ACTIVE` records).
 
-## Running the build
+## Installing and running the app
 ```bash
 # dependencies (osx)
 brew install ant
