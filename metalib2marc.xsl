@@ -20,28 +20,15 @@
         <xsl:variable name="categories" select="document('categories.xml')"/>
       
         <records xmlns="http://www.loc.gov/MARC21/slim">
-         <xsl:variable name="records">
+         
                   <xsl:apply-templates>
                 <xsl:with-param name="categories" tunnel="yes" select="$categories"/>
             </xsl:apply-templates>
-         </xsl:variable>
-            <!-- choosing new mode for sort, which always copies-->
-            <xsl:apply-templates select="$records" mode="sort">
-                </xsl:apply-templates>
+         
            </records>
     </xsl:template>
 
-    <xsl:template match="*:record" mode="sort">
-        <xsl:copy>
-            <xsl:copy-of select="@*"/>       
-        <xsl:apply-templates mode="sort">
-            <xsl:sort select="@tag"/>
-            <xsl:sort select="@ind1"/>
-            <xsl:sort select="@ind2"/>
-        </xsl:apply-templates>
-        </xsl:copy>
-    </xsl:template>
-    <xsl:template match="*" priority="0.5">
+       <xsl:template match="*" priority="0.5">
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -118,7 +105,8 @@
     -->
     <xsl:template match="*:record[*:datafield[@tag = 'STA']/*:subfield[@code = 'a'] = 'ACTIVE']"
         priority="1.0">
-        <xsl:element name="{local-name()}">
+        <xsl:variable name="record">
+            <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*" copy-namespaces="no"/>
             <xsl:call-template name="leader"/>
             <xsl:call-template name="controlfield_008"/>
@@ -150,6 +138,15 @@
                 </datafield>
             </xsl:if>
         </xsl:element>
+        </xsl:variable>
+        <!-- sorting records based on tag, ind1 and ind2-->
+        <record>
+            <xsl:apply-templates mode="sort" select="$record/descendant-or-self::*:record/*">
+            <xsl:sort select="@tag"/>
+            <xsl:sort select="@ind1"/>
+            <xsl:sort select="@ind2"/>
+        </xsl:apply-templates>
+        </record>
     </xsl:template>
 
     <xsl:template match="*:datafield"/>
