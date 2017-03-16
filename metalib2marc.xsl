@@ -18,13 +18,29 @@
     <xsl:key name="category-by-id" match="*" use="@id"/>
     <xsl:template match="*:file" priority="1.0">
         <xsl:variable name="categories" select="document('categories.xml')"/>
+      
         <records xmlns="http://www.loc.gov/MARC21/slim">
-            <xsl:apply-templates>
+         <xsl:variable name="records">
+                  <xsl:apply-templates>
                 <xsl:with-param name="categories" tunnel="yes" select="$categories"/>
             </xsl:apply-templates>
-        </records>
+         </xsl:variable>
+            <!-- choosing new mode for sort, which always copies-->
+            <xsl:apply-templates select="$records" mode="sort">
+                </xsl:apply-templates>
+           </records>
     </xsl:template>
 
+    <xsl:template match="*:record" mode="sort">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>       
+        <xsl:apply-templates mode="sort">
+            <xsl:sort select="@tag"/>
+            <xsl:sort select="@ind1"/>
+            <xsl:sort select="@ind2"/>
+        </xsl:apply-templates>
+        </xsl:copy>
+    </xsl:template>
     <xsl:template match="*" priority="0.5">
         <xsl:apply-templates/>
     </xsl:template>
@@ -34,13 +50,13 @@
         <xsl:apply-templates select="*:record"/>
     </xsl:template>
 
-    <xsl:template match="text()" mode="copy">
+    <xsl:template match="text()" mode="copy sort">
         <xsl:value-of select="."/>
     </xsl:template>
 
     <xsl:template match="text()"/>
 
-    <xsl:template match="*" mode="copy">
+    <xsl:template match="*" mode="copy sort">
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
@@ -59,13 +75,13 @@
             *:datafield[@tag = '245']/*:subfield[@code = '9']"
         priority="2.0" mode="copy #default"/>
 
-    <xsl:template match="*:datafield[matches(@tag, '^[0-9]+')]" priority="1.8">
+    <xsl:template match="*:datafield[matches(@tag, '^[0-9]+')]|*:controlfield[matches(@tag, '^[0-9]+')]" priority="1.8">
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
-        </xsl:element>
+        </xsl:element>        
     </xsl:template>
-
+   
     <xsl:template
         match="
             *:datafield[@tag = '520'] |
