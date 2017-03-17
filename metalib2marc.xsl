@@ -14,18 +14,18 @@
     <xsl:variable name="controlfield_008" as="node()">
         <controlfield tag="008">#########################################</controlfield>
     </xsl:variable>
-
+ 
     <xsl:key name="category-by-id" match="*" use="@id"/>
+    
+    
     <xsl:template match="*:file" priority="1.0">
         <xsl:variable name="categories" select="document('categories.xml')"/>
       
-        <records xmlns="http://www.loc.gov/MARC21/slim">
-         
+        <collection xmlns="http://www.loc.gov/MARC21/slim">         
                   <xsl:apply-templates>
                 <xsl:with-param name="categories" tunnel="yes" select="$categories"/>
-            </xsl:apply-templates>
-         
-           </records>
+            </xsl:apply-templates>         
+           </collection>
     </xsl:template>
 
        <xsl:template match="*" priority="0.5">
@@ -109,6 +109,7 @@
             <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*" copy-namespaces="no"/>
             <xsl:call-template name="leader"/>
+            <xsl:call-template name="controlfield_005"/>
             <xsl:call-template name="controlfield_008"/>
             <xsl:variable name="conditionForOA" as="xs:boolean">
                 <xsl:sequence
@@ -250,9 +251,13 @@
             <xsl:value-of select="$institution"/>
         </subfield>
     </xsl:template>
+    
+    <xsl:template name="controlfield_005">
+        <controlfield tag="005"><xsl:value-of select="format-dateTime(adjust-dateTime-to-timezone(current-dateTime(),xs:dayTimeDuration('PT0H')),'[Y][M01][D01][H01][m01][s01].0')"/></controlfield>
+    </xsl:template>
 
     <xsl:template name="leader">
-        <leader>00000nai</leader>
+        <leader>00000cai a22000002u 4500</leader>
     </xsl:template>
 
 </xsl:stylesheet>
