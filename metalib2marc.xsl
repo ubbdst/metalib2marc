@@ -257,7 +257,7 @@
     </xsl:template>
 
     <xsl:template name="leader">
-        <leader>00000cai a22000002u 4500</leader>
+        <leader>     cai a2200000 u 4500</leader>
     </xsl:template>
 
 </xsl:stylesheet>
