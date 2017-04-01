@@ -9,8 +9,8 @@
             
            >        
         </file></x:context>
-        <x:expect label="Expecting file element to be stripped and replaced with a root element &lt;records&gt; in xmlns='http://www.loc.gov/MARC21/slim'">
-            <records xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>  
+        <x:expect label="Expecting file element to be stripped and replaced with a root element &lt;collection&gt; in xmlns='http://www.loc.gov/MARC21/slim'">
+            <collection xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>  
         </x:expect>
     </x:scenario>
     
@@ -37,12 +37,20 @@
             </file>
         </x:context>
         <x:expect label="expecting nested bibliotekkataloger" >
-            <records xmlns="http://www.loc.gov/MARC21/slim"
+            <collection xmlns="http://www.loc.gov/MARC21/slim"
                 xmlns:impl="urn:x-xspec:compile:xslt:impl"
                 xmlns:flub="http://data.ub.uib.no/xsl/function-library">
                 <record>
-                    <leader>00000nai</leader>
+                    <leader> cai a2200000 u 4500</leader>                    
+                    <controlfield tag="001">UNI01262</controlfield>
+                    <controlfield tag="003">IL-JeEL</controlfield>
+                    <controlfield tag="005">20170401105914.0</controlfield>
                     <controlfield tag="008">##################k##d#o##########2######</controlfield>
+                    <datafield tag="035"
+                        ind1=" "
+                        ind2=" ">
+                        <subfield code="a">(IL-JeEL)UNI01262</subfield>
+                    </datafield>
                     <datafield tag="245" ind1="1" ind2=" ">
                         <subfield code="a">Library of Congress</subfield>
                     </datafield>
@@ -51,19 +59,22 @@
                         <subfield code="b">Library catalogues</subfield>
                         <subfield code="5">UBB</subfield>
                         <subfield code="9">eng</subfield>
+                        <subfield code="9">LOCAL</subfield>
                     </datafield>
                     <datafield tag="920" ind1=" " ind2=" ">
                         <subfield code="a">Tverrfaglig</subfield>
                         <subfield code="b">Bibliotekkataloger</subfield>
                         <subfield code="5">UBB</subfield>
                         <subfield code="9">nor</subfield>
+                        <subfield code="9">LOCAL</subfield>                        
                     </datafield>
                     <datafield tag="920" ind1=" " ind2=" ">
                         <subfield code="a">For UB library staff</subfield>
-                        <subfield code="b">Library catalogs</subfield>
+                        <subfield code="b">Online Library catalogues</subfield>
                         <subfield code="b">Interlibrary loan - internat.</subfield>
                         <subfield code="5">UBB</subfield>
                         <subfield code="9">eng</subfield>
+                        <subfield code="9">LOCAL</subfield>                        
                     </datafield>
                     <datafield tag="920" ind1=" " ind2=" ">
                         <subfield code="a">Bibliotekinternt</subfield>
@@ -71,9 +82,10 @@
                         <subfield code="b">Fjernlån - Internasj.</subfield>
                         <subfield code="5">UBB</subfield>
                         <subfield code="9">nor</subfield>
+                        <subfield code="9">LOCAL</subfield>                        
                     </datafield>
                 </record>
-            </records>
+            </collection>
         </x:expect>
     </x:scenario>
 
@@ -87,8 +99,8 @@
             </knowledge_unit>
             </file>
         </x:context>
-        <x:expect label="Expecting &lt;knowledge_unit&gt; stripped and root element records">
-            <records xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <x:expect label="Expecting &lt;knowledge_unit&gt; stripped and root element collection">
+            <collection xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </x:expect>
     </x:scenario>
 
@@ -170,8 +182,8 @@
                                </knowledge_unit>
                 </file>
             </x:context>
-            <x:expect label="no record copied. Empty records element.">
-                <records xmlns="http://www.loc.gov/MARC21/slim"
+            <x:expect label="no record copied. Empty collection element.">
+                <collection xmlns="http://www.loc.gov/MARC21/slim"
                     xmlns:pkg="http://expath.org/ns/pkg"
                     xmlns:impl="urn:x-xspec:compile:xslt:impl"
                     xmlns:flub="http://data.ub.uib.no/xsl/function-library" />
@@ -189,13 +201,13 @@
             </file>
             </x:context>
             <x:expect label="record added with leader and controlfield">
-                <records xmlns="http://www.loc.gov/MARC21/slim"
+                <collection xmlns="http://www.loc.gov/MARC21/slim"
                 xmlns:pkg="http://expath.org/ns/pkg"
                 xmlns:impl="urn:x-xspec:compile:xslt:impl"
                 xmlns:flub="http://data.ub.uib.no/xsl/function-library" > <record>
                     <leader>00000nai</leader>
                     <controlfield tag="008">##################k##d#o##########2######</controlfield>
-                </record></records></x:expect>
+                </record></collection></x:expect>
         </x:scenario>    
     </x:scenario>
  
@@ -274,8 +286,8 @@
                 </knowledge_unit>
             </file>
         </x:context>
-        <x:expect label="Expecting empty records element">
-            <records xmlns="http://www.loc.gov/MARC21/slim"
+        <x:expect label="Expecting empty collection element">
+            <collection xmlns="http://www.loc.gov/MARC21/slim"
                 xmlns:pkg="http://expath.org/ns/pkg"
                 xmlns:impl="urn:x-xspec:compile:xslt:impl"
                 xmlns:flub="http://data.ub.uib.no/xsl/function-library" />
@@ -313,9 +325,9 @@
 
     <x:scenario label="Scenario for testing function leader">
         <x:call template="leader"/>
-        <x:expect label="Expecting &lt;leader>00000nai&lt;/leader"><leader xmlns="http://www.loc.gov/MARC21/slim"
+        <x:expect label="Expecting &lt;leader> cai a2200000 u 4500&lt;/leader"><leader xmlns="http://www.loc.gov/MARC21/slim"
             xmlns:pkg="http://expath.org/ns/pkg"
             xmlns:impl="urn:x-xspec:compile:xslt:impl"
-            xmlns:flub="http://data.ub.uib.no/xsl/function-library">00000nai</leader></x:expect>
+            xmlns:flub="http://data.ub.uib.no/xsl/function-library"> cai a2200000 u 4500</leader></x:expect>
     </x:scenario>
 </x:description>
