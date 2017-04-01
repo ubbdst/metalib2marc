@@ -11,24 +11,28 @@
 
     <xsl:param name="languages" select="'en nb'"/>
     <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+
+    <xsl:variable name="controlfield_003">
+        <controlfield tag="003">IL-JeEL</controlfield>
+    </xsl:variable>
+
     <xsl:variable name="controlfield_008" as="node()">
         <controlfield tag="008">#########################################</controlfield>
     </xsl:variable>
- 
+
     <xsl:key name="category-by-id" match="*" use="@id"/>
-    
-    
+
     <xsl:template match="*:file" priority="1.0">
         <xsl:variable name="categories" select="document('categories.xml')"/>
-      
-        <collection xmlns="http://www.loc.gov/MARC21/slim">         
-                  <xsl:apply-templates>
+
+        <collection xmlns="http://www.loc.gov/MARC21/slim">
+            <xsl:apply-templates>
                 <xsl:with-param name="categories" tunnel="yes" select="$categories"/>
-            </xsl:apply-templates>         
-           </collection>
+            </xsl:apply-templates>
+        </collection>
     </xsl:template>
 
-       <xsl:template match="*" priority="0.5">
+    <xsl:template match="*" priority="0.5">
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -47,6 +51,10 @@
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
+
+            <xsl:if test="self::*:datafield">
+                <xsl:sequence select="flub:addLocal(self::*:datafield)"/>
+            </xsl:if>
         </xsl:element>
     </xsl:template>
 
@@ -61,14 +69,17 @@
             *:datafield[@tag = '856']/*:subfield[@code = ('7', 'D')] |
             *:datafield[@tag = '245']/*:subfield[@code = '9']"
         priority="2.0" mode="copy #default"/>
-
-    <xsl:template match="*:datafield[matches(@tag, '^[0-9]+')]|*:controlfield[matches(@tag, '^[0-9]+')]" priority="1.8">
+    <!--
+MARC 09x, 59x, 69x, and 950-999 local fields-->
+    <xsl:template
+        match="*:datafield[matches(@tag, '^[0-9]+')] | *:controlfield[matches(@tag, '^[0-9]+')]"
+        priority="1.8">
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
-        </xsl:element>        
+        </xsl:element>
     </xsl:template>
-   
+
     <xsl:template
         match="
             *:datafield[@tag = '520'] |
@@ -107,46 +118,51 @@
         priority="1.0">
         <xsl:variable name="record">
             <xsl:element name="{local-name()}">
-            <xsl:copy-of select="@*" copy-namespaces="no"/>
-            <xsl:call-template name="leader"/>
-            <xsl:call-template name="controlfield_005"/>
-            <xsl:call-template name="controlfield_008"/>
-            <xsl:variable name="conditionForOA" as="xs:boolean">
-                <xsl:sequence
-                    select="
-                        if (*:datafield[@tag = '594']/subfield[@code = 'a'
-                        and matches(., 'FREE', 'i')]
-                        )
-                        then
-                            true()
-                        else
-                            false()"
-                />
-            </xsl:variable>
-            <xsl:apply-templates>
-                <xsl:with-param name="OA" select="$conditionForOA" tunnel="yes"/>
-            </xsl:apply-templates>
+                <xsl:copy-of select="@*" copy-namespaces="no"/>
+                <xsl:call-template name="leader"/>
+                <xsl:sequence select="$controlfield_003"/>
+                <xsl:call-template name="controlfield_005"/>
+                <xsl:call-template name="controlfield_008"/>
 
-            <!-- apply category from outside of record. Only go to first of each main category, 
+                <xsl:variable name="conditionForOA" as="xs:boolean">
+                    <xsl:sequence
+                        select="
+                            if (*:datafield[@tag = '594']/subfield[@code = 'a'
+                            and matches(., 'FREE', 'i')]
+                            )
+                            then
+                                true()
+                            else
+                                false()"
+                    />
+                </xsl:variable>
+
+                <xsl:apply-templates>
+                    <xsl:with-param name="OA" select="$conditionForOA" tunnel="yes"/>
+                </xsl:apply-templates>
+
+                <xsl:call-template name="datafield_035"/>
+
+                <!-- apply category from outside of record. Only go to first of each main category, 
             to nest the categories -->
-            <xsl:apply-templates
-                select="parent::*:knowledge_unit/*:category/(*:main except *:main[preceding-sibling::*:main = .])"
-                mode="datafield_920"/>
+                <xsl:apply-templates
+                    select="parent::*:knowledge_unit/*:category/(*:main except *:main[preceding-sibling::*:main = .])"
+                    mode="datafield_920"/>
 
-            <xsl:if test="$conditionForOA">
-                <datafield tag="999">
-                    <subfield code="a">OA</subfield>
-                </datafield>
-            </xsl:if>
-        </xsl:element>
+                <xsl:if test="$conditionForOA">
+                    <datafield tag="999">
+                        <subfield code="a">OA</subfield>
+                    </datafield>
+                </xsl:if>
+            </xsl:element>
         </xsl:variable>
         <!-- sorting records based on tag, ind1 and ind2-->
         <record>
             <xsl:apply-templates mode="sort" select="$record/descendant-or-self::*:record/*">
-            <xsl:sort select="@tag"/>
-            <xsl:sort select="@ind1"/>
-            <xsl:sort select="@ind2"/>
-        </xsl:apply-templates>
+                <xsl:sort select="@tag"/>
+                <xsl:sort select="@ind1"/>
+                <xsl:sort select="@ind2"/>
+            </xsl:apply-templates>
         </record>
     </xsl:template>
 
@@ -209,6 +225,33 @@
     <!-- remove all records which are not ACTIVE-->
     <xsl:template match="*:record" priority="0.7"/>
 
+    <xsl:template name="subfield_code_5">
+        <subfield code="5">
+            <xsl:value-of select="$institution"/>
+        </subfield>
+    </xsl:template>
+
+    <xsl:template name="controlfield_005">
+        <controlfield tag="005">
+            <xsl:value-of
+                select="format-dateTime(adjust-dateTime-to-timezone(current-dateTime(), xs:dayTimeDuration('PT0H')), '[Y][M01][D01][H01][m01][s01].0')"
+            />
+        </controlfield>
+    </xsl:template>
+
+    <xsl:template name="datafield_035">
+        <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">
+                <xsl:sequence
+                    select="concat('(', $controlfield_003, ')', *:controlfield[@tag = '001'])"/>
+            </subfield>
+        </datafield>
+    </xsl:template>
+
+    <xsl:template name="leader">
+        <leader> cai a2200000 u 4500</leader>
+    </xsl:template>
+
     <xsl:function name="flub:replaceFieldInPosition">
         <xsl:param name="controlfield" as="node()"/>
         <xsl:param name="position" as="xs:integer"/>
@@ -246,18 +289,12 @@
 
     </xsl:function>
 
-    <xsl:template name="subfield_code_5">
-        <subfield code="5">
-            <xsl:value-of select="$institution"/>
-        </subfield>
-    </xsl:template>
-    
-    <xsl:template name="controlfield_005">
-        <controlfield tag="005"><xsl:value-of select="format-dateTime(adjust-dateTime-to-timezone(current-dateTime(),xs:dayTimeDuration('PT0H')),'[Y][M01][D01][H01][m01][s01].0')"/></controlfield>
-    </xsl:template>
-
-    <xsl:template name="leader">
-        <leader>     cai a2200000 u 4500</leader>
-    </xsl:template>
-
+    <!-- MARC 09x, 59x, 69x, and 950-999 r-->
+    <xsl:function name="flub:addLocal">
+        <xsl:param name="datafield" as="node()"/>
+        <xsl:if
+            test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|59|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'LOCAL'])">
+            <subfield code="9">LOCAL</subfield>
+        </xsl:if>
+    </xsl:function>
 </xsl:stylesheet>
