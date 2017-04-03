@@ -249,7 +249,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     </xsl:template>
 
     <xsl:template name="leader">
-        <leader> cai a2200000 u 4500</leader>
+        <leader>     cai a2200000 u 4500</leader>
     </xsl:template>
 
     <xsl:function name="flub:replaceFieldInPosition">
