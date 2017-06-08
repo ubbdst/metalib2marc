@@ -116,7 +116,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     -->
     <xsl:template match="*:record[*:datafield[@tag = 'STA']/*:subfield[@code = 'a'] = 'ACTIVE']"
         priority="1.0">
-        <xsl:variable name="record">
+        <xsl:variable name="record-element">
             <xsl:element name="{local-name()}">
                 <xsl:copy-of select="@*" copy-namespaces="no"/>
                 <xsl:call-template name="leader"/>
@@ -158,7 +158,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         </xsl:variable>
         <!-- sorting records based on tag, ind1 and ind2-->
         <record>
-            <xsl:apply-templates mode="sort" select="$record/descendant-or-self::*:record/*">
+            <xsl:apply-templates mode="sort" select="$record-element/descendant-or-self::*:record/*">
                 <xsl:sort select="@tag"/>
                 <xsl:sort select="@ind1"/>
                 <xsl:sort select="@ind2"/>
@@ -253,7 +253,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     </xsl:template>
 
     <xsl:function name="flub:replaceFieldInPosition">
-        <xsl:param name="controlfield" as="node()"/>
+        <xsl:param name="controlfield" as="element(controlfield)"/>
         <xsl:param name="position" as="xs:integer"/>
         <xsl:param name="insert_value" as="xs:string"/>
         <!-- to replace sibling values we use the length of the insert value-->
@@ -291,7 +291,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
 
     <!-- MARC 09x, 59x, 69x, and 950-999 r-->
     <xsl:function name="flub:addLocal">
-        <xsl:param name="datafield" as="node()"/>
+        <xsl:param name="datafield" as="element(datafield)"/>
         <xsl:if
             test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|59|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'LOCAL'])">
             <subfield code="9">LOCAL</subfield>

@@ -12,17 +12,17 @@
     <xsl:output indent="yes"/>
 
     <xsl:template match="/">
-        <xsl:variable name="examples">
+        <xsl:variable name="examples-root-element">
             <examples>
                 <xsl:apply-templates/>
             </examples>
         </xsl:variable>
         <examples xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd http://uniport.hosted.exlibrisgroup.com:80/aleph-cgi/load_schema.pl">
-            <xsl:for-each select="distinct-values($examples/*:examples/*:analyze-wrapper/@xpath)">
+            <xsl:for-each select="distinct-values($examples-root-element/*:examples/*:analyze-wrapper/@xpath)">
                 <xsl:sort select="."/>
                 <xsl:apply-templates
-                    select="key('lookup-example-by-xpath-attribute', ., $examples)[1]" mode="copy"
+                    select="key('lookup-example-by-xpath-attribute', ., $examples-root-element)[1]" mode="copy"
                 > </xsl:apply-templates>
             </xsl:for-each>
         </examples>
@@ -56,10 +56,8 @@
             </xsl:copy>
         </analyze-wrapper>
         <xsl:apply-templates/>
-    </xsl:template>
-
-    <xsl:template match="processing-instruction()"/>
-
+    </xsl:template>    
+    
     <xsl:function name="flub:WriteOutXpath">
         <xsl:param name="current-element" as="node()"/>
         <xsl:param name="sofar" as="xs:string?"/>
