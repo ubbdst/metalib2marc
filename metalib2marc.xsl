@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:flub="http://data.ub.uib.no/xsl/function-library"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/MARC21/slim"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim"
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
     <xsl:output indent="yes" method="xml"/>
@@ -16,8 +16,8 @@
         <controlfield tag="003">IL-JeEL</controlfield>
     </xsl:variable>
 
-    <xsl:variable name="controlfield_008" as="node()">
-        <controlfield tag="008">#########################################</controlfield>
+    <xsl:variable name="controlfield_008" as="element(marc:controlfield)">
+        <marc:controlfield tag="008">#########################################</marc:controlfield>
     </xsl:variable>
 
     <xsl:key name="category-by-id" match="*" use="@id"/>
@@ -171,8 +171,8 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     <xsl:template
         match="*:datafield[@tag = '856' and @ind1 = '4' and (@ind2 = '1' or @ind2 = '9') and *:subfield/@code = 'u']"
         priority="2.5">
-        <datafield tag="{if (@ind2='9') then 956
-                else 921}" ind1=" " ind2=" ">
+        <datafield tag="{if (@ind2='9') then 921
+                else 956}" ind1=" " ind2=" ">
             <subfield code="u">
                 <xsl:value-of select="*:subfield[@code = 'u']"/>
             </subfield>
@@ -252,8 +252,8 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         <leader>     cai a2200000 u 4500</leader>
     </xsl:template>
 
-    <xsl:function name="flub:replaceFieldInPosition">
-        <xsl:param name="controlfield" as="element(controlfield)"/>
+    <xsl:function name="flub:replaceFieldInPosition" as="element(marc:controlfield)">
+        <xsl:param name="controlfield" as="element(marc:controlfield)"/>
         <xsl:param name="position" as="xs:integer"/>
         <xsl:param name="insert_value" as="xs:string"/>
         <!-- to replace sibling values we use the length of the insert value-->
@@ -267,12 +267,13 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         <xsl:variable name="regexp"
             select="concat('^([\s\S]{', $marc-position, '})[\s\S]{', $length, '}')"/>
 
-        <xsl:variable name="controlfield_out" as="node()">
+        <xsl:variable name="controlfield_out" as="element(marc:controlfield)">
             <xsl:for-each select="$controlfield">
-                <xsl:element name="{local-name()}">
+               <xsl:copy>
                     <xsl:copy-of select="@*"/>
                     <xsl:value-of select="replace(., $regexp, concat('$1', $insert_value))"/>
-                </xsl:element>
+               </xsl:copy>
+             
             </xsl:for-each>
         </xsl:variable>
 
@@ -285,13 +286,13 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
             <xsl:message terminate="yes"> flub:replaceFieldInPosition(): controlfield out of bounds.
             </xsl:message>
         </xsl:if>
-        <xsl:sequence select="$controlfield_out"/>
+        <xsl:copy-of select="$controlfield_out"/>
 
     </xsl:function>
 
     <!-- MARC 09x, 59x, 69x, and 950-999 r-->
     <xsl:function name="flub:addLocal">
-        <xsl:param name="datafield" as="element(datafield)"/>
+        <xsl:param name="datafield" as="element(marc:datafield)"/>
         <xsl:if
             test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|59|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'LOCAL'])">
             <subfield code="9">LOCAL</subfield>

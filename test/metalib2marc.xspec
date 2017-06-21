@@ -219,7 +219,7 @@
                 xmlns:pkg="http://expath.org/ns/pkg"
                 xmlns:impl="urn:x-xspec:compile:xslt:impl"
                 xmlns:flub="http://data.ub.uib.no/xsl/function-library"
-                tag="921"
+                tag="956"
                 ind1=" "
                 ind2=" ">
                 <subfield code="u">http://www.ncbi.nlm.nih.gov/pubmed?otool=inoublib</subfield>
@@ -232,7 +232,7 @@
                xmlns:pkg="http://expath.org/ns/pkg"
                xmlns:impl="urn:x-xspec:compile:xslt:impl"
                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
-               tag="956"
+               tag="921"
                ind1=" "
                ind2=" ">
                <subfield code="u">http://www.ub.uib.no/felles/brosjyrer/pubmed-eng.pdf</subfield>
@@ -298,7 +298,7 @@
         <x:scenario label="$position=0">
         <x:call function="flub:replaceFieldInPosition">
             <x:param name="controlfield">
-                <controlfield tag="008">#########################################</controlfield>
+                <controlfield xmlns="http://www.loc.gov/MARC21/slim" tag="008">#########################################</controlfield>
             </x:param>
             <x:param name="position" select="0"/>
             <x:param name="insert_value" select="'a'"/>
