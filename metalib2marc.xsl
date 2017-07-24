@@ -5,6 +5,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim"
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
+    <xsl:param name="examples" as="xs:string*"></xsl:param>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
     <xsl:param name="institution" select="'UBB'" as="xs:string"/>
