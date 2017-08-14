@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:marcx="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
     xmlns:flub="http://data.ub.uib.no/xsl/function-library"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim"
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
-    <xsl:param name="examples" as="xs:string*"></xsl:param>
+    <!-- example posts atekst, wos, jstor, lovdata, pubmed-->
+    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
     <xsl:param name="institution" select="'UBB'" as="xs:string"/>
@@ -20,7 +22,8 @@
     <xsl:variable name="controlfield_008" as="element(marc:controlfield)">
         <marc:controlfield tag="008">#########################################</marc:controlfield>
     </xsl:variable>
-
+    
+    <xsl:variable name="multilang-regex" select="'#+ +#+'"/>
     <xsl:key name="category-by-id" match="*" use="@id"/>
 
     <xsl:template match="*:file" priority="1.0">
@@ -35,11 +38,12 @@
 
     <xsl:template match="*" priority="0.5">
         <xsl:apply-templates/>
-    </xsl:template>
-
+    </xsl:template>    
     <!-- explicitly just selecting record child(ren)-->
-    <xsl:template match="*:knowledge_unit">
+    <xsl:template match="*:knowledge_unit" priority="2.0">
+        <xsl:if test="*:record/*:controlfield[@tag='001']=$examples or count($examples) =0">
         <xsl:apply-templates select="*:record"/>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="text()" mode="copy sort">
@@ -83,19 +87,48 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
 
     <xsl:template
         match="
-            *:datafield[@tag = '520'] |
+            
             *:datafield[@tag = '245' and *:subfield/@code = 'a'] |
             *:datafield[@tag = '246' and *:subfield/@code = 'a'] |
             *:datafield[@tag = '260' and (*:subfield/@code = 'a' or *:subfield/@code = 'b')]"
         priority="2.1">
+      
         <xsl:element name="{local-name()}">
-
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
-
         </xsl:element>
     </xsl:template>
-
+                         
+    <xsl:template match="*:datafield[matches(@tag,'^520$')]" priority="4.0">
+        
+        <xsl:variable name="multilang" select="flub:isBiLingual(*:subfield[@code='a'])"/>
+        <xsl:element name="{local-name()}">
+            <xsl:copy-of select="@*"/>
+            
+            <xsl:apply-templates mode="parse">
+                <xsl:with-param name="position" select="1"/>
+            </xsl:apply-templates>         
+        </xsl:element>
+        <xsl:if test="$multilang">
+            <xsl:element name="{local-name()}">
+                <xsl:copy-of select="@*"/>
+            <xsl:apply-templates mode="parse">
+                <xsl:with-param name="position" select="2"/>
+            </xsl:apply-templates>
+            </xsl:element>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match=" *:datafield[@tag = '520']/*:subfield[@code='a']" mode="parse">
+        <xsl:param name="position" as="xs:integer?"/>        
+        <xsl:element name="{local-name()}">
+            <xsl:copy-of select="@*"/>
+            <xsl:value-of select="flub:parseMetalibURL(tokenize(.,$multilang-regex)[($position,1)[1]])"/>                   
+        </xsl:element>
+        <xsl:call-template name="subfield_code_5"/>
+        <subfield code="9"><xsl:value-of select="if ($position=1) then 'nor' else 'eng'"/></subfield>
+    </xsl:template>
+    
     <xsl:template name="controlfield_008">
         <xsl:sequence
             select="
@@ -267,14 +300,12 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         <xsl:variable name="marc-position" select="$position"/>
         <xsl:variable name="regexp"
             select="concat('^([\s\S]{', $marc-position, '})[\s\S]{', $length, '}')"/>
-
         <xsl:variable name="controlfield_out" as="element(marc:controlfield)">
             <xsl:for-each select="$controlfield">
                <xsl:copy>
                     <xsl:copy-of select="@*"/>
                     <xsl:value-of select="replace(., $regexp, concat('$1', $insert_value))"/>
-               </xsl:copy>
-             
+               </xsl:copy>             
             </xsl:for-each>
         </xsl:variable>
 
@@ -298,5 +329,24 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
             test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|59|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'LOCAL'])">
             <subfield code="9">LOCAL</subfield>
         </xsl:if>
+    </xsl:function>
+    
+    <xsl:function name="flub:isBiLingual" as="xs:boolean">
+        <xsl:param name="subfield" as="element(marcx:subfield)"/>
+        <xsl:sequence select="if (count(tokenize($subfield[@code='a'],$multilang-regex))=2)
+            then true()
+            else false()"/>
+    </xsl:function>
+    
+    <xsl:function name="flub:parseMetalibURL">
+        <xsl:param name="locale-string" as="xs:string"/>
+        <xsl:analyze-string select="$locale-string" regex="@@U([^@]+)@@D([^@]+)@@E">
+            <xsl:matching-substring>
+                <xsl:value-of select="concat(normalize-space(regex-group(2)),' (',normalize-space(regex-group(1)),')')"/>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <xsl:value-of select="."/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
     </xsl:function>
 </xsl:stylesheet>
