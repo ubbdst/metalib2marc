@@ -6,13 +6,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim"
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
-    <!-- example posts atekst, wos, jstor, lovdata, pubmed-->
-    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')"/>
+    <!-- example posts atekst, wos, jstor, lovdata, pubmed ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
+    <xsl:param name="examples" as="xs:string*"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
     <xsl:param name="institution" select="'UBB'" as="xs:string"/>
 
-    <xsl:param name="languages" select="'en nb'"/>
+    <xsl:param name="languages" select="'en'"/>
     <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
     <xsl:variable name="controlfield_003">
@@ -218,6 +218,10 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         <xsl:param name="categories" tunnel="yes" as="node()"/>
         <xsl:variable name="this_context" select="."/>
         <xsl:for-each select="tokenize($languages, '\s')">
+            <xsl:if test="position() > 1">
+                <xsl:message terminate="yes">
+                    No handling of multiple lang tags in import. $9 reserver for local Choose one language for import.</xsl:message>
+            </xsl:if>
             <xsl:variable name="lang" select="."/>
             <datafield tag="920" ind1=" " ind2=" ">
                 <xsl:variable name="current-cat"
@@ -240,15 +244,6 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                     </subfield>
                 </xsl:for-each>
                 <xsl:call-template name="subfield_code_5"/>
-                <subfield code="9">
-                    <xsl:value-of
-                        select="
-                            if (. = 'en') then
-                                'eng'
-                            else
-                                'nor'"
-                    />
-                </subfield>
             </datafield>
         </xsl:for-each>
     </xsl:template>
@@ -326,8 +321,8 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     <xsl:function name="flub:addLocal">
         <xsl:param name="datafield" as="element(marc:datafield)"/>
         <xsl:if
-            test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|59|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'LOCAL'])">
-            <subfield code="9">LOCAL</subfield>
+            test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|59|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'local'])">
+            <subfield code="9">local</subfield>
         </xsl:if>
     </xsl:function>
     

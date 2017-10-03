@@ -215,7 +215,7 @@
         label="Scenario for testing template with match '*:datafield[@tag='856' and @ind1='4' and (@ind2='1' or @ind2='9') and subfield/@code='u']">
         <x:scenario label="ind2 is 1">
             <x:context href="../examples.xml" select="//*:knowledge_unit[4]/*:record/*:datafield[@tag='856' and @ind1='4' and @ind2='1']"/>
-            <x:expect label="expecting field copied to controlfield 956"><datafield xmlns="http://www.loc.gov/MARC21/slim"
+            <x:expect label="expecting field (main link on post) copied to controlfield 956"><datafield xmlns="http://www.loc.gov/MARC21/slim"
                 xmlns:pkg="http://expath.org/ns/pkg"
                 xmlns:impl="urn:x-xspec:compile:xslt:impl"
                 xmlns:flub="http://data.ub.uib.no/xsl/function-library"
@@ -330,4 +330,14 @@
             xmlns:impl="urn:x-xspec:compile:xslt:impl"
             xmlns:flub="http://data.ub.uib.no/xsl/function-library"> cai a2200000 u 4500</leader></x:expect>
     </x:scenario>
+    
+    <x:scenario label="Testing 920 category without language tags ($9 reserved for local on import)">
+    
+        
+    </x:scenario>
+    <x:scenario label="Adding 922 for description">
+        
+    </x:scenario>
+    
+    <x:scenario label="Select last language for bilingual strings."></x:scenario>
 </x:description>
