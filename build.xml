@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project basedir="." name="metalib2alma" default="metalib2marc">
+<project basedir="." name="metalib2alma" default="metalib2marc"  xmlns:if="ant:if">
   <import file="language/build.xml"/>
     
   <target name="analyzeMetalib" depends="loadConfig">      
@@ -11,10 +11,11 @@
   
   <target name="metalib2marc" depends="getLanguageHtmlFilesToXml">
       <mkdir dir="out/"/>
-      <xslt in="${metalib.xml}" style="metalib2marc.xsl" out="out/${metalib.xml}">
+      <xslt in="${metalib.xml}" style="metalib2marc.xsl" out="out/${metalib.xml}" force="yes">
           <param name="institution" expression="${xsl.metalib2marc.institution}"/>
           <param name="language" expression="${xsl.metalib2marc.language}"/>
           <param name="path" expression="${xsl.metalib2marc.path}"/>
+          <param name="proxy" if:set="xsl.metalib2marc.proxy" expression="${xsl.metalib2marc.proxy}"/>
           <classpath path="lib/saxon9he.jar"/>  
       </xslt>
   </target>

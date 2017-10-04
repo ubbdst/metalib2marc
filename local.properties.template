@@ -2,3 +2,4 @@ xsl.getCategoriesFromHtml.path=language/html/ubb
 metalib.xml=examples.xml
 xsl.metalib2marc.institution=UBB
 xsl.metalib2marc.language="en nb"
+xsl.metalib2marc.proxy=

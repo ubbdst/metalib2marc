@@ -22,7 +22,7 @@ To make the xml valid, a search and replace for `([^<])(/line>)` `\1<\2` worked.
 The required input for the project is a valid metalib dump xml file.
 
 ### 2. Downloading category html
-The project requires html files downloaded for each category and language.
+The project requires html files downloaded for each category and language. Due to restrictions in import, local fields can't have language tags, which means only one language should be selected.
 The html files are downloaded manually, once for each language and each main category. 
 
 Go to the metalib admin page, and select `categories admin -> categories display`
@@ -53,14 +53,15 @@ xsl.metalib2marc.institution=UBB
 xsl.metalib2marc.language="en nb"
 ```
 
-Language property is space separated to control which languages are to be used. Since *the mapping does not allow both nb or nn*, one of them should be used.
+Language property is one language tag only, ie: nb, en, or nn.
 
 ## The mapping
+
 We only export records where the records are defined as `ACTIVE` in Metalib. 
 The mapping is done based on the output of analyze metalib stylesheet.
 See [metalib_structure.xml](/metalib_structure.xml) or generate your own list.
 
-```bash
+```
 # generate existing elements and attributes in your metalib dump
 ant analyzeMetalib
 ```
@@ -73,7 +74,7 @@ The mapping is a work in progress.
     - This includes all siblings of record elements, which are not categories, and all control fields which are non numerical (except `STA`, which is used for selecting only `ACTIVE` records).
 
 ## Installing and running the app
-```bash
+```
 # dependencies (osx)
 brew install ant
 

@@ -7,7 +7,8 @@
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
     <!-- example posts atekst, wos, jstor, lovdata, pubmed ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
-    <xsl:param name="examples" as="xs:string*"/>
+    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')"/>
+    <xsl:param name="proxy" as="xs:string?"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
     <xsl:param name="institution" select="'UBB'" as="xs:string"/>
@@ -23,12 +24,12 @@
         <marc:controlfield tag="008">#########################################</marc:controlfield>
     </xsl:variable>
     
-    <xsl:variable name="multilang-regex" select="'#+ +#+'"/>
+    <xsl:variable name="multilang-regex" select="'#{2,} *#{2,}'"/>
     <xsl:key name="category-by-id" match="*" use="@id"/>
 
     <xsl:template match="*:file" priority="1.0">
         <xsl:variable name="categories" select="document('categories.xml')"/>
-
+    <xsl:message><xsl:value-of select="$proxy"/></xsl:message>
         <collection xmlns="http://www.loc.gov/MARC21/slim">
             <xsl:apply-templates>
                 <xsl:with-param name="categories" tunnel="yes" select="$categories"/>
@@ -99,24 +100,26 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         </xsl:element>
     </xsl:template>
                          
-    <xsl:template match="*:datafield[matches(@tag,'^520$')]" priority="4.0">
-        
+    <xsl:template match="*:datafield[matches(@tag,'^520$')]" priority="4.0">       
         <xsl:variable name="multilang" select="flub:isBiLingual(*:subfield[@code='a'])"/>
         <xsl:element name="{local-name()}">
-            <xsl:copy-of select="@*"/>
-            
-            <xsl:apply-templates mode="parse">
-                <xsl:with-param name="position" select="1"/>
-            </xsl:apply-templates>         
+            <xsl:attribute name="tag" select="'922'"/>
+            <xsl:copy-of select="@* except @tag"/>            
+        <xsl:choose>
+            <xsl:when test="$multilang">
+               
+                    <xsl:apply-templates mode="parse">
+                        <xsl:with-param name="position" select="2"/>
+                    </xsl:apply-templates>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates mode="parse">
+                    <xsl:with-param name="position" select="1"/>
+                </xsl:apply-templates>
+            </xsl:otherwise>
+        </xsl:choose>
         </xsl:element>
-        <xsl:if test="$multilang">
-            <xsl:element name="{local-name()}">
-                <xsl:copy-of select="@*"/>
-            <xsl:apply-templates mode="parse">
-                <xsl:with-param name="position" select="2"/>
-            </xsl:apply-templates>
-            </xsl:element>
-        </xsl:if>
+        
     </xsl:template>
     
     <xsl:template match=" *:datafield[@tag = '520']/*:subfield[@code='a']" mode="parse">
@@ -126,7 +129,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
             <xsl:value-of select="flub:parseMetalibURL(tokenize(.,$multilang-regex)[($position,1)[1]])"/>                   
         </xsl:element>
         <xsl:call-template name="subfield_code_5"/>
-        <subfield code="9"><xsl:value-of select="if ($position=1) then 'nor' else 'eng'"/></subfield>
+        <!--importerer ikkje lang<subfield code="9"><xsl:value-of select="if ($position=1) then 'nor' else 'eng'"/></subfield>-->
     </xsl:template>
     
     <xsl:template name="controlfield_008">
@@ -153,7 +156,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         <xsl:variable name="record-element">
             <xsl:element name="{local-name()}">
                 <xsl:copy-of select="@*" copy-namespaces="no"/>
-                <xsl:call-template name="leader"/>
+                <xsl:sequence select="$leader"/>
                 <xsl:sequence select="$controlfield_003"/>
                 <xsl:call-template name="controlfield_005"/>
                 <xsl:call-template name="controlfield_008"/>
@@ -161,7 +164,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                 <xsl:variable name="conditionForOA" as="xs:boolean">
                     <xsl:sequence
                         select="
-                            if (*:datafield[@tag = '594']/subfield[@code = 'a'
+                            if (*:datafield[@tag = '594']/*:subfield[@code = 'a'
                             and matches(., 'FREE', 'i')]
                             )
                             then
@@ -184,7 +187,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                     mode="datafield_920"/>
 
                 <xsl:if test="$conditionForOA">
-                    <datafield tag="999">
+                    <datafield tag="999" ind1=" " ind2=" ">
                         <subfield code="a">OA</subfield>
                     </datafield>
                 </xsl:if>
@@ -205,10 +208,15 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     <xsl:template
         match="*:datafield[@tag = '856' and @ind1 = '4' and (@ind2 = '1' or @ind2 = '9') and *:subfield/@code = 'u']"
         priority="2.5">
+        <xsl:param name="OA" tunnel="yes" as="xs:boolean" select="false()"/>
         <datafield tag="{if (@ind2='9') then 921
                 else 956}" ind1=" " ind2=" ">
+           <!-- use url if OA, not main link-->
+           <xsl:variable name="resource-url" select="if ((($OA) or(@ind2='9') or not($proxy)))
+               then *:subfield[@code = 'u'] 
+               else concat($proxy,*:subfield[@code = 'u']) "/>
             <subfield code="u">
-                <xsl:value-of select="*:subfield[@code = 'u']"/>
+                <xsl:value-of select="$resource-url"/>
             </subfield>
             <xsl:call-template name="subfield_code_5"/>
         </datafield>
@@ -277,9 +285,9 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         </datafield>
     </xsl:template>
 
-    <xsl:template name="leader">
-        <leader>     cai a2200000 u 4500</leader>
-    </xsl:template>
+    <xsl:variable name="leader" as="element(marc:leader)">        
+        <marc:leader>     cai a2200000 u 4500</marc:leader>
+    </xsl:variable>
 
     <xsl:function name="flub:replaceFieldInPosition" as="element(marc:controlfield)">
         <xsl:param name="controlfield" as="element(marc:controlfield)"/>
