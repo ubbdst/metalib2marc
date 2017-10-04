@@ -335,7 +335,7 @@
     <x:scenario label="Adding 922 for description"> </x:scenario>    
     <x:scenario label="Select last language for bilingual strings."></x:scenario>
     <x:scenario label="520 with no translation regex"></x:scenario>
-        <x:scenario label="OA markering 594 FREE"></x:scenario>
+    <x:scenario label="OA markering 594 FREE"></x:scenario>
     <x:scenario label="OA markering (ezproxy lenke)"></x:scenario>
     <x:scenario label="Uten OA markering (ezproxy lenke)"></x:scenario>
     </x:scenario>

@@ -28,19 +28,19 @@
     <xsl:key name="category-by-id" match="*" use="@id"/>
 
     <xsl:template match="*:file" priority="1.0">
-        <xsl:variable name="categories" select="document('categories.xml')"/>
-    <xsl:message><xsl:value-of select="$proxy"/></xsl:message>
+        <xsl:variable name="categories" select="document('categories.xml')"/>    
         <collection xmlns="http://www.loc.gov/MARC21/slim">
             <xsl:apply-templates>
                 <xsl:with-param name="categories" tunnel="yes" select="$categories"/>
             </xsl:apply-templates>
         </collection>
     </xsl:template>
-
+    
     <xsl:template match="*" priority="0.5">
         <xsl:apply-templates/>
     </xsl:template>    
-    <!-- explicitly just selecting record child(ren)-->
+    
+    <!-- explicitly just selecting record children-->
     <xsl:template match="*:knowledge_unit" priority="2.0">
         <xsl:if test="*:record/*:controlfield[@tag='001']=$examples or count($examples) =0">
         <xsl:apply-templates select="*:record"/>
@@ -50,7 +50,8 @@
     <xsl:template match="text()" mode="copy sort">
         <xsl:value-of select="."/>
     </xsl:template>
-
+    
+    <!-- ignore text match with with no mode-->
     <xsl:template match="text()"/>
 
     <xsl:template match="*" mode="copy sort">
