@@ -6,8 +6,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim"
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
-    <!-- example posts atekst, wos, jstor, lovdata, pubmed ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
-    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')"/>
+    <!-- example posts atekst, -wos-, jstor, lovdata, -pubmed- ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
+    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI03671','UNI19590')"/>
     <xsl:param name="proxy" as="xs:string?"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
@@ -103,22 +103,30 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                          
     <xsl:template match="*:datafield[matches(@tag,'^520$')]" priority="4.0">       
         <xsl:variable name="multilang" select="flub:isBiLingual(*:subfield[@code='a'])"/>
-        <xsl:element name="{local-name()}">
-            <xsl:attribute name="tag" select="'922'"/>
-            <xsl:copy-of select="@* except @tag"/>            
-        <xsl:choose>
-            <xsl:when test="$multilang">
-               
+        <xsl:variable name="language-description">
+            <xsl:choose>
+                <xsl:when test="$multilang">
+                    
                     <xsl:apply-templates mode="parse">
                         <xsl:with-param name="position" select="2"/>
                     </xsl:apply-templates>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:apply-templates mode="parse">
-                    <xsl:with-param name="position" select="1"/>
-                </xsl:apply-templates>
-            </xsl:otherwise>
-        </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates mode="parse">
+                        <xsl:with-param name="position" select="1"/>
+                    </xsl:apply-templates>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:element name="{local-name()}">        
+            <xsl:copy-of select="@*"/>            
+            <xsl:sequence select="$language-description"/>        
+        </xsl:element>
+        
+        <xsl:element name="{local-name()}">
+            <xsl:attribute name="tag" select="'922'"/>
+            <xsl:copy-of select="@* except @tag"/>            
+        <xsl:sequence select="$language-description"/>        
         </xsl:element>
         
     </xsl:template>
@@ -330,7 +338,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     <xsl:function name="flub:addLocal">
         <xsl:param name="datafield" as="element(marc:datafield)"/>
         <xsl:if
-            test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|59|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'local'])">
+            test="$datafield/self::*:datafield and matches($datafield/@tag, '^(09|69|9)') and not($datafield/*:subfield[@code = '9' and . = 'local'])">
             <subfield code="9">local</subfield>
         </xsl:if>
     </xsl:function>
