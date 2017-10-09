@@ -7,7 +7,7 @@
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
     <!-- example posts atekst, -wos-, jstor, lovdata, -pubmed- ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
-    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI03671','UNI19590')"/>
+    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI03671','UNI19590','UNI01300')"/>
     <xsl:param name="proxy" as="xs:string?"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
@@ -81,9 +81,14 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     <xsl:template
         match="*:datafield[matches(@tag, '^[0-9]+')] | *:controlfield[matches(@tag, '^[0-9]+')]"
         priority="1.8">
+        <xsl:param name="OA" as="xs:boolean" select="false()" tunnel="yes"/>
+        
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
+        <xsl:if test="@tag='856' and $OA">
+            <subfield code="z">Gratis</subfield>
+        </xsl:if>
         </xsl:element>
     </xsl:template>
 
