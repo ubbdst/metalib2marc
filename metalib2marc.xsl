@@ -103,10 +103,12 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                          
     <xsl:template match="*:datafield[matches(@tag,'^520$')]" priority="4.0">       
         <xsl:variable name="multilang" select="flub:isBiLingual(*:subfield[@code='a'])"/>
-        <xsl:variable name="language-description">
+      
+        <xsl:element name="{local-name()}">
+            <xsl:attribute name="tag" select="'922'"/>
+            <xsl:copy-of select="@* except @tag"/>
             <xsl:choose>
                 <xsl:when test="$multilang">
-                    
                     <xsl:apply-templates mode="parse">
                         <xsl:with-param name="position" select="2"/>
                     </xsl:apply-templates>
@@ -117,16 +119,6 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                     </xsl:apply-templates>
                 </xsl:otherwise>
             </xsl:choose>
-        </xsl:variable>
-        <xsl:element name="{local-name()}">        
-            <xsl:copy-of select="@*"/>            
-            <xsl:sequence select="$language-description"/>        
-        </xsl:element>
-        
-        <xsl:element name="{local-name()}">
-            <xsl:attribute name="tag" select="'922'"/>
-            <xsl:copy-of select="@* except @tag"/>            
-        <xsl:sequence select="$language-description"/>        
         </xsl:element>
         
     </xsl:template>
