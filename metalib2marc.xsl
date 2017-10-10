@@ -7,7 +7,7 @@
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
     <!-- example posts atekst, -wos-, jstor, lovdata, -pubmed- ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
-    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI03671','UNI19590','UNI01300')"/>
+    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')"/>
     <xsl:param name="proxy" as="xs:string?"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
@@ -54,7 +54,7 @@
     <!-- ignore text match with with no mode-->
     <xsl:template match="text()"/>
 
-    <xsl:template match="*" mode="copy sort">
+    <xsl:template match="*" mode="copy sort" priority="2.0">
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
@@ -91,15 +91,19 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         </xsl:if>
         </xsl:element>
     </xsl:template>
-
-    <xsl:template
-        match="
-            
-            *:datafield[@tag = '245' and *:subfield/@code = 'a'] |
-            *:datafield[@tag = '246' and *:subfield/@code = 'a'] |
-            *:datafield[@tag = '260' and (*:subfield/@code = 'a' or *:subfield/@code = 'b')]"
-        priority="2.1">
-      
+    <!-- change ind1 of titles-->
+    <xsl:template match="*:datafield[@tag = '246' or @tag='210']" priority="2.3">
+        <xsl:element name="{local-name()}">
+            <xsl:copy-of select="@tag"/>
+            <xsl:attribute name="ind1" select="0"/>
+            <xsl:copy-of select="@* except (@tag,@ind1)"/>
+           
+            <xsl:apply-templates mode="copy"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="*:datafield[@tag = '245' and *:subfield/@code = 'a']| *:datafield[@tag = '260' and (*:subfield/@code = 'a' or *:subfield/@code = 'b')]"
+        priority="2.1" mode="copy">      
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
