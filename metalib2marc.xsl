@@ -7,7 +7,8 @@
     exclude-result-prefixes="xs flub xsi" version="2.0">
     <xsl:strip-space elements="*"/>
     <!-- example posts atekst, -wos-, jstor, lovdata, -pubmed- ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
-    <xsl:param name="examples" as="xs:string*" select="('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')"/>
+    <xsl:param name="examples" as="xs:string*" select="(::('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')::)()"/>
+    <xsl:param name="except" as="xs:string*" select="(::('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')::)()"/>
     <xsl:param name="proxy" as="xs:string?"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
@@ -29,11 +30,23 @@
 
     <xsl:template match="*:file" priority="1.0">
         <xsl:variable name="categories" select="document('categories.xml')"/>    
-        <collection xmlns="http://www.loc.gov/MARC21/slim">
+        <xsl:variable name="result"><collection xmlns="http://www.loc.gov/MARC21/slim">
             <xsl:apply-templates>
                 <xsl:with-param name="categories" tunnel="yes" select="$categories"/>
             </xsl:apply-templates>
         </collection>
+        </xsl:variable>
+        <xsl:sequence select="$result"/>
+        
+        <xsl:result-document href="id.txt" encoding="utf-8" method="text">
+            <xsl:for-each select="$result/descendant-or-self::*:record/*:datafield[@tag='035']/*:subfield[@code='a']">
+                <xsl:value-of select="."/>
+                <xsl:if test="parent::*/following-sibling::*[1]">
+                    <xsl:text>
+</xsl:text>
+                </xsl:if>
+            </xsl:for-each>           
+        </xsl:result-document>
     </xsl:template>
     
     <xsl:template match="*" priority="0.5">
@@ -42,8 +55,10 @@
     
     <!-- explicitly just selecting record children-->
     <xsl:template match="*:knowledge_unit" priority="2.0">
-        <xsl:if test="*:record/*:controlfield[@tag='001']=$examples or count($examples) =0">
-        <xsl:apply-templates select="*:record"/>
+        <xsl:variable name="_001" select="*:record/*:controlfield[@tag='001']"/>
+        <xsl:if test="($_001=$examples or count($examples) =0)
+            and not(some $x in $except satisfies $x = $_001)">     
+           <xsl:apply-templates select="*:record"/>
         </xsl:if>
     </xsl:template>
 
@@ -75,7 +90,7 @@
             '575', '591', '592', '593', '594', '595', '901', '902', '956') and *:subfield/@code = 'a'] |
             *:datafield[@tag = '856']/*:subfield[@code = ('7', 'D')] |
             *:datafield[@tag = '245']/*:subfield[@code = '9']"
-        priority="2.0" mode="copy #default"/>
+        priority="2.1" mode="copy #default"/>
     <!--
 MARC 09x, 59x, 69x, and 950-999 local fields-->
     <xsl:template
@@ -210,7 +225,8 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                 <xsl:sort select="@ind1"/>
                 <xsl:sort select="@ind2"/>
             </xsl:apply-templates>
-        </record>
+        </record>        
+     
     </xsl:template>
 
     <xsl:template match="*:datafield"/>
