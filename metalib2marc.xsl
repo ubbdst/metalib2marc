@@ -22,7 +22,15 @@
     </xsl:variable>
 
     <xsl:variable name="controlfield_008" as="element(marc:controlfield)">
-        <marc:controlfield tag="008">#########################################</marc:controlfield>
+        <marc:controlfield tag="008">######c####9999xx#k|#d#o####|#####2###|c#</marc:controlfield>
+    </xsl:variable>
+    
+    <xsl:variable name="datafield_040" as="element(marc:datafield)">
+        <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">NO-TrBIB</subfield>
+            <subfield code="b">nob</subfield>
+            <subfield code="e">katreg</subfield>
+        </datafield>
     </xsl:variable>
     
     <xsl:variable name="multilang-regex" select="'#{2,} *#{2,}'"/>
@@ -108,24 +116,55 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     </xsl:template>
     <!-- change ind1 of titles-->
     <xsl:template match="*:datafield[@tag = '246' or @tag='210']" priority="2.3">
-        <xsl:element name="{local-name()}">
-            <xsl:copy-of select="@tag"/>
-            <xsl:attribute name="ind1" select="0"/>
-            <xsl:copy-of select="@* except (@tag,@ind1)"/>
-           
-            <xsl:apply-templates mode="copy"/>
-        </xsl:element>
+   
+        <xsl:if
+            test="*:subfield[@code = 'a'] != parent::*/*:datafield[@tag = '245']/*:subfield[@code = 'a']">
+            <xsl:element name="{local-name()}">
+                <!-- change 210 also to 246 if it is different from 245-->
+                <xsl:attribute name="tag" select="'246'"/>
+                <xsl:attribute name="ind1" select="0"/>
+                <xsl:copy-of select="@* except (@tag, @ind1)"/>
+                <xsl:apply-templates mode="copy"/>
+            </xsl:element>
+        </xsl:if>
     </xsl:template>
     
-    <xsl:template match="*:datafield[@tag = '245' and *:subfield/@code = 'a']| *:datafield[@tag = '260' and (*:subfield/@code = 'a' or *:subfield/@code = 'b')]"
+    <xsl:template match=" *:datafield[@tag = '260' and (*:subfield/@code = 'a' or *:subfield/@code = 'b')]"
         priority="2.1" mode="copy">      
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates mode="copy"/>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="*:datafield[@tag = '245' and *:subfield/@code = 'a']"
+        priority="2.1" mode="copy">      
+        <xsl:element name="{local-name()}">
+            <xsl:copy-of select="@*"/>
+            <!-- override ind2-->
+            <xsl:attribute name="ind2" select="'0'"/>
+            <xsl:apply-templates mode="copy"/>
+            <marc:subfield code="h">[elektronisk ressurs]</marc:subfield>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="*:datafield[@tag='655']" priority="4.0">
+        <marc:datafield ind1=" " ind2=" " tag="653">
+            <xsl:apply-templates/>
+        </marc:datafield>
+    </xsl:template>
+    
+    <xsl:template match="*:datafield[@tag='110']" priority="4.0">
+      <xsl:message terminate="yes"/>
+        <xsl:if test="not(parent::*/*:datafield[@tag='260'])">
+        <marc:datafield ind1=" " ind2=" " tag="260">
+            <subfield code="b"><xsl:value-of select="*:subfield[@code='a']"/></subfield>
+        </marc:datafield>
+        </xsl:if>
+    </xsl:template>
+    
                          
-    <xsl:template match="*:datafield[matches(@tag,'^520$')]" priority="4.0">       
+    <xsl:template match="*:datafield[@tag='520']" priority="4.0">       
         <xsl:variable name="multilang" select="flub:isBiLingual(*:subfield[@code='a'])"/>
       
         <xsl:element name="{local-name()}">
@@ -184,6 +223,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                 <xsl:sequence select="$leader"/>
                 <xsl:sequence select="$controlfield_003"/>
                 <xsl:call-template name="controlfield_005"/>
+                <xsl:sequence select="$controlfield_007"/>
                 <xsl:call-template name="controlfield_008"/>
 
                 <xsl:variable name="conditionForOA" as="xs:boolean">
@@ -204,7 +244,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                 </xsl:apply-templates>
 
                 <xsl:call-template name="datafield_035"/>
-
+                <xsl:sequence select="$datafield_040"/>
                 <!-- apply category from outside of record. Only go to first of each main category, 
             to nest the categories -->
                 <xsl:apply-templates
@@ -301,7 +341,11 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
             />
         </controlfield>
     </xsl:template>
-
+    
+    <xsl:variable name="controlfield_007" as="element(marc:controlfield)">
+        <marc:controlfield tag="007">cr#||||||</marc:controlfield> 
+    </xsl:variable>
+    
     <xsl:template name="datafield_035">
         <datafield tag="035" ind1=" " ind2=" ">
             <subfield code="a">
@@ -312,9 +356,11 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     </xsl:template>
 
     <xsl:variable name="leader" as="element(marc:leader)">        
-        <marc:leader>     cai a2200000 u 4500</marc:leader>
+        <marc:leader>     cai a22000005c 4500</marc:leader>
     </xsl:variable>
-
+    
+ 
+    
     <xsl:function name="flub:replaceFieldInPosition" as="element(marc:controlfield)">
         <xsl:param name="controlfield" as="element(marc:controlfield)"/>
         <xsl:param name="position" as="xs:integer"/>

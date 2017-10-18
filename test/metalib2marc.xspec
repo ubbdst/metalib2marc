@@ -45,11 +45,17 @@
                     <controlfield tag="001">UNI01262</controlfield>
                     <controlfield tag="003">IL-JeEL</controlfield>
                     <controlfield tag="005">20170401105914.0</controlfield>
-                    <controlfield tag="008">##################k##d#o##########2######</controlfield>
+                    <controlfield tag="007">cr#|||||||||||</controlfield>
+                    <controlfield tag="008">######c####9999xx#k|#d#o####|#####2###|c#</controlfield>
                     <datafield tag="035"
                         ind1=" "
                         ind2=" ">
                         <subfield code="a">(IL-JeEL)UNI01262</subfield>
+                    </datafield>
+                    <datafield tag="040" ind1=" " ind2=" ">
+                        <subfield code="a">NO-TrBIB</subfield>
+                        <subfield code="b">nob</subfield>
+                        <subfield code="e">katreg</subfield>
                     </datafield>
                     <datafield tag="245" ind1="1" ind2=" ">
                         <subfield code="a">Library of Congress</subfield>
@@ -270,7 +276,7 @@
                 <knowledge_unit>
                     <record  xmlns="http://www.loc.gov/MARC21/slim">
                         <controlfield tag="001">UNI01262</controlfield>
-                        <datafield tag="245" ind1="1" ind2=" ">
+                        <datafield tag="245" ind1="1" ind2="0">
                             <subfield code="a">Library of Congress</subfield>
                         </datafield>
                         <datafield tag='STA'><subfield code="a">INACTIVE</subfield></datafield>
