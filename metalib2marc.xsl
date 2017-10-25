@@ -10,6 +10,7 @@
     <xsl:param name="examples" as="xs:string*" select="(::('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')::)()"/>
     <xsl:param name="except" as="xs:string*" select="(::('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')::)()"/>
     <xsl:param name="proxy" as="xs:string?"/>
+    <xsl:param name="id-list" as="xs:boolean" select="true()"/>
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
     <xsl:param name="institution" select="'UBB'" as="xs:string"/>
@@ -45,7 +46,7 @@
         </collection>
         </xsl:variable>
         <xsl:sequence select="$result"/>
-        
+        <xsl:if test="$id-list">
         <xsl:result-document href="id.txt" encoding="utf-8" method="text">
             <xsl:for-each select="$result/descendant-or-self::*:record/*:datafield[@tag='035']/*:subfield[@code='a']">
                 <xsl:value-of select="."/>
@@ -55,6 +56,7 @@
                 </xsl:if>
             </xsl:for-each>           
         </xsl:result-document>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="*" priority="0.5">
@@ -155,7 +157,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     </xsl:template>
     
     <xsl:template match="*:datafield[@tag='110']" priority="4.0">
-      <xsl:message terminate="yes"/>
+      
         <xsl:if test="not(parent::*/*:datafield[@tag='260'])">
         <marc:datafield ind1=" " ind2=" " tag="260">
             <subfield code="b"><xsl:value-of select="*:subfield[@code='a']"/></subfield>

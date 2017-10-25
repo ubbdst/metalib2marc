@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <x:description xmlns:x="http://www.jenitennison.com/xslt/xspec"
     xmlns:flub="http://data.ub.uib.no/xsl/function-library"
+    xmlns:marc="http://www.loc.gov/MARC21/slim"
     stylesheet="../metalib2marc.xsl">
     <x:param name="institution" select="'UBB'"/>    
-    
+    <x:param name="id-list" select="false()"/>
     <x:scenario label="Scenario for testing template with match '*:file">
         <x:context><file xmlns="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
             
            >        
         </file></x:context>
-        <x:expect label="Expecting file element to be stripped and replaced with a root element &lt;collection&gt; in xmlns='http://www.loc.gov/MARC21/slim'">
-            <collection xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>  
+        <x:expect label="Expecting file element to be stripped and replaced with a root element &lt;collection&gt; in xmlns='http://www.loc.gov/MARC21/slim'" test="count(/marc:collection[not(*)])=1">
+            <!--<collection xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>-->  
         </x:expect>
     </x:scenario>
     
     <x:scenario label="Scenario for testing multiple of same main category, and different sub categories">
-        <x:context>
+        <x:context >
             <file>        
                 <knowledge_unit>
                     <record  xmlns="http://www.loc.gov/MARC21/slim">
@@ -330,7 +331,12 @@
     </x:scenario>
    
     <x:scenario label="Feedback from bibsys">
-    <x:scenario label="Testing 920 category without language tags ($9 reserved for local on import)"></x:scenario>
+    <x:scenario label="Testing 920 category without language tags ($9 reserved for local on import)">
+        <x:scenario label="Ingen 900 felt med code='9' som er ulik local">
+            <x:context href="../examples.xml"/>
+            <x:expect label="0 " test="count(//marc:datafield[matches(@tag,'^9')]/marc:subfield[@code='9' and .='local'])=0"></x:expect>
+        </x:scenario>
+    </x:scenario>
     <x:scenario label="Adding 922 for description"> </x:scenario>    
     <x:scenario label="Select last language for bilingual strings."></x:scenario>
     <x:scenario label="520 with no translation regex"></x:scenario>
@@ -340,7 +346,11 @@
     </x:scenario>
     
     <x:scenario label="feedback from Ketil">
-        <x:scenario label="655 til 653"></x:scenario>
+        <x:scenario label="655 til 653">
+            <x:context href="../examples.xml"/>
+            <x:expect label="expecting 14 (10+4) 653 with $a" test="count(//marc:datafield[@tag='653'])=14"></x:expect>
+        </x:scenario>
+        <x:scenario label="110 $a til 260 $1 dersom forskjellig. Bare en dersom 260 og 210 er lik"></x:scenario>
         <x:scenario label="slett 210 dersom den er lik som 245, flytt til 246 (alternativ tittel dersom den ikke finnes). "></x:scenario>
         <x:scenario label="856">
             <x:scenario label="Ta inn igjen lenke fra 856 1 4 til 856 0 4. For network post."></x:scenario>
