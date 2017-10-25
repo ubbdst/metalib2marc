@@ -37,63 +37,13 @@
                 </knowledge_unit>
             </file>
         </x:context>
-        <x:expect label="expecting nested bibliotekkataloger" >
-            <collection xmlns="http://www.loc.gov/MARC21/slim"
-                xmlns:impl="urn:x-xspec:compile:xslt:impl"
-                xmlns:flub="http://data.ub.uib.no/xsl/function-library">
-                <record>
-                    <leader> cai a2200000 u 4500</leader>                    
-                    <controlfield tag="001">UNI01262</controlfield>
-                    <controlfield tag="003">IL-JeEL</controlfield>
-                    <controlfield tag="005">20170401105914.0</controlfield>
-                    <controlfield tag="007">cr#|||||||||||</controlfield>
-                    <controlfield tag="008">######c####9999xx#k|#d#o####|#####2###|c#</controlfield>
-                    <datafield tag="035"
-                        ind1=" "
-                        ind2=" ">
-                        <subfield code="a">(IL-JeEL)UNI01262</subfield>
-                    </datafield>
-                    <datafield tag="040" ind1=" " ind2=" ">
-                        <subfield code="a">NO-TrBIB</subfield>
-                        <subfield code="b">nob</subfield>
-                        <subfield code="e">katreg</subfield>
-                    </datafield>
-                    <datafield tag="245" ind1="1" ind2=" ">
-                        <subfield code="a">Library of Congress</subfield>
-                    </datafield>
-                    <datafield tag="920" ind1=" " ind2=" ">
-                        <subfield code="a">Interdisciplinary resources</subfield>
-                        <subfield code="b">Library catalogues</subfield>
-                        <subfield code="5">UBB</subfield>
-                        <subfield code="9">eng</subfield>
-                        <subfield code="9">LOCAL</subfield>
-                    </datafield>
-                    <datafield tag="920" ind1=" " ind2=" ">
-                        <subfield code="a">Tverrfaglig</subfield>
-                        <subfield code="b">Bibliotekkataloger</subfield>
-                        <subfield code="5">UBB</subfield>
-                        <subfield code="9">nor</subfield>
-                        <subfield code="9">LOCAL</subfield>                        
-                    </datafield>
-                    <datafield tag="920" ind1=" " ind2=" ">
-                        <subfield code="a">For UB library staff</subfield>
-                        <subfield code="b">Online Library catalogues</subfield>
-                        <subfield code="b">Interlibrary loan - internat.</subfield>
-                        <subfield code="5">UBB</subfield>
-                        <subfield code="9">eng</subfield>
-                        <subfield code="9">LOCAL</subfield>                        
-                    </datafield>
-                    <datafield tag="920" ind1=" " ind2=" ">
-                        <subfield code="a">Bibliotekinternt</subfield>
-                        <subfield code="b">Bibliotekkataloger</subfield>
-                        <subfield code="b">Fjernlån - Internasj.</subfield>
-                        <subfield code="5">UBB</subfield>
-                        <subfield code="9">nor</subfield>
-                        <subfield code="9">LOCAL</subfield>                        
-                    </datafield>
-                </record>
-            </collection>
-        </x:expect>
+       
+   
+        <x:expect label="two category datafields"  test="count(//marc:datafield[@tag='920'])=2"/>
+            <x:expect label="category 'For UB library staff' has two $b"
+                test="count(//marc:datafield[@tag='920' and marc:subfield[@code='a']='For UB library staff']/marc:subfield[@code='b'])=2">
+                
+            </x:expect>
     </x:scenario>
 
     <x:scenario label="Scenario for testing template with match '*">
@@ -106,7 +56,7 @@
             </knowledge_unit>
             </file>
         </x:context>
-        <x:expect label="Expecting &lt;knowledge_unit&gt; stripped and root element collection">
+        <x:expect label="Expecting &lt;knowledge_unit&gt; stripped and root element collection" test="count(/marc:collection[not(*)])=1">
             <collection xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </x:expect>
     </x:scenario>
@@ -147,7 +97,7 @@
 
     <x:scenario label="Scenario for testing template with match '*:datafield[matches(@tag,'^[0-9]+')]">
         <x:context href="../examples.xml" select="//*:knowledge_unit[1]/*:record[1]/*:datafield[@tag='210']"/>
-        <x:expect label="datafield 210 copied as is">
+        <x:expect label="datafield 210 copied as is" test="//marc:datafield/subfield[@code='a']='Eurobarometer'">
             <datafield xmlns="http://www.loc.gov/MARC21/slim"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:pkg="http://expath.org/ns/pkg"
