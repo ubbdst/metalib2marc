@@ -328,14 +328,7 @@
                 xmlns:flub="http://data.ub.uib.no/xsl/function-library" code="5">UBB</subfield>
         </x:expect>
     </x:scenario>
-
-    <x:scenario label="Scenario for testing function leader">
-        <x:call template="leader"/>
-        <x:expect label="Expecting &lt;leader> cai a2200000 u 4500&lt;/leader"><leader xmlns="http://www.loc.gov/MARC21/slim"
-            xmlns:pkg="http://expath.org/ns/pkg"
-            xmlns:impl="urn:x-xspec:compile:xslt:impl"
-            xmlns:flub="http://data.ub.uib.no/xsl/function-library"> cai a2200000 u 4500</leader></x:expect>
-    </x:scenario>
+   
     <x:scenario label="Feedback from bibsys">
     <x:scenario label="Testing 920 category without language tags ($9 reserved for local on import)"></x:scenario>
     <x:scenario label="Adding 922 for description"> </x:scenario>    
@@ -346,4 +339,26 @@
     <x:scenario label="Uten OA markering (ezproxy lenke)"></x:scenario>
     </x:scenario>
     
+    <x:scenario label="feedback from Ketil">
+        <x:scenario label="655 til 653"></x:scenario>
+        <x:scenario label="slett 210 dersom den er lik som 245, flytt til 246 (alternativ tittel dersom den ikke finnes). "></x:scenario>
+        <x:scenario label="856">
+            <x:scenario label="Ta inn igjen lenke fra 856 1 4 til 856 0 4. For network post."></x:scenario>
+            <x:scenario label="$3 Fulltekst"/>
+        </x:scenario>
+        
+        <x:scenario label="LDR 17 til 15 og 18 til c"/>
+        <x:scenario label="007 til cr#||||||"/>
+        <x:scenario label="008">
+            <x:scenario label="06 til c">
+            </x:scenario>
+            <x:scenario label="11-14 9999"></x:scenario>
+            <x:scenario label="19 28 29 og 38 til |"></x:scenario>
+            <x:scenario label="039 til c"></x:scenario>
+            
+        </x:scenario>
+        <x:scenario label="040 $$a NO-TrBIB $$b nob $$e katreg
+            "></x:scenario>
+        <x:scenario label="245 andreindikator til 0"></x:scenario>
+    </x:scenario>
 </x:description>
