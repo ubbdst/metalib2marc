@@ -17,14 +17,45 @@
 
     <xsl:param name="languages" select="'en'"/>
     <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
-
     <xsl:variable name="controlfield_003">
         <controlfield tag="003">IL-JeEL</controlfield>
+    
     </xsl:variable>
-
+   
+    
     <xsl:variable name="controlfield_008" as="element(marc:controlfield)">
-        <marc:controlfield tag="008">######c####9999xx#k|#d#o####|#####2###|c#</marc:controlfield>
+        <xsl:variable name="_008" as="element(marc:controlfield)">
+
+            <marc:controlfield tag="008">########################################</marc:controlfield>
+        </xsl:variable>
+        <xsl:sequence
+            select="
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition(
+            flub:replaceFieldInPosition($_008
+            ,6,'c')
+            ,11,'9999')
+            ,15,'xx')
+            ,18,'k')
+            ,19,'|')            
+            ,21,'d')
+            ,23,'o')
+            ,28,'||')
+            ,34, '2')
+            ,38,'|')
+            ,39,'c')"
+        />
     </xsl:variable>
+    
+   
     
     <xsl:variable name="datafield_040" as="element(marc:datafield)">
         <datafield tag="040" ind1=" " ind2=" ">
@@ -277,12 +308,18 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         match="*:datafield[@tag = '856' and @ind1 = '4' and (@ind2 = '1' or @ind2 = '9') and *:subfield/@code = 'u']"
         priority="2.5">
         <xsl:param name="OA" tunnel="yes" as="xs:boolean" select="false()"/>
+        <xsl:if test="@ind2='1'">
+            <datafield tag="856" ind1="0" ind2="4">
+            <subfield code="3">Fulltekst</subfield>
+            <subfield code="u"><xsl:value-of select="*:subfield[@code = 'u']"/></subfield>
+        </datafield>
+        </xsl:if>
         <datafield tag="{if (@ind2='9') then 921
                 else 956}" ind1=" " ind2=" ">
            <!-- use url if OA, not main link-->
            <xsl:variable name="resource-url" select="if ((($OA) or(@ind2='9') or not($proxy)))
                then *:subfield[@code = 'u'] 
-               else concat($proxy,*:subfield[@code = 'u']) "/>
+               else concat($proxy,*:subfield[@code = 'u']) "/>            
             <subfield code="u">
                 <xsl:value-of select="$resource-url"/>
             </subfield>
@@ -360,8 +397,6 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     <xsl:variable name="leader" as="element(marc:leader)">        
         <marc:leader>     cai a22000005c 4500</marc:leader>
     </xsl:variable>
-    
- 
     
     <xsl:function name="flub:replaceFieldInPosition" as="element(marc:controlfield)">
         <xsl:param name="controlfield" as="element(marc:controlfield)"/>

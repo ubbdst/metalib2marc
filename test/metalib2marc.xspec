@@ -5,6 +5,7 @@
     stylesheet="../metalib2marc.xsl">
     <x:param name="institution" select="'UBB'"/>    
     <x:param name="id-list" select="false()"/>
+    <x:param name="proxy" select="'https://pva.uib.no/login?url='"/>
     <x:scenario label="Scenario for testing template with match '*:file">
         <x:context><file xmlns="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
             
@@ -97,26 +98,15 @@
 
     <x:scenario label="Scenario for testing template with match '*:datafield[matches(@tag,'^[0-9]+')]">
         <x:context href="../examples.xml" select="//*:knowledge_unit[1]/*:record[1]/*:datafield[@tag='210']"/>
-        <x:expect label="datafield 210 copied as is" test="//marc:datafield/subfield[@code='a']='Eurobarometer'">
-            <datafield xmlns="http://www.loc.gov/MARC21/slim"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:pkg="http://expath.org/ns/pkg"
-                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
-                tag="210" ind1=" " ind2=" ">
-                <subfield code="a">Eurobarometer</subfield>
-            </datafield>
+        <x:expect label="datafield 210 returns empty" select="()">
+           
         </x:expect>
     </x:scenario>
 
-    <x:scenario label="Scenario for testing template with match '*:datafield[@tag='520']|         *:datafield[@tag='245' and *:subfield/@code='a']|         *:datafield[@tag='246' and *:subfield/@code='a']|           *:datafield[@tag='260' and (*:subfield/@code='a' or *:subfield/@code='b')]">
+    <!--<x:scenario label="Scenario for testing template with match '*:datafield[@tag='520']|         *:datafield[@tag='245' and *:subfield/@code='a']|         *:datafield[@tag='246' and *:subfield/@code='a']|           *:datafield[@tag='260' and (*:subfield/@code='a' or *:subfield/@code='b')]">
         <x:context href="../examples.xml" select="//*:knowledge_unit[1]/*:record[1]/*:datafield[@tag='210']"/>
-        <x:expect label="datafield 210 copied as is">
-            <datafield xmlns="http://www.loc.gov/MARC21/slim" tag="210" ind1=" " ind2=" ">
-                <subfield code="a">Eurobarometer</subfield>
-            </datafield>
-            
-        </x:expect>
-    </x:scenario>
+        <x:expect label="datafield 210 copied as is" test="//marc:datafield[@tag='210']/marc:subfield[@code='a']='Eurobarometer'"/>   
+    </x:scenario>-->
 
     <x:scenario label="Scenario for testing function controlfield_008">
         <x:call template="controlfield_008"/>
@@ -124,7 +114,7 @@
             xmlns:pkg="http://expath.org/ns/pkg"
             xmlns:impl="urn:x-xspec:compile:xslt:impl"
             xmlns:flub="http://data.ub.uib.no/xsl/function-library"
-            tag="008">##################k##d#o##########2######</controlfield>
+            tag="008">######c####9999xx#k|#d#o####||####2###|c</controlfield>
         </x:expect>
     </x:scenario>
 
@@ -139,12 +129,8 @@
                                </knowledge_unit>
                 </file>
             </x:context>
-            <x:expect label="no record copied. Empty collection element.">
-                <collection xmlns="http://www.loc.gov/MARC21/slim"
-                    xmlns:pkg="http://expath.org/ns/pkg"
-                    xmlns:impl="urn:x-xspec:compile:xslt:impl"
-                    xmlns:flub="http://data.ub.uib.no/xsl/function-library" />
-                
+            <x:expect label="no record copied. Empty collection element." test="exists(/marc:collection[not(*)])">
+                               
             </x:expect>
         </x:scenario>
         <x:scenario label="with ACTIVE status">
@@ -157,14 +143,8 @@
                 </knowledge_unit>
             </file>
             </x:context>
-            <x:expect label="record added with leader and controlfield">
-                <collection xmlns="http://www.loc.gov/MARC21/slim"
-                xmlns:pkg="http://expath.org/ns/pkg"
-                xmlns:impl="urn:x-xspec:compile:xslt:impl"
-                xmlns:flub="http://data.ub.uib.no/xsl/function-library" > <record>
-                    <leader>00000nai</leader>
-                    <controlfield tag="008">##################k##d#o##########2######</controlfield>
-                </record></collection></x:expect>
+            <x:expect label="record child exists" test="exists(/marc:collection/marc:record)"/>
+               
         </x:scenario>    
     </x:scenario>
  
@@ -172,16 +152,7 @@
         label="Scenario for testing template with match '*:datafield[@tag='856' and @ind1='4' and (@ind2='1' or @ind2='9') and subfield/@code='u']">
         <x:scenario label="ind2 is 1">
             <x:context href="../examples.xml" select="//*:knowledge_unit[4]/*:record/*:datafield[@tag='856' and @ind1='4' and @ind2='1']"/>
-            <x:expect label="expecting field (main link on post) copied to controlfield 956"><datafield xmlns="http://www.loc.gov/MARC21/slim"
-                xmlns:pkg="http://expath.org/ns/pkg"
-                xmlns:impl="urn:x-xspec:compile:xslt:impl"
-                xmlns:flub="http://data.ub.uib.no/xsl/function-library"
-                tag="956"
-                ind1=" "
-                ind2=" ">
-                <subfield code="u">http://www.ncbi.nlm.nih.gov/pubmed?otool=inoublib</subfield>
-                <subfield code="5">UBB</subfield>
-            </datafield></x:expect>
+            <x:expect label="expecting field (main link on post) copied to controlfield 956" test="exists(//*:datafield[@tag='956'])"/>
         </x:scenario>
        <x:scenario label="ind2 is 9">
            <x:context  href="../examples.xml" select="//*:knowledge_unit[4]/*:record/*:datafield[@tag='856' and @ind1='4' and @ind2='9']"/>
@@ -210,15 +181,8 @@
                 <datafield tag='STA'><subfield code="a">ACTIVE</subfield></datafield>
             </record>
         </x:context>
-        <x:expect label="Expecting text node stripped" >
-            <record xmlns="http://www.loc.gov/MARC21/slim"
-                xmlns:pkg="http://expath.org/ns/pkg"
-                xmlns:impl="urn:x-xspec:compile:xslt:impl"
-                xmlns:flub="http://data.ub.uib.no/xsl/function-library">
-                <leader>00000nai</leader>
-                <controlfield tag="008">##################k##d#o##########2######</controlfield>
-            </record>
-        </x:expect>
+            <x:expect label="Expecting text node stripped" test="exists(//marc:record) and (every $x in /descendant::text() satisfies not(matches($x,'TEST')))"/>
+           
     </x:scenario>
 
     <x:scenario  label="Scenario for testing template with match '*:record">
@@ -243,12 +207,8 @@
                 </knowledge_unit>
             </file>
         </x:context>
-        <x:expect label="Expecting empty collection element">
-            <collection xmlns="http://www.loc.gov/MARC21/slim"
-                xmlns:pkg="http://expath.org/ns/pkg"
-                xmlns:impl="urn:x-xspec:compile:xslt:impl"
-                xmlns:flub="http://data.ub.uib.no/xsl/function-library" />
-        </x:expect>
+        <x:expect label="Expecting empty collection element" test="exists(marc:collection[not(*)])"/>
+    
     </x:scenario>
 
     <x:scenario  label="Scenario for testing function replaceFieldInPosition">
@@ -281,29 +241,53 @@
     </x:scenario>
    
     <x:scenario label="Feedback from bibsys">
+        <x:context href="../examples.xml"/>        
     <x:scenario label="Testing 920 category without language tags ($9 reserved for local on import)">
         <x:scenario label="Ingen 900 felt med code='9' som er ulik local">
-            <x:context href="../examples.xml"/>
-            <x:expect label="0 " test="count(//marc:datafield[matches(@tag,'^9')]/marc:subfield[@code='9' and .='local'])=0"></x:expect>
+            <x:expect label="0 " test="count(//marc:datafield[matches(@tag,'^9')]/marc:subfield[@code='9' and .!='local'])=0"></x:expect>
         </x:scenario>
     </x:scenario>
-    <x:scenario label="Adding 922 for description"> </x:scenario>    
-    <x:scenario label="Select last language for bilingual strings."></x:scenario>
-    <x:scenario label="520 with no translation regex"></x:scenario>
-    <x:scenario label="OA markering 594 FREE"></x:scenario>
-    <x:scenario label="OA markering (ezproxy lenke)"></x:scenario>
-    <x:scenario label="Uten OA markering (ezproxy lenke)"></x:scenario>
+    <x:scenario label="Adding 922 for description" > 
+        <x:expect label="datafield 922 finnes" test="exists(//marc:datafield[@tag='922'])"/>
+        </x:scenario>    
+    <x:scenario label="Select last language for bilingual strings.">
+        <x:expect label="expecting english description" test="exists(//marc:datafield[@tag='922'][contains(.,'This is the website for the Public Opinion')])"/>
+        <x:expect label="no norwegian description" test="exists(//marc:datafield[@tag='922'][not(contains(.,'Du kjem inn på heimesida til European Commission Public Opinion'))])"></x:expect>
+    </x:scenario>    
+    <x:scenario label="OA markering 594 FREE">
+        <x:expect label="594 with text FREE" test="//marc:datafield[@tag='594'][matches(.,'FREE')]"/>
+    </x:scenario>
+    <x:scenario label="OA markering">
+        <x:expect label="921 without pva.uib.no in url" test="exists(//marc:datafield[@tag='956']/marc:subfield[@code='u'][not(starts-with(.,'https://pva.uib.no/login?url='))])"></x:expect>
+        <x:expect label="921 with pva.uib.no" test="exists(//marc:datafield[@tag='956']/marc:subfield[@code='u'][starts-with(.,'https://pva.uib.no/login?url=')])"></x:expect>
+    </x:scenario>
     </x:scenario>
     
     <x:scenario label="feedback from Ketil">
+        <x:context href="../examples.xml"/>
         <x:scenario label="655 til 653">
-            <x:context href="../examples.xml"/>
             <x:expect label="expecting 14 (10+4) 653 with $a" test="count(//marc:datafield[@tag='653'])=14"></x:expect>
         </x:scenario>
-        <x:scenario label="110 $a til 260 $1 dersom forskjellig. Bare en dersom 260 og 210 er lik"></x:scenario>
-        <x:scenario label="slett 210 dersom den er lik som 245, flytt til 246 (alternativ tittel dersom den ikke finnes). "></x:scenario>
+        <x:scenario label="110 $a til 260 $1 dersom forskjellig. Bare en dersom 260 og 210 er lik">
+            <x:scenario label="test">
+                <x:expect label="Expecting 110 to not be present" test="not(marc:datafield[@tag='110'])"/>
+                <x:expect label="'United States National Library of Medicine (NLM)' one of" test="count(//marc:datafield/marc:subfield[@code='b' and .='United States National Library of Medicine (NLM)'])=1"></x:expect>
+                <x:expect label="expecting one record to have two 260b" test="exists(//marc:datafield[count(marc:subfield[@code='b'])=2])"></x:expect>
+            </x:scenario>
+        </x:scenario>
+        <x:scenario label="slett 210 dersom den er lik som 245, flytt til 246 (alternativ tittel dersom den ikke finnes). ">
+            <x:expect label="no 210" test="not(//marc:datafield[@tag='210'])"/>
+            <x:expect label="one record with two 246" test="count(//marc:record[count(marc:datafield[@tag='246'])=2])=1"/>
+            <x:expect label="246 with 'The Cambridge Companion to Literature and Classics'" 
+                test="exists(//marc:datafield[marc:subfield[@code='a' and . = 'The Cambridge Companion to Literature and Classics']])"></x:expect>
+            
+        </x:scenario>
         <x:scenario label="856">
-            <x:scenario label="Ta inn igjen lenke fra 856 1 4 til 856 0 4. For network post."></x:scenario>
+            <x:scenario label="Ta inn igjen lenke fra 856 1 4 til 856 0 4. For network post.">
+                <x:expect label="856 0 4 exists" test="exists(//marc:datafield[@tag='856' and @ind1='0' and @ind2='4' and marc:subfield[@code='3' and .='Fulltekst']])"/>
+                <x:expect label="has url" test="exists(//marc:datafield[@tag='856']/marc:subfield[@code='u'][matches(.,'^http')])"/>
+                <x:expect label="all 856 0 4 $u without proxy" test="every $x in //marc:datafield[@tag='856']/marc:subfield[@code='u'] satisfies not(matches($x,'pva.uib.no'))"/>
+            </x:scenario>
             <x:scenario label="$3 Fulltekst"/>
         </x:scenario>
         
