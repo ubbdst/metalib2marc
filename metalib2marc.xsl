@@ -312,7 +312,10 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
             <datafield tag="856" ind1="0" ind2="4">
             <subfield code="3">Fulltekst</subfield>
             <subfield code="u"><xsl:value-of select="*:subfield[@code = 'u']"/></subfield>
-        </datafield>
+            <xsl:if test="$OA">
+                    <subfield code="z">Gratis</subfield>
+            </xsl:if>
+            </datafield>
         </xsl:if>
         <datafield tag="{if (@ind2='9') then 921
                 else 956}" ind1=" " ind2=" ">

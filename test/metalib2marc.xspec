@@ -287,6 +287,8 @@
                 <x:expect label="856 0 4 exists" test="exists(//marc:datafield[@tag='856' and @ind1='0' and @ind2='4' and marc:subfield[@code='3' and .='Fulltekst']])"/>
                 <x:expect label="has url" test="exists(//marc:datafield[@tag='856']/marc:subfield[@code='u'][matches(.,'^http')])"/>
                 <x:expect label="all 856 0 4 $u without proxy" test="every $x in //marc:datafield[@tag='856']/marc:subfield[@code='u'] satisfies not(matches($x,'pva.uib.no'))"/>
+                <x:expect label="some 856 have $9 Gratis" test="exists(//marc:datafield[@tag='856']/marc:subfield[@code='z' and .='Gratis'])"></x:expect> 
+                <x:expect label="some 856 don't have $9 Gratis" test="exists(//marc:datafield[@tag='856'][not(marc:subfield[@code='z' and .='Gratis'])])"></x:expect>
             </x:scenario>
             <x:scenario label="$3 Fulltekst"/>
         </x:scenario>
