@@ -182,8 +182,14 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
     </xsl:template>
     
     <xsl:template match="*:datafield[@tag='655']" priority="4.0">
-        <marc:datafield ind1=" " ind2=" " tag="653">
-            <xsl:apply-templates/>
+        <marc:datafield tag="653" ind1=" " ind2=" " >
+            <xsl:for-each select="*:subfield">
+                <marc:subfield>
+                    <xsl:copy-of select="@*"/>
+                    <xsl:value-of select="."/>
+                </marc:subfield>
+               
+            </xsl:for-each><xsl:apply-templates/>
         </marc:datafield>
     </xsl:template>
     
