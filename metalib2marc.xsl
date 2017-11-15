@@ -4,7 +4,7 @@
     xmlns:marcx="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
     xmlns:flub="http://data.ub.uib.no/xsl/function-library"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim"
-    exclude-result-prefixes="xs flub xsi marcx" version="2.0">
+    exclude-result-prefixes="xs flub xsi marcx marc" version="2.0">
     <xsl:strip-space elements="*"/>
     <!-- example posts atekst, -wos-, jstor, lovdata, -pubmed- ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
     <xsl:param name="examples" as="xs:string*" select="(::('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')::)()"/>
