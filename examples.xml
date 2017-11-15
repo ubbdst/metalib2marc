@@ -1379,6 +1379,602 @@
 </category>
 </knowledge_unit>
 
+<knowledge_unit>
+<record>
+  <controlfield tag="001">UNI01323</controlfield>
+  <datafield tag="245" ind1="1" ind2=" ">
+    <subfield code="a">HighWire Press</subfield>
+  </datafield>
+  <datafield tag="210" ind1=" " ind2=" ">
+    <subfield code="a">HighWire Press</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Online-tidsskrifter frå HighWire Press ## ##Search journals published by HighWire Press</subfield>
+  </datafield>
+  <datafield tag="594" ind1=" " ind2=" ">
+    <subfield code="a">SUBSCRIPTION</subfield>
+  </datafield>
+  <datafield tag="595" ind1=" " ind2=" ">
+    <subfield code="a">YEAR, ISBN and ISSN searches are not supported. ## ##Searches in the subject are done on the title and abstract. ## ##Boolean NOT searches are not supported. ## ##Enter your search in one search box. Refining searches is not supported. ## ##Do not use truncation in a 'phrase' search. Truncation is only supported when one word is used as a search term.</subfield>
+  </datafield>
+  <datafield tag="591" ind1=" " ind2=" ">
+    <subfield code="a">27.7.2006 rkl##2011.09.26 lmi Endret til subscription og bruk proxy</subfield>
+  </datafield>
+  <datafield tag="110" ind1="2" ind2=" ">
+    <subfield code="a">HighWire Press</subfield>
+  </datafield>
+  <datafield tag="TAR" ind1=" " ind2=" ">
+    <subfield code="a">HIGHWIRE</subfield>
+    <subfield code="f">N</subfield>
+  </datafield>
+  <datafield tag="ZHS" ind1=" " ind2=" ">
+    <subfield code="a">http://highwire.stanford.edu/cgi/searchresults?</subfield>
+  </datafield>
+  <datafield tag="PXY" ind1=" " ind2=" ">
+    <subfield code="a">Y</subfield>
+  </datafield>
+  <datafield tag="AF1" ind1=" " ind2=" ">
+    <subfield code="a">BERGEN</subfield>
+  </datafield>
+  <datafield tag="STA" ind1=" " ind2=" ">
+    <subfield code="a">ACTIVE</subfield>
+  </datafield>
+  <controlfield tag="CKB">CKB00483</controlfield>
+  <datafield tag="RNK" ind1=" " ind2=" ">
+    <subfield code="a">3</subfield>
+  </datafield>
+  <datafield tag="CJK" ind1=" " ind2=" ">
+    <subfield code="a">lat</subfield>
+  </datafield>
+  <controlfield tag="FMT">DD</controlfield>
+  <datafield tag="ATG" ind1=" " ind2=" ">
+    <subfield code="a">FREE</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://intl.highwire.org/</subfield>
+  </datafield>
+  <datafield tag="655" ind1=" " ind2=" ">
+    <subfield code="a">E-Journal</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="u">http://highwire.stanford.edu/</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="3">
+    <subfield code="u">$856_u</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="c">20041017</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1523</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="a">bergen</subfield>
+    <subfield code="b">00</subfield>
+    <subfield code="c">20130122</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1342</subfield>
+  </datafield>
+  <datafield tag="CAT" ind1=" " ind2=" ">
+    <subfield code="a">bergen</subfield>
+    <subfield code="b">00</subfield>
+    <subfield code="c">20170509</subfield>
+    <subfield code="l">DAT01</subfield>
+    <subfield code="h">1123</subfield>
+  </datafield>
+</record>
+
+<z58 base='HIGHWIRE'>
+  <field name='z58_base'>HIGHWIRE</field>
+  <field name='z58_access_method'>EXTERNAL</field>
+  <field name='z58_in_record_type'>USMARC</field>
+  <field name='z58_in_record_create'>vir_z00_z39_usmarc</field>
+  <field name='z58_in_record_create_param'></field>
+  <field name='z58_in_record_char_conv'>8859-1_TO_UTF</field>
+  <field name='z58_in_direct_key'></field>
+  <field name='z58_in_direct_key_param'></field>
+  <field name='z58_in_scan_fix'></field>
+  <field name='z58_configuration_type'>Full Record</field>
+  <field name='z58_in_scan_char_conv'></field>
+  <field name='z58_out_find_char_conv'>UTF_TO_8859_1</field>
+  <field name='z58_out_scan_char_conv'></field>
+  <field name='z58_sort'></field>
+  <field name='z58_scan'></field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WTI</field>
+    <field name='z58_tab01_code_target'>WTI</field>
+    <field name='z58_tab01_filing'>29Ps/\?/*/gP</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WAU</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WSU</field>
+    <field name='z58_tab01_code_target'>WSU</field>
+    <field name='z58_tab01_filing'>29Ps/\?/*/gP</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WYR</field>
+    <field name='z58_tab01_code_target'>WYR</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>WRD</field>
+    <field name='z58_tab01_code_target'>WRD</field>
+    <field name='z58_tab01_filing'>29Ps/\?/*/gP</field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>ISSN</field>
+    <field name='z58_tab01_code_target'>ISSN</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>ISBN</field>
+    <field name='z58_tab01_code_target'>ISBN</field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>24###</field>
+    <field name='z58_tab01_code_target'>WTI</field>
+    <field name='z58_tab01_filing'>1_2P.,:;!&quot;-*P_8P8P</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>1####</field>
+    <field name='z58_tab01_code_target'>WAU</field>
+    <field name='z58_tab01_filing'>1_7P([/&lt;P_2P.P_12</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>6####</field>
+    <field name='z58_tab01_code_target'>WSU</field>
+    <field name='z58_tab01_filing'>1_2P.,:;!&quot;-*P</field>
+    <field name='z58_tab01_sub_code'>a</field>
+  </field>
+  <field name='z58_tab01'>
+    <field name='z58_tab01_type'></field>
+    <field name='z58_tab01_code'>7####</field>
+    <field name='z58_tab01_code_target'></field>
+    <field name='z58_tab01_filing'></field>
+    <field name='z58_tab01_sub_code'></field>
+  </field>
+  <field name='z58_record_conv_name'>vir_fix_doc_standard</field>
+  <field name='z58_record_conv_param'></field>
+  <field name='z58_tab_conv'>
+    <field name='z58_tab_conv_in_tag'>362##</field>
+    <field name='z58_tab_conv_in_sub_field'>a</field>
+    <field name='z58_tab_conv_program'>vir_fix_doc_reg_exp</field>
+    <field name='z58_tab_conv_param'>YR,a,Pa/(\d{4})/</field>
+    <field name='z58_tab_conv_action'>ADDNEW</field>
+    <field name='z58_tab_conv_condition'></field>
+  </field>
+  <field name='z58_metalib_info'></field>
+  <field name='z58_metalib_select'></field>
+  <field name='z58_metalib_connect'></field>
+  <field name='z58_metalib_note'></field>
+  <field name='z58_locate'></field>
+  <field name='z58_holding_method'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_fix'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_rec_type'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_z39_server_char_conv'></field>
+  <field name='z58_sfx_name'></field>
+  <field name='z58_sfx_param'></field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>year</field>
+    <field name='z58_sfx_950_tag'>YR</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>atitle</field>
+    <field name='z58_sfx_950_tag'>245##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>title</field>
+    <field name='z58_sfx_950_tag'>773##</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>t</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>volume</field>
+    <field name='z58_sfx_950_tag'>VOL</field>
+    <field name='z58_sfx_950_program'>vir_950_reg_exp</field>
+    <field name='z58_sfx_950_param'>Pa/(\d+)/</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>spage</field>
+    <field name='z58_sfx_950_tag'>PG</field>
+    <field name='z58_sfx_950_program'>vir_950_parser</field>
+    <field name='z58_sfx_950_param'>Pa\S\G-</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>epage</field>
+    <field name='z58_sfx_950_tag'>PG</field>
+    <field name='z58_sfx_950_program'>vir_950_parser</field>
+    <field name='z58_sfx_950_param'>Pa\S-\G</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>authorl</field>
+    <field name='z58_sfx_950_tag'>100</field>
+    <field name='z58_sfx_950_program'>vir_950_au_firlst</field>
+    <field name='z58_sfx_950_param'>Pa</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>issue</field>
+    <field name='z58_sfx_950_tag'>ISSUE</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>genre</field>
+    <field name='z58_sfx_950_tag'>245##</field>
+    <field name='z58_sfx_950_program'>vir_950_reg_exp</field>
+    <field name='z58_sfx_950_param'>Pas/.*/article/</field>
+  </field>
+  <field name='z58_sfx_950'>
+    <field name='z58_sfx_950_source_tag'></field>
+    <field name='z58_sfx_950_source_value'></field>
+    <field name='z58_sfx_950_field'>spage</field>
+    <field name='z58_sfx_950_tag'>PG</field>
+    <field name='z58_sfx_950_program'></field>
+    <field name='z58_sfx_950_param'>a</field>
+  </field>
+  <field name='z58_open_date'>20051017</field>
+  <field name='z58_update_date'>20120304</field>
+  <field name='z58_cataloger'>Chris</field>
+  <field name='z58_source'>XXX</field>
+  <field name='z58_status'></field>
+  <field name='z58_sdi_flag'></field>
+  <field name='z58_sdi_326_key'>        00</field>
+  <field name='z58_merge_type'></field>
+  <field name='z58_up_cataloger'>exlibris</field>
+  <field name='z58_update_time'>0000000000</field>
+  <field name='z58_active'>Y</field>
+  <field name='z58_institute'>METALIB</field>
+  <field name='z58_html_hit_pattern'></field>
+  <field name='z58_zero_hit_pattern'></field>
+  <field name='z58_program_name'>hc_u_highwire.pm</field>
+  <field name='z58_authen_module'></field>
+  <field name='z58_find_module'>ext_highwire_find</field>
+  <field name='z58_present_module'>ext_highwire_present</field>
+  <field name='z58_external_format'></field>
+  <field name='z58_version'></field>
+  <field name='z58_buf_url'>
+  </field>
+</z58>
+
+<program_name>
+<line>#################################################################</line>
+<line>####################-----hc_u_----#######################</line>
+<line>#################################################################</line>
+<line>use strict;</line>
+<line>#use warnings;</line>
+<line>package hc_u_highwire;</line>
+<line>use base (&quot;hc_url&quot;);</line>
+<line>use URI::Escape;</line>
+<line></line>
+<line>#################################################################</line>
+<line>sub createFindRequest {</line>
+<line>    my $self = shift;</line>
+<line>    $self-&gt;{Find}-&gt;{hitPattern} = 'of ([\d|,]+) results';</line>
+<line>  #  $self-&gt;{Find}-&gt;{nextPattern} = '';#get the 'next' navigation from the response via regex</line>
+<line>  #  $self-&gt;{Find}-&gt;{failPattern} = '';#regex on response of failed logon - only special cases</line>
+<line>    my $command=$self-&gt;constructQuery();</line>
+<line>    $self-&gt;{RequestParams}-&gt;{cgiMethod} = 'GET';</line>
+<line>    $self-&gt;{RequestParams}-&gt;{url} = $self-&gt;{Find}-&gt;{baseUrl}.$command;</line>
+<line>  #  $self-&gt;{RequestParams}-&gt;{addToHeader}= {};# only if special lines must be added to http header</line>
+<line>    $self-&gt;{MLQuery} = $self-&gt;{RequestParams}-&gt;{url};</line>
+<line>    return (0,&quot;&quot;);</line>
+<line>}</line>
+<line>#################################################################</line>
+<line>sub createPresentRequest {</line>
+<line>    my $self = shift;</line>
+<line>    ##my $page = int(($self-&gt;{Present}-&gt;{Navigate}-&gt;{setEntry}/10) + 1);</line>
+<line>    #$self-&gt;{Present}-&gt;{Navigate}-&gt;{setEntry}=100;</line>
+<line>    my $start = $self-&gt;{Present}-&gt;{Navigate}-&gt;{setEntry} - 1;</line>
+<line>    $self-&gt;{RequestParams}-&gt;{url} = $self-&gt;{MLQuery};</line>
+<line>    $self-&gt;{RequestParams}-&gt;{url} .= &quot;&amp;FIRSTINDEX=$start&quot;;</line>
+<line>    $self-&gt;{RequestParams}-&gt;{cgiMethod} = &quot;GET&quot;;</line>
+<line>    return (0,&quot;&quot;);</line>
+<line>}</line>
+<line>#################################################################</line>
+<line>sub constructQuery {</line>
+<line>        # $self-&gt;{CookieJar}-&gt;{IN_param1} etc are the session ids that can be replaced from the conf file</line>
+<line>    my $self = shift;</line>
+<line>    my $find_request = $self-&gt;{MLQuery};</line>
+<line>    $find_request =~ s/\?/\*/g;</line>
+<line></line>
+<line>    my $h = {</line>
+<line>        'WRD'  =&gt; 'fulltext',</line>
+<line>        'WTI'  =&gt; 'title',</line>
+<line>        'WAU'  =&gt; 'author1',</line>
+<line>        'WSU'  =&gt; 'titleabstract',</line>
+<line>        'WYR'  =&gt; 'pubdate_year',</line>
+<line>        'ISSN' =&gt; 'fulltext',</line>
+<line>        'ISBN' =&gt; 'fulltext',</line>
+<line>        #'AND'  =&gt; '',</line>
+<line>        #'OR'   =&gt; '',</line>
+<line>        #'NOT'  =&gt; '',</line>
+<line>    };</line>
+<line>    my ($hash, $year);</line>
+<line>    my ($code,$value,$bool);</line>
+<line>    my $count=1;</line>
+<line>    my $code12=0;</line>
+<line>    my $code23=0;</line>
+<line>    my $code13=0;</line>
+<line>    my $allcodeq=0;</line>
+<line>    ##getting the params</line>
+<line>    #while ($find_request =~ /(AND|OR|NOT)?\s*(\w+)\s?=\s?\(\s?(.*?)\s?\)\s?/g){</line>
+<line>        #       $bool=$1;</line>
+<line>        #       $code=$2;</line>
+<line>        #       $value=$3;</line>
+<line>    while ($find_request =~ /\s?(\w+)\s?=\s?\(\s?(.*?)\s?\)\s?(AND|OR|NOT)?/g){</line>
+<line>        #$code=$1;</line>
+<line>        #$value=$2;</line>
+<line>        #$bool=$3;</line>
+<line></line>
+<line>        $hash-&gt;{&quot;code$count&quot;}  = $1;</line>
+<line>        $hash-&gt;{&quot;value$count&quot;} = $2;</line>
+<line>        $hash-&gt;{&quot;bool$count&quot;}  = $3;</line>
+<line></line>
+<line>        if($count == 2){</line>
+<line>                if($hash-&gt;{code1} eq $hash-&gt;{code2}) {$code12=1;}</line>
+<line>        }</line>
+<line>        elsif($count == 3){</line>
+<line>            if($hash-&gt;{code2} eq $hash-&gt;{code3}) {$code23=1;}</line>
+<line>        }</line>
+<line>        $hash-&gt;{&quot;value$count&quot;} =~ s/\s/\+/g;</line>
+<line>         if($hash-&gt;{&quot;code$count&quot;} ne &quot;WYR&quot;){</line>
+<line>         $hash-&gt;{&quot;value$count&quot;} = '(' . $hash-&gt;{&quot;value$count&quot;} . ')' ;}</line>
+<line></line>
+<line>        $count++;</line>
+<line>    }</line>
+<line></line>
+<line>    if($code12 &amp;&amp; $code23){</line>
+<line>        $allcodeq=1;</line>
+<line>    }</line>
+<line>    my $cgi_parameters = &quot;&quot;;</line>
+<line></line>
+<line>    ##If only one search term, search as &quot;and&quot; not &quot;or&quot;</line>
+<line>    if ($count == 2){</line>
+<line>        if ($hash-&gt;{code1} eq 'WTI'){</line>
+<line>            $cgi_parameters = &quot;CODE1=TERM1&amp;andorexacttitle=and&amp;src=hw&amp;searchsubmit=redo&amp;resourcetype=1&quot;;</line>
+<line>        }</line>
+<line>        else{</line>
+<line>            $cgi_parameters = &quot;CODE1=TERM1&amp;andorexactfulltext=and&amp;src=hw&amp;searchsubmit=redo&amp;resourcetype=1&quot;;</line>
+<line>        }</line>
+<line>    }</line>
+<line>    elsif($allcodeq){</line>
+<line>        $cgi_parameters = &quot;CODE1=TERM1+BOOL1+TERM2+BOOL2+TERM3&amp;src=hw&amp;searchsubmit=redo&amp;resourcetype=1&quot;;</line>
+<line>    }</line>
+<line>    elsif($code12){</line>
+<line>       $cgi_parameters = &quot;CODE1=TERM1+BOOL1+TERM2&amp;CODE3=TERM3&amp;src=hw&amp;searchsubmit=redo&amp;resourcetype=1&quot;;</line>
+<line>    }</line>
+<line>    elsif($code23){</line>
+<line>        $cgi_parameters = &quot;CODE2=TERM2+BOOL2+TERM3&amp;CODE1=TERM1&amp;src=hw&amp;searchsubmit=redo&amp;resourcetype=1&quot;;</line>
+<line>    }</line>
+<line>    else{</line>
+<line>        $cgi_parameters = &quot;CODE1=TERM1&amp;CODE2=TERM2&amp;CODE3=TERM3&amp;src=hw&amp;searchsubmit=redo&amp;resourcetype=1&quot;;</line>
+<line>    }</line>
+<line></line>
+<line></line>
+<line>    $cgi_parameters =~ s/CODE1/$h-&gt;{$hash-&gt;{code1}}/;</line>
+<line>    $cgi_parameters =~ s/CODE2/$h-&gt;{$hash-&gt;{code2}}/;</line>
+<line>    $cgi_parameters =~ s/CODE3/$h-&gt;{$hash-&gt;{code3}}/;</line>
+<line>    $cgi_parameters =~ s/TERM1/$hash-&gt;{value1}/;</line>
+<line>    $cgi_parameters =~ s/TERM2/$hash-&gt;{value2}/;</line>
+<line>    $cgi_parameters =~ s/TERM3/$hash-&gt;{value3}/;</line>
+<line>    $cgi_parameters =~ s/BOOL1/$hash-&gt;{bool1}/;</line>
+<line>    $cgi_parameters =~ s/BOOL2/$hash-&gt;{bool2}/;</line>
+<line>    $cgi_parameters =~ s/&amp;=//g;</line>
+<line>    $cgi_parameters =~ s/&amp;+/&amp;/g;</line>
+<line></line>
+<line></line>
+<line></line>
+<line>    return ($cgi_parameters);</line>
+<line>}</line>
+<line>#################################################################</line>
+<line>sub parsePresentResults {</line>
+<line>    my $self = shift;</line>
+<line>    my $response = $self-&gt;{response};</line>
+<line>    $response =~ s/[\n\r\t]/ /g;</line>
+<line>    $response =~ s/\s+/ /g;</line>
+<line></line>
+<line>    my (@present);</line>
+<line>    my $prefix = &quot;&quot;;</line>
+<line>    while ( $response =~ m!&lt;TD ROWSPAN=&quot;2&quot; ALIGN=&quot;CENTER&quot; VALIGN=&quot;TOP&quot; WIDTH=&quot;61&quot; NOWRAP&gt;(.*?)&lt;\/table&gt;\s*&lt;TABLE CELLPADDING=&quot;0&quot; CELLSPACING=&quot;0&quot; BORDER=&quot;0&quot; WIDTH=&quot;120&quot;&gt;!sg ) {</line>
+<line>        my $result_line = $1;</line>
+<line>        my @docs        = ();</line>
+<line></line>
+<line></line>
+<line></line>
+<line>        #thumb</line>
+<line>        my ($thumb)=$result_line=~m!&lt;IMG.*?SRC=&quot;([^&quot;]+)&quot;!cs;</line>
+<line>        push (@docs, &quot;THUMB \$\$a$thumb&quot;)if $thumb;</line>
+<line></line>
+<line></line>
+<line>        #title</line>
+<line>        my ($ttl,$auth,$jnl,$cit)=$result_line=~m!\G.*?&lt;/FONT&gt;\s*&lt;font size=&quot;-1&quot; face=&quot;verdana,arial,helvetica,sans-serif&quot;&gt;\s*&lt;STRONG&gt;(.*?)&lt;/STRONG&gt;&lt;br&gt;&lt;/font&gt;\s*&lt;font size=&quot;-2&quot; face=&quot;verdana,arial,helvetica,sans-serif&quot;&gt;(.*?)&lt;BR&gt;\s*&lt;strong&gt;(.*?)&lt;/strong&gt;(.*?)&lt;/font&gt;&lt;/TD&gt;!cs;</line>
+<line></line>
+<line></line>
+<line>        if(!$ttl){</line>
+<line>        ($ttl,$jnl,$cit)=$result_line=~m!\G.*?&lt;/FONT&gt;\s*&lt;font size=&quot;-1&quot; face=&quot;verdana,arial,helvetica,sans-serif&quot;&gt;\s*&lt;STRONG&gt;(.*?)&lt;/STRONG&gt;&lt;br&gt;&lt;/font&gt;\s*&lt;font size=&quot;-2&quot; face=&quot;verdana,arial,helvetica,sans-serif&quot;&gt;\s*&lt;strong&gt;(.*?)&lt;/strong&gt;(.*?)&lt;/font&gt;&lt;/TD&gt;!cs;</line>
+<line>        }</line>
+<line>        push (@docs, &quot;245 \$\$a$ttl&quot;)if $ttl;</line>
+<line></line>
+<line></line>
+<line>        #author</line>
+<line>        $auth =~ s/ and / , /g;</line>
+<line>        my @auths = split /, /, $auth;</line>
+<line>        my $ath = shift @auths;</line>
+<line>        push (@docs, &quot;100 \$\$a$ath&quot;) if $ath;</line>
+<line>        foreach  $ath (@auths){</line>
+<line>                push (@docs, &quot;700 \$\$a$ath&quot;);</line>
+<line>        }</line>
+<line></line>
+<line>        #jnl</line>
+<line>        $jnl =~ s/,//g;</line>
+<line>        push (@docs, &quot;773 \$\$t$jnl&quot;)if $jnl;</line>
+<line></line>
+<line></line>
+<line></line>
+<line>        #cit</line>
+<line>        my ($dt, $vol ,$PG)= $cit =~ m!(.*?);(.*?):(.*?)\.!cs;</line>
+<line>        push (@docs, &quot;362 \$\$a$dt&quot;)if $dt;</line>
+<line>        push (@docs, &quot;VOL \$\$a$vol&quot;)if $vol;</line>
+<line>        push (@docs, &quot;PG \$\$a$PG&quot;)if $PG;</line>
+<line></line>
+<line>        my $cit1;</line>
+<line>       if($vol){</line>
+<line>         $vol=~ s/\s//g;</line>
+<line>         $cit1 = &quot;Volume:$vol&quot;;}</line>
+<line></line>
+<line></line>
+<line>        #abstract</line>
+<line>        my ($notes)=$result_line=~m!\G.*?TD VALIGN=&quot;TOP&quot;&gt;&lt;\!--SUSPENDHIGHLIGHT--&gt;&lt;font size=&quot;-2&quot; face=&quot;verdana,arial,helvetica,sans-serif&quot; color=&quot;#666666&quot;&gt;(.*?)&lt;/FONT&gt;&lt;\!--RESUMEHIGHLIGHT--&gt;&lt;/TD&gt;!cs;</line>
+<line>        push (@docs, &quot;520 \$\$a$notes&quot;) if $notes;</line>
+<line></line>
+<line></line>
+<line>        #href</line>
+<line>        my ($abshref)=$result_line=~m!\G.*?&lt;A class=&quot;searchresult_contentlinks_major&quot; TARGET=&quot;_blank&quot; HREF=&quot;([^&quot;]+)&quot;&gt;\s*Abstract!cs;</line>
+<line>        push (@docs, &quot;856 \$\$u$abshref&quot;)if $abshref;</line>
+<line></line>
+<line>        #href</line>
+<line>        my ($flhref)=$result_line=~m!\G.*?&lt;A class=&quot;searchresult_contentlinks_major&quot; TARGET=&quot;_blank&quot; HREF=&quot;([^&quot;]+)&quot;&gt;\s*Full text!cs;</line>
+<line>        push (@docs, &quot;856 \$\$u$flhref&quot;)if $flhref;</line>
+<line></line>
+<line>        #href</line>
+<line>        my ($pdfhref)=$result_line=~m!\G.*?&lt;A class=&quot;searchresult_contentlinks_major&quot; TARGET=&quot;_blank&quot; HREF=&quot;([^&quot;]+)&quot;&gt;\s*PDF!cs;</line>
+<line>        push (@docs, &quot;856 \$\$u$pdfhref&quot;)if $pdfhref;</line>
+<line></line>
+<line>       my ($issue);</line>
+<line>       if($abshref){</line>
+<line>        ($issue) = $abshref =~ m!abstract/.*?/(\d+)/!cs;</line>
+<line>       push (@docs, &quot;ISSUE \$\$a$issue&quot;)if $issue;</line>
+<line>       }</line>
+<line>       elsif($flhref){</line>
+<line>        ($issue) = $flhref =~ m!full/.*?/(\d+)/!cs;</line>
+<line>       push (@docs, &quot;ISSUE \$\$a$issue&quot;)if $issue;</line>
+<line>       }</line>
+<line>      elsif($pdfhref){</line>
+<line>        ($issue) = $pdfhref =~ m!/[\d|X]+/([\d|X]+)/[\d|X]+!cs;</line>
+<line>       push (@docs, &quot;ISSUE \$\$a$issue&quot;)if $issue;</line>
+<line>       }</line>
+<line></line>
+<line>       if($issue){</line>
+<line>       $issue =~ s/\s//g;</line>
+<line>       $cit1 .= &quot; Issue:$issue&quot;;</line>
+<line>       }</line>
+<line>       if($PG){</line>
+<line>       $PG =~ s/\s//g;</line>
+<line>       $cit1 .= &quot; Pages:$PG&quot;;</line>
+<line>       }</line>
+<line>       push (@docs, &quot;773 \$\$g$cit1&quot;)if $cit1;</line>
+<line></line>
+<line></line>
+<line>        if (scalar @docs) {</line>
+<line>            push(@present,\@docs);</line>
+<line>        }</line>
+<line>    }</line>
+<line>    $self-&gt;{PresentArray} = \@present;</line>
+<line>    return (0,&quot;&quot;);</line>
+<line>}</line>
+<line></line>
+<line>1;</line>
+
+</program_name>
+<find_module>
+<line>#!/exlibris/metalib/m4_1/product/bin/perl</line>
+<line>sub BEGIN {</line>
+<line>    unshift (@INC, $ENV{'aleph_ext'});</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005&quot;);</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005/i686-linux&quot;);</line>
+<line>}</line>
+<line></line>
+<line>use hc_u_highwire;</line>
+<line>use strict;</line>
+<line></line>
+<line>{</line>
+<line>    my $externalObject = new hc_u_highwire;</line>
+<line>    $externalObject-&gt;find;</line>
+<line>}</line>
+<line></line>
+
+</find_module>
+<present_module>
+<line>#!/exlibris/metalib/m4_1/product/bin/perl</line>
+<line>sub BEGIN {</line>
+<line>    unshift (@INC, $ENV{'aleph_ext'});</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005&quot;);</line>
+<line>    unshift (@INC, &quot;$ENV{'aleph_product'}&quot;.&quot;/perl/lib/site_perl/5.005/i686-linux&quot;);</line>
+<line>}</line>
+<line></line>
+<line>use hc_u_highwire;</line>
+<line>use strict;</line>
+<line></line>
+<line>{</line>
+<line>    my $externalObject = new hc_u_highwire;</line>
+<line>    $externalObject-&gt;present;</line>
+<line>}</line>
+<line></line>
+
+</present_module>
+<category>
+<main>Tverrfagleg</main>
+<sub>E-tidsskriftpakkar</sub>
+</category>
+</knowledge_unit>
+
     
     
 

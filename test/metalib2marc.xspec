@@ -266,7 +266,8 @@
     <x:scenario label="feedback from Ketil">
         <x:context href="../examples.xml"/>
         <x:scenario label="655 til 653">
-            <x:expect label="expecting 14 (10+4) 653 with $a" test="count(//marc:datafield[@tag='653'])=14"></x:expect>
+            <x:expect label="expecting 5 653 with $a" test="count(//marc:datafield[@tag='653'])=5"/>
+            <x:expect label="with 15 datafields" test="count(//marc:datafield[@tag='653']/marc:subfield[@code='a'])=15"></x:expect>
         </x:scenario>
         <x:scenario label="110 $a til 260 $1 dersom forskjellig. Bare en dersom 260 og 210 er lik">
             <x:scenario label="test">
@@ -292,6 +293,10 @@
             </x:scenario>
             <x:scenario label="$3 Fulltekst"/>
         </x:scenario>
+        <x:scenario label="Slett 856 med $856u">
+            <x:expect label="ingen returnerte 856u" test="not(exists(//marc:datafield[@tag='856' and marc:subfield[@code='u']='$856_u']))"></x:expect>
+        </x:scenario>
+        <x:scenario label="Max 1 653"></x:scenario>
         
         <x:scenario label="LDR 17 til 15 og 18 til c"/>
         <x:scenario label="007 til cr#||||||"/>

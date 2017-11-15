@@ -4,7 +4,7 @@
     xmlns:marcx="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
     xmlns:flub="http://data.ub.uib.no/xsl/function-library"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim"
-    exclude-result-prefixes="xs flub xsi" version="2.0">
+    exclude-result-prefixes="xs flub xsi marcx" version="2.0">
     <xsl:strip-space elements="*"/>
     <!-- example posts atekst, -wos-, jstor, lovdata, -pubmed- ('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')-->
     <xsl:param name="examples" as="xs:string*" select="(::('UNI08537','UNI01563','UNI03671','UNI19590','UNI01300')::)()"/>
@@ -14,12 +14,11 @@
     <xsl:output indent="yes" method="xml"/>
     <!-- stylesheet to transform from metalib dump to normarc import for bibsys consortium-->
     <xsl:param name="institution" select="'UBB'" as="xs:string"/>
-
     <xsl:param name="languages" select="'en'"/>
+    
     <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
     <xsl:variable name="controlfield_003">
-        <controlfield tag="003">IL-JeEL</controlfield>
-    
+        <controlfield tag="003">IL-JeEL</controlfield>    
     </xsl:variable>
    
     
@@ -55,8 +54,6 @@
         />
     </xsl:variable>
     
-   
-    
     <xsl:variable name="datafield_040" as="element(marc:datafield)">
         <datafield tag="040" ind1=" " ind2=" ">
             <subfield code="a">NO-TrBIB</subfield>
@@ -67,7 +64,20 @@
     
     <xsl:variable name="multilang-regex" select="'#{2,} *#{2,}'"/>
     <xsl:key name="category-by-id" match="*" use="@id"/>
-
+    
+    <xsl:template match="*:datafield[@tag='653' and preceding-sibling::*:datafield[@tag='653']]" priority="2.4" mode="strip-groups"/>
+    <xsl:template match="*:datafield[@tag='653' and not(preceding-sibling::*:datafield[@tag='653'])]" priority="2.4" mode="strip-groups">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+        <xsl:for-each select="(*:subfield[@code='a'],following-sibling::*:datafield[@tag='653']/*:subfield[@code='a'])">
+            <xsl:copy>
+                <xsl:copy-of select="@*"/>
+                <xsl:apply-templates mode="#current"/>
+            </xsl:copy>
+        </xsl:for-each>
+        </xsl:copy>      
+    </xsl:template>
+    
     <xsl:template match="*:file" priority="1.0">
         <xsl:variable name="categories" select="document('categories.xml')"/>    
         <xsl:variable name="result"><collection xmlns="http://www.loc.gov/MARC21/slim">
@@ -76,7 +86,8 @@
             </xsl:apply-templates>
         </collection>
         </xsl:variable>
-        <xsl:sequence select="$result"/>
+        <xsl:apply-templates select="$result" mode="strip-groups"/>
+        
         <xsl:if test="$id-list">
         <xsl:result-document href="id.txt" encoding="utf-8" method="text">
             <xsl:for-each select="$result/descendant-or-self::*:record/*:datafield[@tag='035']/*:subfield[@code='a']">
@@ -102,6 +113,8 @@
            <xsl:apply-templates select="*:record"/>
         </xsl:if>
     </xsl:template>
+    
+    
 
     <xsl:template match="text()" mode="copy sort">
         <xsl:value-of select="."/>
@@ -110,11 +123,10 @@
     <!-- ignore text match with with no mode-->
     <xsl:template match="text()"/>
 
-    <xsl:template match="*" mode="copy sort" priority="2.0">
+    <xsl:template match="*" mode="copy sort strip-groups" priority="2.0">
         <xsl:element name="{local-name()}">
             <xsl:copy-of select="@*"/>
-            <xsl:apply-templates mode="copy"/>
-
+            <xsl:apply-templates mode="#current"/>
             <xsl:if test="self::*:datafield">
                 <xsl:sequence select="flub:addLocal(self::*:datafield)"/>
             </xsl:if>
@@ -130,7 +142,8 @@
             *:datafield[@tag = ('531', '532', '574',
             '575', '591', '592', '593', '594', '595', '901', '902', '956') and *:subfield/@code = 'a'] |
             *:datafield[@tag = '856']/*:subfield[@code = ('7', 'D')] |
-            *:datafield[@tag = '245']/*:subfield[@code = '9']"
+            *:datafield[@tag = '245']/*:subfield[@code = '9'] |
+            *:datafield[@tag='856' and *:subfield[@code='u']='$856_u']"
         priority="2.1" mode="copy #default"/>
     <!--
 MARC 09x, 59x, 69x, and 950-999 local fields-->
@@ -307,7 +320,9 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         </record>        
      
     </xsl:template>
-
+    
+    
+    
     <xsl:template match="*:datafield"/>
 
     <xsl:template
