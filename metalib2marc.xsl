@@ -330,7 +330,7 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
         priority="2.5">
         <xsl:param name="OA" tunnel="yes" as="xs:boolean" select="false()"/>
         <xsl:if test="@ind2='1'">
-            <datafield tag="856" ind1="0" ind2="4">
+            <datafield tag="856" ind1="4" ind2="0">
             <subfield code="3">Fulltekst</subfield>
             <subfield code="u"><xsl:value-of select="*:subfield[@code = 'u']"/></subfield>
             <xsl:if test="$OA">
