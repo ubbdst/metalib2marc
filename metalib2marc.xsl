@@ -360,28 +360,29 @@ MARC 09x, 59x, 69x, and 950-999 local fields-->
                     No handling of multiple lang tags in import. $9 reserver for local Choose one language for import.</xsl:message>
             </xsl:if>
             <xsl:variable name="lang" select="."/>
-            <datafield tag="920" ind1=" " ind2=" ">
                 <xsl:variable name="current-cat"
                     select="key('category-by-id', $this_context, $categories)"/>
                 <xsl:if test="not($current-cat/(@* except @id))">
                     <xsl:message terminate="yes">Finner inngen språk attributter for <xsl:value-of
                             select="$this_context"/> Opprett 'en' eller 'nb' translations i
                             <xsl:value-of select="base-uri($categories)"/></xsl:message>
-                </xsl:if>
-                <subfield code="a">
-                    <xsl:value-of select="$current-cat/@*[name() = $lang]"/>
-                </subfield>
+                </xsl:if>                
                 <xsl:variable name="sub-context" select="$this_context/following-sibling::*[1]"/>
                 <xsl:for-each
                     select="$this_context/following-sibling::*:sub[preceding-sibling::*[1]/text() = $this_context]">
                     <xsl:variable name="sub-cat"
                         select="key('category-by-id', ., $current-cat)/@*[name() = $lang]"/>
+                    <datafield tag="920" ind1=" " ind2=" ">
+                        <subfield code="a">
+                            <xsl:value-of select="$current-cat/@*[name() = $lang]"/>
+                        </subfield>    
                     <subfield code="b">
                         <xsl:value-of select="$sub-cat"/>
                     </subfield>
+                    <xsl:call-template name="subfield_code_5"/>
+                    </datafield>
                 </xsl:for-each>
-                <xsl:call-template name="subfield_code_5"/>
-            </datafield>
+                
         </xsl:for-each>
     </xsl:template>
 
